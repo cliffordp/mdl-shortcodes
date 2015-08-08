@@ -13,11 +13,12 @@ class MDL_Shortcodes {
 		'MDL_Shortcodes\Shortcodes\MDL_Badge',
 		'MDL_Shortcodes\Shortcodes\MDL_Button',
 		'MDL_Shortcodes\Shortcodes\MDL_Card',
+		'MDL_Shortcodes\Shortcodes\MDL_Tab',
 	);
 	
 	// NO Shortcake UI, NO Duplicates
 	private $internal_shortcode_classes_wo_ui = array(
-		'MDL_Shortcodes\Shortcodes\MDL_Tabs',
+		'MDL_Shortcodes\Shortcodes\MDL_Tab_Group',
 	);
 	
 	// YES Shortcake UI, YES Duplicates
@@ -303,7 +304,7 @@ class MDL_Shortcodes {
 		// to display only an icon:
 			// 'add_button'	 => 'icon_only',
 		// to display icon + label:
-			// 'add_button'	 => 'yea',
+			// 'add_button'	 => 'yup',
 			// anything that passes the empty() check
 		foreach ( $ui_shortcodes as $shortcode => $atts ) {
 		
@@ -324,6 +325,7 @@ class MDL_Shortcodes {
 			}
 			
 			// Compile button HTML
+			// example icon_only result: <a href="#" id="insert-mdl-card-button" class="button insert-mdl-card add-mdl-card" data-editor="content" title="Insert MDL Card"><span class="dashicons wp-media-buttons-icon dashicons-format-aside"></span></a>
 			$html .= sprintf( '<a href="#" id="insert-%1$s-button" class="button insert-%1$s add-%1$s" data-editor="content" title="Insert %2$s"><span class="dashicons wp-media-buttons-icon %3$s"></span>%4$s</a>',
 				$shortcode,
 				$atts['label'],

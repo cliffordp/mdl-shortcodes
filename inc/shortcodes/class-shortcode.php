@@ -319,6 +319,50 @@ public static function mdl_url_target( $target = '', $fallback = '' ) {
 	}
 }
 
+
+
+
+
+// substr_getbykeys() - Returns everything in a source string that exists between the first occurance of each of the two key substrings
+//          - only returns first match, and can be used in loops to iterate through large datasets
+//          - arg 1 is the first substring to look for
+//          - arg 2 is the second substring to look for
+//          - arg 3 is the source string the search is performed on.
+//          - arg 4 is boolean and allows you to determine if returned result should include the search keys.
+//          - arg 5 is boolean and can be used to determine whether search should be case-sensative or not.
+//
+// from http://stackoverflow.com/a/27611859
+public static function substr_getbykeys( $key1, $key2, $source, $returnkeys = false, $casematters = true ) {
+	if ( $casematters === true ) {
+		$start = strpos($source, $key1);
+		$end = strpos($source, $key2);
+	} else {
+		$start = stripos($source, $key1);
+		$end = stripos($source, $key2);
+	}
+	if ( $start === false || $end === false ) {
+		return false;
+	}
+	if ( $start > $end ) {
+		$temp = $start;
+		$start = $end;
+		$end = $temp;
+	}
+	if ( $returnkeys === true) {
+		$length = ($end + strlen($key2)) - $start;
+	} else {
+		$start = $start + strlen($key1);
+		$length = $end - $start;
+	}
+	return substr($source, $start, $length);
+}
+
+
+
+
+
+
+
 //
 // implement Material Design Lite http://www.getmdl.io/started/
 //
