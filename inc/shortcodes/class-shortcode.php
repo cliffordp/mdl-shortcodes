@@ -320,8 +320,39 @@ public static function mdl_url_target( $target = '', $fallback = '' ) {
 }
 
 
-
-
+// $item is filled automatically when used with array_walk_recursive
+public static function array_items_keep_each_from_start_end( $item, $start = '', $end = '' ) {
+	$fail = false;
+	
+	if( ! isset( $item ) ) {
+		$fail = true;
+	}
+	
+	$end_length = strlen( $end );
+	
+	$start_position = strpos( $item, $start );
+	
+	if( false === $start_position ) {
+		$fail = true;
+	}
+	
+	$end_position = strpos( $item, $end );
+	
+	if( false === $end_position ) {
+		$fail = true;
+	} else {
+		$end_position = $end_position + $end_length; // to keep $end in string
+	}
+	
+	if( true === $fail ) {
+		$item = '';
+	} else {
+		$item = strstr( $item, $start ); // trim before $start
+		$item = substr( $item, 0, $end_position ); // trim after $end
+	}
+	
+	return $item;
+}
 
 // substr_getbykeys() - Returns everything in a source string that exists between the first occurance of each of the two key substrings
 //          - only returns first match, and can be used in loops to iterate through large datasets

@@ -10,6 +10,7 @@ class MDL_Tab_Group extends Shortcode {
 //
 // $content should include shortcodes to create tabs content
 //
+// wraps all the nested [mdl-tab] shortcodes' titles into one tab-bar div
 // Full Example:
 /*
 	[mdl-tabs]
@@ -30,7 +31,9 @@ class MDL_Tab_Group extends Shortcode {
 */
 //
 //
-	
+
+// MAYBE CHECK FOR ACTIVE!!!
+
 	public static function get_shortcode_ui_args() {
 		return array(
 			'label'          => esc_html__( 'MDL Tab Group', 'mdl-shortcodes' ),
@@ -98,121 +101,63 @@ class MDL_Tab_Group extends Shortcode {
 		if( empty( $content ) ) {
 			return '';
 		}
-		
-		// wrap all the nested [mdl-tab] shortcodes' titles into one tab-bar div
 
-/*
-NOTES / EXAMPLES:
-
-1) spread out in Editor
-
-	[mdl-tab-group]
-	
-	[mdl-tab title="Boom" active="true"]
-	<ul>
-		<li>Boomer!</li>
-	</ul>
-	[/mdl-tab]
-	
-	[mdl-tab title="Soon"]
-	<ul>
-		<li>Sooner!</li>
-	</ul>
-	[/mdl-tab]
-	
-	[/mdl-tab-group]
-	
-	$content has lots of P tags already:
-		</p>
-		<p>[mdl-tab title="Boom" active="true"]</p>
-		<ul>
-		<li>Boomer!</li>
-		</ul>
-		<p>[/mdl-tab]</p>
-		<p>[mdl-tab title="Soon"]</p>
-		<ul>
-		<li>Sooner!</li>
-		</ul>
-		<p>[/mdl-tab]</p>
-		<p>
-	
-	do_shortcode( $content ) keeps those P tags:
-		</p>
-		<p><!-- MDL Tab --><!-- mdl-tab-title-start --><a href="#panel-Boom" class="mdl-tabs__tab is-active">Boom</a><!-- mdl-tab-title-end --><!-- mdl-tab-panel-start --><div id="panel-Boom" class="mdl-tabs__panel is-active"></p>
-		<ul>
-		<li>Boomer!</li>
-		</ul>
-		<p></div><!-- mdl-tab-panel-end --></p>
-		<p><!-- MDL Tab --><!-- mdl-tab-title-start --><a href="#panel-Soon" class="mdl-tabs__tab">Soon</a><!-- mdl-tab-title-end --><!-- mdl-tab-panel-start --><div id="panel-Soon" class="mdl-tabs__panel"></p>
-		<ul>
-		<li>Sooner!</li>
-		</ul>
-		<p></div><!-- mdl-tab-panel-end --></p>
-		<p>
-
-
-2) all on one line in Editor
-
-	[mdl-tab-group][mdl-tab title="Boom" active="true"]<ul><li>Boomer!</li></ul>[/mdl-tab][mdl-tab title="Soon"]<ul><li>Sooner!</li></ul>[/mdl-tab][/mdl-tab-group]
-	
-	$content has 
-		[mdl-tab title="Boom" active="true"]
-		<ul>
-		<li>Boomer!</li>
-		</ul>
-		<p>[/mdl-tab][mdl-tab title="Soon"]
-		<ul>
-		<li>Sooner!</li>
-		</ul>
-		<p>[/mdl-tab]
-	
-	do_shortcode( $content ) is:
-		<!-- MDL Tab --><!-- mdl-tab-title-start --><a href="#panel-Boom" class="mdl-tabs__tab is-active">Boom</a><!-- mdl-tab-title-end --><!-- mdl-tab-panel-start --><div id="panel-Boom" class="mdl-tabs__panel is-active">
-		<ul>
-		<li>Boomer!</li>
-		</ul>
-		<p></div><!-- mdl-tab-panel-end --><!-- MDL Tab --><!-- mdl-tab-title-start --><a href="#panel-Soon" class="mdl-tabs__tab">Soon</a><!-- mdl-tab-title-end --><!-- mdl-tab-panel-start --><div id="panel-Soon" class="mdl-tabs__panel">
-		<ul>
-		<li>Sooner!</li>
-		</ul>
-		<p></div><!-- mdl-tab-panel-end -->
-
-*/
-
-		// remove all wpautop P tags from $content before do_content()
-		var_dump($content);
-		$content = preg_replace( '/(<\/p>\s<p>\[mdl-tab)/', '[mdl-tab', $content );
-		$content = preg_replace( '/(<p>\[\/mdl-tab]<\/p>\s<p>)/', '[/mdl-tab]', $content );
-		var_dump($content);
-		
-		$content = do_shortcode( $content );
-		plprint( $content );
-		
 		$start_tab = '<!-- MDL Tab -->';
 		$start_title = '<!-- mdl-tab-title-start -->';
 		$end_title = '<!-- mdl-tab-title-end -->';
 		$start_panel = '<!-- mdl-tab-panel-start -->';
 		$end_panel = '<!-- mdl-tab-panel-end -->';
 		
-		// array of all Tabs + Panels
-		$tabs = explode( $start_tab, $content );
+		// each Tab in its own array
+		$tabs = preg_split( '@(?=\[mdl-tab)@', $content, -1, PREG_SPLIT_NO_EMPTY ); // regex lookahead -- replace / with @ and add ?= to front of search -- to keep delimeter idea from http://stackoverflow.com/a/26021324
 		
-		plprint( $tabs, 'tabs' );
+		// make each item start with [mdl-tab (avoid all those P tags and whitespace, like nbsp and br too
+		array_walk( $tabs, function( &$item ) {
+			$fail = false;
+			
+			$start_tab_shortcode = '[mdl-tab';
+			$end_tab_shortcode = '[/mdl-tab]';
+			$end_tab_shortcode_length = strlen( $end_tab_shortcode );
+			
+			$start_position = strpos( $item, $start_tab_shortcode );
+			if( false === $start_position ) {
+				$fail = true;
+			}
+			
+			$end_position = strpos( $item, $end_tab_shortcode );
+			if( false === $start_position ) {
+				$fail = true;
+			} else {
+				$end_position = $end_position + $end_tab_shortcode_length;
+			}
+			
+			if( true === $fail ) {
+				$item = '';
+			} else {
+				$item = strstr( $item, $start_tab_shortcode ); // trim before $start_tab_shortcode
+				$item = substr( $item, 0, $end_position ); // trim after of $end_tab_shortcode
+			}
+		});
 		
+		$tabs = array_filter( $tabs );
+		
+		$tabs_html = array();
+		foreach( $tabs as $tab ) {
+			$tabs_html[] = do_shortcode( $tab );
+		}
+		$tabs_html = array_filter( $tabs_html );
+				
 		$tab_titles = array();
 		$tab_panels = array();
-		foreach( $tabs as $tab ) {
+		foreach( $tabs_html as $tab ) {
 			$tab_titles[] = parent::substr_getbykeys( $start_title, $end_title, $tab );
 		}
-		foreach( $tabs as $tab ) {
+		foreach( $tabs_html as $tab ) {
 			$tab_panels[] = parent::substr_getbykeys( $start_panel, $end_panel, $tab );
 		}
 		
 		$tab_titles = array_filter( $tab_titles );
 		$tab_panels = array_filter( $tab_panels );
-		
-		plprint( $tab_titles, 'titles' );
-		plprint( $tab_panels, 'panels' );
 		
 		// no MDL tabs inside!
 		if( empty( $tab_titles ) || empty( $tab_panels ) ) {
@@ -230,15 +175,14 @@ NOTES / EXAMPLES:
 		}
 		
 		$content = sprintf( '<div class="mdl-tabs__tab-bar">%s</div>%s', $tab_titles_output, $tab_panels_output );
-		
-		
+				
 		// BUILD OUTPUT
 		$output = '<!-- MDL Tab Group -->';
 			
-		$classes = 'mdl-tabs';
+		$classes = 'mdl-tabs mdl-js-tabs';
 		
 		if ( 'false' !== $effect ) {
-			$classes .= sprintf( ' mdl-js-tabs mdl-js-%s-effect', $effect );
+			$classes .= sprintf( ' mdl-js-%s-effect', $effect );
 		}
 		
 		$output .= sprintf( '<div class="%s">%s</div>', $classes, $content );
