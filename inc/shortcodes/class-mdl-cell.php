@@ -267,9 +267,12 @@ class MDL_Cell extends Shortcode {
 		}
 		
 		// no content!
+		// but that's ok because sometimes it's just used as a spacer!
+/*
 		if( empty( $content ) ) {
 			return '';
 		}
+*/
 		
 		// BUILD OUTPUT
 		$output = '<!-- MDL Cell -->';

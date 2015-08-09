@@ -86,9 +86,9 @@ class MDL_Tab extends Shortcode {
 		
 		$active = parent::mdl_truefalse( $active, 'false' );
 		if( 'true' == $active ) {
-			$active = ' is-active';
+			$active = ' is-active ';
 		} else {
-			$active = '';
+			$active = ' ';
 		}
 		
 		if( method_exists( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_sanitize_html_classes' ) ) {
@@ -97,9 +97,11 @@ class MDL_Tab extends Shortcode {
 			$class = sanitize_html_class( $atts['class'] );
 		}
 		
+/*
 		if( $class ) {
 			$class = ' ' . $class;
 		}
+*/
 		
 		$tab_id = strip_tags( $title );
 		$tab_id = sanitize_html_class( $tab_id );
@@ -117,9 +119,10 @@ class MDL_Tab extends Shortcode {
 		// BUILD OUTPUT
 		$output = '<!-- MDL Tab -->'; // removed via [mdl-tab-group] parsing
 		
-		$title_classes = sprintf( 'mdl-tabs__tab%s%s', $active, $class );
+		$title_classes = sprintf( '%s%smdl-tabs__tab', $class, $active ); // put custom and active classes first for [mdl-tab-group] parsing
 		
-		$panel_classes = sprintf( 'mdl-tabs__panel%s%s', $active, $class );
+		$panel_classes = sprintf( '%s%smdl-tabs__panel', $class, $active ); // put custom and active classes first for [mdl-tab-group] parsing
+
 		
 		// Build Title
 		$output .= '<!-- mdl-tab-title-start -->'; // removed via [mdl-tab-group] parsing

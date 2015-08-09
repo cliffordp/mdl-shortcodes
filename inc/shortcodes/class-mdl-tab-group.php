@@ -111,7 +111,7 @@ class MDL_Tab_Group extends Shortcode {
 		// each Tab in its own array
 		$tabs = preg_split( '@(?=\[mdl-tab)@', $content, -1, PREG_SPLIT_NO_EMPTY ); // regex lookahead -- replace / with @ and add ?= to front of search -- to keep delimeter idea from http://stackoverflow.com/a/26021324
 		
-		// make each item start with [mdl-tab (avoid all those P tags and whitespace, like nbsp and br too
+		// trim before [mdl-tab and after [/mdl-tab] (avoid all those leading and trailing P tags and whitespace, like nbsp and br too)
 		array_walk( $tabs, function( &$item ) {
 			$fail = false;
 			
@@ -139,13 +139,13 @@ class MDL_Tab_Group extends Shortcode {
 			}
 		});
 		
-		$tabs = array_filter( $tabs );
+		$tabs = array_filter( $tabs ); // remove empty array items
 		
 		$tabs_html = array();
 		foreach( $tabs as $tab ) {
 			$tabs_html[] = do_shortcode( $tab );
 		}
-		$tabs_html = array_filter( $tabs_html );
+		$tabs_html = array_filter( $tabs_html ); // remove empty array items
 				
 		$tab_titles = array();
 		$tab_panels = array();
@@ -156,8 +156,8 @@ class MDL_Tab_Group extends Shortcode {
 			$tab_panels[] = parent::substr_getbykeys( $start_panel, $end_panel, $tab );
 		}
 		
-		$tab_titles = array_filter( $tab_titles );
-		$tab_panels = array_filter( $tab_panels );
+		$tab_titles = array_filter( $tab_titles ); // remove empty array items
+		$tab_panels = array_filter( $tab_panels ); // remove empty array items
 		
 		// no MDL tabs inside!
 		if( empty( $tab_titles ) || empty( $tab_panels ) ) {
@@ -187,7 +187,14 @@ class MDL_Tab_Group extends Shortcode {
 		
 		$output .= sprintf( '<div class="%s">%s</div>', $classes, $content );
 		
-		return do_shortcode( $output );
+		// remove invalid P tags
+		$output = str_replace( '<p></div>', '</div>', $output );
+		$output = str_replace( '</div></p>', '</div>', $output );
+		$output = str_replace( 'mdl-tabs__panel"></p>', 'mdl-tabs__panel">', $output );
+		$output = str_replace( 'mdl-tabs__panel"></p>', 'mdl-tabs__panel">', $output );
+		
+		//return do_shortcode( $output ); // already did this above
+		return $output;
 	}
 
 

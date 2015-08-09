@@ -105,26 +105,103 @@ class MDL_Grid extends Shortcode {
 			return '';
 		}
 		
+		$content = do_shortcode( $content );
+		
 		// BUILD OUTPUT
 		$output = '<!-- MDL Grid -->';
 			
-		$classes = 'mdl-grid';
+		$classes = $class;
 		
 		if ( 'false' == $spacing ) {
-			$classes .= ' mdl-grid--no-spacing';
+			if( $classes ) {
+				$classes .= ' ';
+			}
+			$classes .= 'mdl-grid--no-spacing';
 		}
 		
 		if ( $color_text ) {
-			$classes .= ' ' . $color_text;
+			if( $classes ) {
+				$classes .= ' ';
+			}
+			$classes .= $color_text;
 		}
 		
 		if ( $color_background ) {
-			$classes .= ' ' . $color_background;
+			if( $classes ) {
+				$classes .= ' ';
+			}
+			$classes .= $color_background;
 		}
+		
+		if( $classes ) {
+			$classes .= ' ';
+		}
+		$classes .= 'mdl-grid'; // put custom, color, and spacing classes first for P tag parsing
 		
 		$output .= sprintf( '<div class="%s">%s</div>', $classes, $content );
 		
-		return do_shortcode( $output );
+		// remove invalid P tags
+		$output = str_replace( '<p></div>', '</div>', $output );
+		$output = str_replace( '</div></p>', '</div>', $output );
+		$output = str_replace( 'mdl-grid"></p>', 'mdl-grid">', $output );
+		$output = str_replace( '<p><!-- MDL Cell -->', '<!-- MDL Cell -->', $output );
+		
+/*
+May still have 1 invalid closing P tag near beginning of cell content if cell content has multiple lines...
+EXAMPLE:
+
+INPUT (in Text Editor, not Visual Editor):
+	[mdl-grid spacing=false]
+	
+	[mdl-cell size="3"]1st quarter
+	second line
+	
+	<br>
+	
+	BR was above
+	<p>added a P here</p>
+	
+	[/mdl-cell]
+	
+	[mdl-cell size=3]2nd quarter[/mdl-cell]
+	
+	[mdl-cell size=3]third quarter[/mdl-cell]
+	
+	[mdl-cell size=3]4th quarter[/mdl-cell]
+	
+	[/mdl-grid]
+
+BEFORE P processing:
+	<!-- MDL Grid --><div class="mdl-grid--no-spacing mdl-grid"></p>
+	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">1st quarter<br />
+	second line</p>
+	<p></p>
+	<p>BR was above</p>
+	<p>added a P here</p>
+	<p></div>
+	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">2nd quarter</div>
+	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">third quarter</div>
+	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">4th quarter</div>
+	<p></div>
+
+AFTER P processing:
+	<!-- MDL Grid --><div class="mdl-grid--no-spacing mdl-grid">
+	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">1st quarter<br />
+	second line</p>
+	<p></p>
+	<p>BR was above</p>
+	<p>added a P here</p>
+	</div>
+	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">2nd quarter</div>
+	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">third quarter</div>
+	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">4th quarter</div>
+	</div>			
+*/
+		
+		
+		
+		//return do_shortcode( $output ); // already did this above
+		return $output;
 	}
 
 

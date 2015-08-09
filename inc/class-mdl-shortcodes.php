@@ -292,13 +292,19 @@ class MDL_Shortcodes {
 		if( empty( $ui_shortcodes ) ) {
 			return false;
 		}
-		plprint($ui_shortcodes);
 		
 		wp_enqueue_script( 'jquery' ); // if not already, we need it
 		
 		// Initialize
 		$html = '';
 		$script = '';
+		
+		//
+		// manually add custom buttons (e.g. shortcodes without UI, group of shortcodes like grid/cell or tabs)
+		//
+		// MDL Grid of 4-4-4-4, 
+		$html .= '<a href="#" id="insert-mdl-grid-84-3333-1101-button" class="button insert-mdl-grid-84-3333-1101-button add-mdl-grid-84-3333-1101-button" data-editor="content" title="Insert MDL Grids of 8-4, 3-3-3-3, and 1-10-1"><span class="dashicons wp-media-buttons-icon dashicons-welcome-view-site"></span></a>';
+		$script .= 'jQuery("#insert-mdl-grid-84-3333-1101-button").on("click", function() { window.parent.send_to_editor(\'[mdl-grid][mdl-cell size=8]something here that will be 8 columns wide[/mdl-cell][mdl-cell]something here that will be 4 columns wide, since 4 is the default size[/mdl-cell][/mdl-grid][mdl-grid spacing=false][mdl-cell size=3]1st quarter[/mdl-cell][mdl-cell size=3]2nd quarter[/mdl-cell][mdl-cell size=3]third quarter[/mdl-cell][mdl-cell size=3]4th quarter[/mdl-cell][/mdl-grid][mdl-grid color="mdl-color-text--accent-contrast" bgcolor="mdl-color--red-700"][mdl-cell size=1][/mdl-cell][mdl-cell size=10]Ten wide with 1 column on each side for gutter effect. Lorem ipsum dolor sit amet, cum posse accumsan prodesset ne. Tale graeci cu ius, nec ne partem labores partiendo, id vel elitr primis veritus.[/mdl-cell][mdl-cell size=1][/mdl-cell][/mdl-grid]\'); });';
 		
 		// Add Button and jQuery for each UI shortcode with add_button attribute
 		// to display only an icon:
@@ -325,7 +331,16 @@ class MDL_Shortcodes {
 			}
 			
 			// Compile button HTML
-			// example icon_only result: <a href="#" id="insert-mdl-card-button" class="button insert-mdl-card add-mdl-card" data-editor="content" title="Insert MDL Card"><span class="dashicons wp-media-buttons-icon dashicons-format-aside"></span></a>
+			// EXAMPLE full button text result:
+			// 
+			// <a href="#" id="insert-mdl-icon-button" class="button insert-mdl-icon add-mdl-icon" data-editor="content" title="Insert MDL Material Design Icon"><span class="dashicons wp-media-buttons-icon dashicons-editor-textcolor"></span></a>
+			//
+			//
+			// EXAMPLE icon_only result:
+			// 
+			// <a href="#" id="insert-mdl-card-button" class="button insert-mdl-card add-mdl-card" data-editor="content" title="Insert MDL Card"><span class="dashicons wp-media-buttons-icon dashicons-format-aside"></span></a>
+			//
+			//
 			$html .= sprintf( '<a href="#" id="insert-%1$s-button" class="button insert-%1$s add-%1$s" data-editor="content" title="Insert %2$s"><span class="dashicons wp-media-buttons-icon %3$s"></span>%4$s</a>',
 				$shortcode,
 				$atts['label'],
@@ -342,6 +357,24 @@ class MDL_Shortcodes {
 			} // end foreach
 			
 			// notice escaped single-quotes in send_to_editor -- they are required, else JS console error and will not insert into Editor
+			// EXAMPLE full button text result:
+			// 
+/*
+				jQuery("#insert-mdl-icon-button").on("click", function() {
+					window.parent.send_to_editor('[mdl-icon icon="" color="" bgcolor="" class=""]');
+				});
+*/
+			//
+			//
+			// EXAMPLE icon_only result (NO DIFFERENCES HERE, just a 2nd output example):
+			// 
+/*
+				jQuery("#insert-mdl-card-button").on("click", function() {
+					window.parent.send_to_editor('[mdl-card postid="" title="" menu="" menulink="" menutarget="" htag="" titlecolor="" titlebgcolor="" mediaid="" mediasize="" mediaplacement="" mediapadding="" supporting="" actions="" actionslink="" actionstarget="" actionsicon="" actionsborder="" shadow="" class=""]');
+				});
+*/
+			//
+			//
 			$script .= sprintf( 'jQuery("#insert-%1$s-button").on("click", function() {
 				window.parent.send_to_editor(\'[%1$s %2$s]%3$s\');
 				});',
