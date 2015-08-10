@@ -389,7 +389,33 @@ public static function substr_getbykeys( $key1, $key2, $source, $returnkeys = fa
 }
 
 
-
+// DIV cannot be in P
+public static function mdl_cleanup_invalid_p_tags( $output = '' ) {
+	$first_open_p = strpos( $output, '<p' );
+	$first_closing_p = strpos( $output, '</p>' );
+	
+	// bail if no P tags to mess with
+	if( false === $first_open_p && false === $first_closing_p ) {
+		return $output;
+	}
+	
+	if( false !== $first_open_p ) {
+		$output = str_replace( '<p></div>', '</div>', $output );
+	}
+	
+	if( false !== $first_closing_p ) {
+		$output = str_replace( '</div></p>', '</div>', $output );
+	}
+	
+	// since we're in a DIV and no DIV should be in an opened P tag, if there's a closing P tag before an opening one, remove the first closing one since it'd be invalid
+	if( false !== $first_open_p && false !== $first_closing_p ) {
+		if( $first_closing_p < $first_open_p ) {
+			$output = substr_replace( $output, '', $first_closing_p, strlen( '</p>' ) );
+		}
+	}
+	
+	return $output;
+}
 
 
 

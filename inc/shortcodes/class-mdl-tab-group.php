@@ -188,10 +188,9 @@ class MDL_Tab_Group extends Shortcode {
 		$output .= sprintf( '<div class="%s">%s</div>', $classes, $content );
 		
 		// remove invalid P tags
-		$output = str_replace( '<p></div>', '</div>', $output );
-		$output = str_replace( '</div></p>', '</div>', $output );
 		$output = str_replace( 'mdl-tabs__panel"></p>', 'mdl-tabs__panel">', $output );
 		$output = str_replace( 'mdl-tabs__panel"></p>', 'mdl-tabs__panel">', $output );
+		$output = parent::mdl_cleanup_invalid_p_tags( $output );
 		
 		//return do_shortcode( $output ); // already did this above
 		return $output;

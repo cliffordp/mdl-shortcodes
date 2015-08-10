@@ -141,18 +141,10 @@ class MDL_Grid extends Shortcode {
 		$output .= sprintf( '<div class="%s">%s</div>', $classes, $content );
 		
 		// remove invalid P tags
-		$output = str_replace( '<p></div>', '</div>', $output );
-		$output = str_replace( '</div></p>', '</div>', $output );
 		$output = str_replace( 'mdl-grid"></p>', 'mdl-grid">', $output );
 		$output = str_replace( '<p><!-- MDL Cell -->', '<!-- MDL Cell -->', $output );
+		$output = parent::mdl_cleanup_invalid_p_tags( $output );
 		
-		// since we're in a DIV and no DIV should be in an opened P tag, if there's a closing P tag before an opening one, remove the closing one since it'd be invalid
-		$first_open_p = strpos( $output, '<p' );
-		$first_closing_p = strpos( $output, '</p>' );
-		if( false !== $first_open_p && false !== $first_closing_p && $first_closing_p < $first_open_p ) {
-			$output = substr_replace( $output, '', $first_closing_p, strlen( '</p>' ) );
-		}
-				
 		//return do_shortcode( $output ); // already did this above
 		return $output;
 	}
