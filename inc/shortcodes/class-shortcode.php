@@ -2065,7 +2065,7 @@ public static function mdl_secondary_color( $default = 'pink' ) {
 public static function mdl_version_number() {
 	// from https://github.com/google/material-design-lite/releases or visible in stylesheet URI at http://www.getmdl.io/started/index.html#download
 	
-	return '1.0.1';
+	return '1.0.2';
 }
 
 

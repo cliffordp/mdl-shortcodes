@@ -146,60 +146,13 @@ class MDL_Grid extends Shortcode {
 		$output = str_replace( 'mdl-grid"></p>', 'mdl-grid">', $output );
 		$output = str_replace( '<p><!-- MDL Cell -->', '<!-- MDL Cell -->', $output );
 		
-/*
-May still have 1 invalid closing P tag near beginning of cell content if cell content has multiple lines...
-EXAMPLE:
-
-INPUT (in Text Editor, not Visual Editor):
-	[mdl-grid spacing=false]
-	
-	[mdl-cell size="3"]1st quarter
-	second line
-	
-	<br>
-	
-	BR was above
-	<p>added a P here</p>
-	
-	[/mdl-cell]
-	
-	[mdl-cell size=3]2nd quarter[/mdl-cell]
-	
-	[mdl-cell size=3]third quarter[/mdl-cell]
-	
-	[mdl-cell size=3]4th quarter[/mdl-cell]
-	
-	[/mdl-grid]
-
-BEFORE P processing:
-	<!-- MDL Grid --><div class="mdl-grid--no-spacing mdl-grid"></p>
-	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">1st quarter<br />
-	second line</p>
-	<p></p>
-	<p>BR was above</p>
-	<p>added a P here</p>
-	<p></div>
-	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">2nd quarter</div>
-	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">third quarter</div>
-	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">4th quarter</div>
-	<p></div>
-
-AFTER P processing:
-	<!-- MDL Grid --><div class="mdl-grid--no-spacing mdl-grid">
-	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">1st quarter<br />
-	second line</p>
-	<p></p>
-	<p>BR was above</p>
-	<p>added a P here</p>
-	</div>
-	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">2nd quarter</div>
-	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">third quarter</div>
-	<!-- MDL Cell --><div class="mdl-cell mdl-cell--3-col">4th quarter</div>
-	</div>			
-*/
-		
-		
-		
+		// since we're in a DIV and no DIV should be in an opened P tag, if there's a closing P tag before an opening one, remove the closing one since it'd be invalid
+		$first_open_p = strpos( $output, '<p' );
+		$first_closing_p = strpos( $output, '</p>' );
+		if( false !== $first_open_p && false !== $first_closing_p && $first_closing_p < $first_open_p ) {
+			$output = substr_replace( $output, '', $first_closing_p, strlen( '</p>' ) );
+		}
+				
 		//return do_shortcode( $output ); // already did this above
 		return $output;
 	}

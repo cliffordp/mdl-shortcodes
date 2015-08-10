@@ -43,6 +43,7 @@ https://www.google.com/design/spec/components/
 http://mdlhut.com/
 https://material.angularjs.org/
 http://materialdesignblog.com/material-design-wordpress/
+https://www.google.com/design/articles/expressing-brand-in-material/
 
 * END notes
 */
@@ -63,20 +64,3 @@ function MDL_Shortcodes() {
 }
 // @codingStandardsIgnoreEnd
 add_action( 'after_setup_theme', 'MDL_Shortcodes' );
-
-
-
-
-	
-// first checking for class_exists( 'Shortcode_UI' ) does not work so just add styles/scripts to TinyMCE whether or not Shortcake plugin is active
-// but alternatively we could leverage get_shortcake_admin_dependencies() in inc/class-mdl-shortcodes.php -- may or may not check for is_admin()
-// add_filter( 'mce_css', 'mdl_tinymce_stylesheet_icons_func' );
-
-/*
-add_filter( 'admin_print_styles', array( 'MDL_Shortcodes', 'admin_shortcake_hide_duplicate_shortcodes_style' ) );
-
-add_filter( 'mce_css', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_tinymce_stylesheet_icons_func' ) );
-
-add_action( 'after_wp_tiny_mce', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_tinymce_scripts_func' ) );
-*/
-
