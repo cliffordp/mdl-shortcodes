@@ -168,7 +168,7 @@ class MDL_Cell extends Shortcode {
 					'attr'   => 'bgcolor',
 					'type'   => 'select',
 					'options' => parent::mdl_color_palette_classes_selection_array( 'true', 'background' ),
-					'description'  => parent::mdl_color_description_text( '', ' (Disallowed from choosing same color as Icon color to avoid displaying a colored square.)' ),
+					'description'  => parent::mdl_color_description_text( '', ' (Disallowed from choosing same color as Text color.)' ),
 				),
 				array(
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
@@ -196,7 +196,7 @@ class MDL_Cell extends Shortcode {
 			'align'			=> '',
 			'text'			=> '',
 			'color'			=> '',
-			'bgcolor'	=> '',
+			'bgcolor'		=> '',
 			'class'			=> '',
 		);
 		

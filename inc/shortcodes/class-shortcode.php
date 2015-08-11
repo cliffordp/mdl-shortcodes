@@ -135,6 +135,166 @@ public static function mdl_get_posts_w_fimage_set( $fields = 'ids' ) {
 }
 
 
+public static function mdl_nav_menus_selection_array( $prepend_empty = 'true', $args = 'hide_empty=1' ) {
+	$navs = get_terms( 'nav_menu', $args );
+	
+	$allowed_options = array();
+	
+	if( ! empty( $navs ) ) {
+		foreach( $navs as $nav => $object ) {
+			$allowed_options[ $object->term_id ] = $object->name . ' (ID: ' . $object->term_id . ')';
+		}
+	}
+	
+	if( 'true' == $prepend_empty ) {
+		$allowed_options = array( '' => '' )+$allowed_options;
+	}
+	
+	return $allowed_options;
+}
+
+
+public static function mdl_nav_types_selection_array( $prepend_empty = 'true' ) {
+	$allowed_options = array(
+		'transparent'		=> esc_html__( 'Transparent Header, Collapsible Drawer', 'mdl-shortcodes' ),
+		'none-fixed'		=> esc_html__( 'No Header, Fixed Drawer', 'mdl-shortcodes' ),
+		'fixed'				=> esc_html__( 'Fixed Header, Collapsible Drawer', 'mdl-shortcodes' ),
+		'fixed-fixed'		=> esc_html__( 'Fixed Header, Fixed Drawer', 'mdl-shortcodes' ),
+		'scrolling'			=> esc_html__( 'Scrolling Header, Collapsible Drawer', 'mdl-shortcodes' ),
+		'waterfall'			=> esc_html__( 'Waterfall Header, Collapsible Drawer', 'mdl-shortcodes' ),
+		'scrollabletabs'	=> esc_html__( 'Scrollable tabs Header, Collapsible Drawer', 'mdl-shortcodes' ),
+		'fixedtabs'			=> esc_html__( 'Fixed tabs Header, Collapsible Drawer', 'mdl-shortcodes' ),
+	);
+	
+	if( 'true' == $prepend_empty ) {
+		$allowed_options = array( '' => '' )+$allowed_options;
+	}
+	
+	return $allowed_options;
+}
+
+
+// wp_get_nav_menu_items takes menu name, ID, or slug -- but shortcode only uses ID
+// just as simple to use wp_get_nav_menu_items and do it all custom instead of custom walker class on wp_nav_menu because we want all the classes on the A tags, not the LI tags
+public static function mdl_build_nav_menu_items( $menu = '', $link_class = '', $depth = -1 ) {
+	$depth = -1; // hard-coded for now
+	$depth = intval( $depth );
+	
+	if( empty( $menu ) ) {
+		return false;
+	}
+	
+	$items = wp_get_nav_menu_items( $menu );
+	
+	if( false === $items || is_wp_error( $items ) ) {
+		return false;
+	}
+	
+	// if $depth is not -1 or 1, should add 'menu-item-has-children' class by following https://core.trac.wordpress.org/browser/tags/4.2.2/src/wp-includes/nav-menu-template.php#L327
+	
+	$output = '<nav class="mdl-navigation">';
+	
+	if( ! empty( $items ) ) {
+		foreach( $items as $key => $object ) {
+			
+			$child_class = '';
+			//
+			// NO multi-level menus at this time!
+			//
+			if( 1 == $depth && ! empty( $object->menu_item_parent ) ) {
+				continue;
+			}
+			// -1 gets links at any depth and arranges them in a single, flat list
+			if( -1 == $depth && ! empty( $object->menu_item_parent ) ) {
+				$child_class = sprintf( ' menu-item-has-parent menu-item-parent-item-is-%d', $object->menu_item_parent );
+			}
+			
+			$class = '';
+			
+			if( method_exists( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_sanitize_html_classes' ) ) {
+				$link_class = self::mdl_sanitize_html_classes( $link_class );
+			} else {
+				// this will remove spaces so is faulty but better than not sanitizing at all
+				$link_class = sanitize_html_class( $link_class );
+			}
+		
+			if( $link_class ) {
+				$class = $link_class . ' ';
+			}
+			$class .= sprintf( 'menu-item menu-item-type-%s menu-item-object-%s menu-item-%d%s',
+				$object->type,
+				$object->object,
+				$object->ID,
+				$child_class
+			);
+			$class .= implode( ' ', $object->classes );
+			
+			$target = '';
+			if( $object->target ) {
+				$target = sprintf( ' target="%s"', esc_attr( $object->target ) );
+			}
+			
+			$attr_title = '';
+			if( $object->attr_title ) {
+				$attr_title = sprintf( ' title="%s"', esc_attr( $object->attr_title ) );
+			}
+			
+			// https://codex.wordpress.org/Defining_Relationships_with_XFN
+			$xfn = '';
+			if( $object->xfn ) {
+				$xfn = sprintf( ' rel="%s"', esc_attr( $object->xfn ) );
+			}
+			
+			$description = '';
+/*
+			if( $object->description ) {
+				$description = sprintf( ' <span class="menu-item-description">%s</span>', $object->description );
+			}
+*/
+			
+			$output .= sprintf( '<a class="mdl-navigation__link %s" href="%s"%s%s%s>%s</a>%s',
+				$class,
+				$object->url,
+				$target,
+				$attr_title,
+				$xfn,
+				$object->title,
+				$description
+			);
+		}
+	}
+	
+	$output .= '</nav>';
+	
+	return $output;
+}
+
+
+/*
+public static function mdl_build_nav_menu_items( $menu_id = 0, $depth = 0 ) {
+	$args = array(
+		'container'			=> 'nav',
+		'container_class'	=> 'mdl-navigation',
+		'menu_id'			=> $menu_id,
+		'echo'				=> false,
+		'items_wrap'		=> '%3$s', // just the <li>, not the <ul>
+		'depth'				=> $depth,
+	);
+	
+	$output = wp_nav_menu( $args );
+	//$output = strip_tags( $output, '<a>' ); // we just want the links -- from https://css-tricks.com/snippets/wordpress/remove-li-elements-from-output-of-wp_nav_menu/
+	
+	if( false === $output ) {
+		return false;
+	}
+	
+	
+	
+	return $output;
+}
+*/
+
+
 // remove all but integers and commas from string -- from http://stackoverflow.com/a/5798519/893907
 // Example: $str = ", 3.3,,x,,, , 2 4b , , 3 , 2 4 ,,,,,";
 // results in: 33,24,3,24

@@ -14,6 +14,7 @@ class MDL_Shortcodes {
 		'MDL_Shortcodes\Shortcodes\MDL_Button',
 		'MDL_Shortcodes\Shortcodes\MDL_Card',
 		'MDL_Shortcodes\Shortcodes\MDL_Tab',
+		'MDL_Shortcodes\Shortcodes\MDL_Nav',
 	);
 	
 	// NO Shortcake UI, NO Duplicates
