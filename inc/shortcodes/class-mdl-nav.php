@@ -9,7 +9,15 @@ class MDL_Nav extends Shortcode {
 // http://www.getmdl.io/components/index.html#layout-section/layout
 //
 /*
-	
+TODO:
+- allow icon in title or as title
+- allow image as title (e.g. http://www.getmdl.io/templates/android-dot-com/ )
+- figure out <main> -- reference: http://www.w3schools.com/tags/tag_main.asp
+- layout parent/children like Android Drawer menu
+- allow image area in Drawer, like Android
+- add search area
+- add more_vert button icon like Android
+- Jetpack site logo	
 */
 
 	public static function get_shortcode_ui_args() {
@@ -134,7 +142,7 @@ class MDL_Nav extends Shortcode {
 		if( 'fixed-fixed' == $type ) {
 			$header_title = '';
 		} else {
-			$header_title = $title;
+			$header_title = sprintf( '<span class="mdl-layout-title">%s</span>', $title );
 		}
 		
 		if( ! array_key_exists( $type, parent::mdl_nav_types_selection_array( 'false' ) ) ) {
@@ -221,14 +229,7 @@ class MDL_Nav extends Shortcode {
 		$outer_class = '';
 		
 		$header_class = 'mdl-layout__header';
-		if( ! empty( $header_background ) ) {
-			$header_class .= ' ' . $header_background;
-		}
-		
 		$drawer_class = 'mdl-layout__drawer';
-		if( ! empty( $drawer_background ) ) {
-			$drawer_class .= ' ' . $drawer_background;
-		}
 		
 		if( ! empty( $type ) ) {
 			if( 'transparent' == $type ) {
@@ -242,9 +243,9 @@ class MDL_Nav extends Shortcode {
 				$outer_class .= ' mdl-layout--fixed-header';
 				$outer_class .= ' mdl-layout--fixed-drawer';
 			} elseif ( 'scrolling' == $type ) {
-				$header_class = ' mdl-layout__header--scroll';
+				$header_class .= ' mdl-layout__header--scroll';
 			} elseif ( 'waterfall' == $type ) {
-				$header_class = ' mdl-layout__header--waterfall';
+				$header_class .= ' mdl-layout__header--waterfall';
 			} elseif ( 'scrollabletabs' == $type ) {
 				$outer_class .= ' mdl-layout--fixed-header';
 			} elseif ( 'fixedtabs' == $type ) {
@@ -252,6 +253,14 @@ class MDL_Nav extends Shortcode {
 			} else {
 				return ''; // should not get here because a default type is set above
 			}
+		}
+		
+		if( ! empty( $header_background ) ) {
+			$header_class .= ' ' . $header_background;
+		}
+		
+		if( ! empty( $drawer_background ) ) {
+			$drawer_class .= ' ' . $drawer_background;
 		}
 		
 		$classes .= $outer_class;
@@ -276,7 +285,7 @@ class MDL_Nav extends Shortcode {
 				<header class="%s">
 					<div class="mdl-layout-icon"></div>
 					<div class="mdl-layout__header-row">
-						<span class="mdl-layout-title">%s</span>
+						%s
 						<div class="mdl-layout-spacer"></div>
 						%s
 					</div>
@@ -300,6 +309,16 @@ class MDL_Nav extends Shortcode {
 			);
 		}
 		
+		$output = sprintf( '
+			<div class="%s">
+				%s
+				%s
+			</div>',
+			$classes,
+			$build_header,
+			$build_drawer
+		);
+						
 		$output = sprintf( '
 			<div class="%s">
 				%s

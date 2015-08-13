@@ -162,7 +162,7 @@ public static function mdl_nav_types_selection_array( $prepend_empty = 'true' ) 
 		'fixed-fixed'		=> esc_html__( 'Fixed Header, Fixed Drawer', 'mdl-shortcodes' ),
 		'scrolling'			=> esc_html__( 'Scrolling Header, Collapsible Drawer', 'mdl-shortcodes' ),
 		'waterfall'			=> esc_html__( 'Waterfall Header, Collapsible Drawer', 'mdl-shortcodes' ),
-		'scrollabletabs'	=> esc_html__( 'Scrollable tabs Header, Collapsible Drawer', 'mdl-shortcodes' ),
+		'scrollabletabs'	=> esc_html__( 'Horizontally-Scrollable tabs Header, Collapsible Drawer', 'mdl-shortcodes' ), // demo at https://github.com/google/material-design-lite/issues/1380#issuecomment-130383886 --> http://codepen.io/surma/pen/RPOREb -- but only scrollable at 1025px and wider on that demo... hmmm
 		'fixedtabs'			=> esc_html__( 'Fixed tabs Header, Collapsible Drawer', 'mdl-shortcodes' ),
 	);
 	
