@@ -162,7 +162,7 @@ public static function mdl_nav_types_selection_array( $prepend_empty = 'true' ) 
 		'fixed-fixed'		=> esc_html__( 'Fixed Header, Fixed Drawer', 'mdl-shortcodes' ),
 		'scrolling'			=> esc_html__( 'Scrolling Header, Collapsible Drawer', 'mdl-shortcodes' ),
 		'waterfall'			=> esc_html__( 'Waterfall Header, Collapsible Drawer', 'mdl-shortcodes' ),
-		'scrollabletabs'	=> esc_html__( 'Horizontally-Scrollable tabs Header, Collapsible Drawer', 'mdl-shortcodes' ), // demo at https://github.com/google/material-design-lite/issues/1380#issuecomment-130383886 --> http://codepen.io/surma/pen/RPOREb -- but only scrollable at 1025px and wider on that demo... hmmm
+		'scrollabletabs'	=> esc_html__( 'Horizontally-Scrollable tabs Header, Collapsible Drawer', 'mdl-shortcodes' ), // demo at https://github.com/google/material-design-lite/issues/1380#issuecomment-130383886 --> http://codepen.io/surma/pen/RPOREb -- but only scrollable at 1025px and wider on that demo... The buttons disappear because we can assume that you are on mobile and have a touch interface.
 		'fixedtabs'			=> esc_html__( 'Fixed tabs Header, Collapsible Drawer', 'mdl-shortcodes' ),
 	);
 	
@@ -570,7 +570,7 @@ public static function mdl_cleanup_invalid_p_tags( $output = '' ) {
 	// since we're in a DIV and no DIV should be in an opened P tag, if there's a closing P tag before an opening one, remove the first closing one since it'd be invalid
 	if( false !== $first_open_p && false !== $first_closing_p ) {
 		if( $first_closing_p < $first_open_p ) {
-			$output = substr_replace( $output, '', $first_closing_p, strlen( '</p>' ) );
+			$output = substr_replace( $output, '', $first_closing_p, 0 );
 		}
 	}
 	
