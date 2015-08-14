@@ -142,15 +142,15 @@ class MDL_Button extends Shortcode {
 		
 		$atts = shortcode_atts( $defaults, $atts, self::get_shortcode_tag() );
 		
-		$type		=	strtolower( $atts['type'] );
-		$icon		=	strtolower( $atts['icon'] );
+		$type			=	strtolower( $atts['type'] );
+		$icon			=	strtolower( $atts['icon'] );
 		$icon_display	=	strtolower( $atts['icondisplay'] );
-		$text		=	trim( $atts['text'] ); // remove surrounding whitespace
-		$color		=	strtolower( $atts['color'] );
-		$effect		=	strtolower( $atts['effect'] );
-		$url		=	esc_url( $atts['url'] );
-		$target		=	parent::mdl_url_target( $atts['target'] );
-		$disabled	=	strtolower( $atts['disabled'] );
+		$text			=	trim( $atts['text'] ); // remove surrounding whitespace
+		$color			=	strtolower( $atts['color'] );
+		$effect			=	strtolower( $atts['effect'] );
+		$url			=	esc_url( $atts['url'] );
+		$target			=	parent::mdl_url_target( $atts['target'] );
+		$disabled		=	strtolower( $atts['disabled'] );
 		
 		
 		// Invalid Icon Name
@@ -160,8 +160,8 @@ class MDL_Button extends Shortcode {
 		
 		if( $icon ) {
 			$text = $icon; // if button type is Icon, do not display button text, just replace it
-			if( 'nested' == $icon_display && shortcode_exists( 'mdl-icon' ) ) {
-				$text = sprintf( '[mdl-icon icon=%s]', $icon );
+			if( 'nested' == $icon_display ) {
+				$text = sprintf( '<i class="material-icons">%s</i>', $text );
 			}
 		}
 		
@@ -269,7 +269,8 @@ class MDL_Button extends Shortcode {
 			$output .= $button;
 		}
 		
-		return do_shortcode( $output );
+		// return do_shortcode( $output ); // no shortcodes here, boss!
+		return $output;
 	
 	}
 	

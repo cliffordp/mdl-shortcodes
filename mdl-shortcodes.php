@@ -47,6 +47,7 @@ http://materialdesignblog.com/material-design-wordpress/
 https://www.google.com/design/articles/expressing-brand-in-material/
 
 Maybe complementary plugins:
+https://wordpress.org/plugins/shortcode-factory/ is a great complement! Doesn't add any styles either. Just what I was looking for, especially if not using Views!
 https://wordpress.org/plugins/display-posts-shortcode/ -- http://www.billerickson.net/code-tag/display-posts-shortcode/
 https://wordpress.org/plugins/custom-sidebars/
 https://wordpress.org/plugins/amr-shortcode-any-widget/

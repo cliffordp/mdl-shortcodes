@@ -109,7 +109,7 @@ class MDL_Tab extends Shortcode {
 		if( empty( $tab_id ) ) {
 			$tab_id = 'mdltabid-rand-' . rand( 101, 199 );
 		}
-		
+		$tab_id = sanitize_html_class( $tab_id );		
 				
 		// no content!
 		if( empty( $content ) ) {

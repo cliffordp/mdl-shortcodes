@@ -14,12 +14,13 @@ class MDL_Shortcodes {
 		'MDL_Shortcodes\Shortcodes\MDL_Button',
 		'MDL_Shortcodes\Shortcodes\MDL_Card',
 		'MDL_Shortcodes\Shortcodes\MDL_Tab',
-		'MDL_Shortcodes\Shortcodes\MDL_Nav',
+		'MDL_Shortcodes\Shortcodes\MDL_Menu',
 	);
 	
 	// NO Shortcake UI, NO Duplicates
 	private $internal_shortcode_classes_wo_ui = array(
 		'MDL_Shortcodes\Shortcodes\MDL_Tab_Group',
+		'MDL_Shortcodes\Shortcodes\MDL_Nav',
 	);
 	
 	// YES Shortcake UI, YES Duplicates

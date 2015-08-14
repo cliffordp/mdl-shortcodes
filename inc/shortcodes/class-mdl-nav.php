@@ -23,11 +23,13 @@ TODO:
 	public static function get_shortcode_ui_args() {
 		return array(
 			'label'          => esc_html__( 'MDL Navigation Menu', 'mdl-shortcodes' ),
-			'listItemImage'  => 'dashicons-menu',
+			//'listItemImage'  => 'dashicons-menu',
+/*
 			'inner_content' => array(
 					//'value'			=> '',
 					'description'	=> __( 'Content you want displayed inside the <main> element of the Navigation.', 'mdl-shortcodes' ),
 			),
+*/
 			'add_button'	 => 'icon_only',
 			'attrs'          => array(
 				array(
@@ -132,9 +134,11 @@ TODO:
 		}
 		
 		// MDL navs require <main>
+/*
 		if( empty( $content ) ) {
 			return '';
 		}
+*/
 		
 		if( empty( $title ) ) {
 			$title = 'Menu';
@@ -308,29 +312,13 @@ TODO:
 				parent::mdl_build_nav_menu_items( $drawer_nav, $drawer_text )
 			);
 		}
-		
-		$output = sprintf( '
-			<div class="%s">
-				%s
-				%s
-			</div>',
-			$classes,
-			$build_header,
-			$build_drawer
-		);
-						
-		$output = sprintf( '
-			<div class="%s">
-				%s
-				%s
-				<main class="mdl-layout__content">%s</main>
-			</div>',
-			$classes,
-			$build_header,
-			$build_drawer,
-			$content
-		);
-						
+				
+		$output .= sprintf( '<div class="%s">', $classes );
+			$output .= $build_header;
+			$output .= $build_drawer;
+			//$output .= sprintf( '<main class="mdl-layout__content">%s</main>', $content );
+		$output .= '</div>';
+			
 		return do_shortcode( $output );
 	
 	}
