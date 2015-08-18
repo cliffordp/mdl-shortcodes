@@ -7,6 +7,10 @@ class MDL_Shortcodes {
 
 	private static $instance;
 	
+	private static $mdl_customizer_flag = 'mdl-shortcodes-customizer';
+	
+	private static $mdl_customizer_colors_section = 'mdl_shortcodes_colors_section';
+	
 	// YES Shortcake UI, NO Duplicates
 	private $internal_shortcode_classes_w_ui = array(
 		'MDL_Shortcodes\Shortcodes\MDL_Icon',
@@ -80,8 +84,16 @@ class MDL_Shortcodes {
 		add_action( 'shortcode_ui_after_do_shortcode', function( $shortcode ) {
 			return $this::get_shortcake_admin_dependencies();
 		});
+				
+		add_action( 'customize_register', array( $this, 'mdl_customizer_options' ) );
 		
+		if( isset( $_GET[ self::$mdl_customizer_flag ] ) ) {
+			add_filter( 'customize_register', array( $this, 'remove_customizer_controls' ) );
+			// add_filter( 'customize_control_active', array( $this, 'mdl_control_filter' ), 10, 2 ); // could not get it to work so manually removed ones via remove_customizer_controls() method
+		}
 		
+		add_action( 'admin_menu', array( $this, 'mdl_add_wp_admin_options_link' ) );
+				
 		add_action( 'after_wp_tiny_mce', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_tinymce_scripts_func' ) ); // note that Shortcake is only loosly coupled with TinyMCE -- the Shortcode UI still works if Visual editor is disabled
 		add_action( 'media_buttons', array( $this, 'shortcode_ui_editor_one_click_insert_buttons' ), 200 ); // higher priority adds it to the right side of all the other buttons (Add Media, Gravity Forms, etc.)
 	}
@@ -105,6 +117,11 @@ class MDL_Shortcodes {
 	 */
 	public function action_init_register_shortcodes() {
 		
+		// global instead of in MDL_Shortcodes::do_shortcode_callback() because we want it to display on all of the site, not just if a shortcode is in use
+		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_stylesheet();
+		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_icons();
+		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_js();
+				
 		$w_ui = apply_filters( 'mdl_shortcodes_shortcode_classes_w_ui', $this->internal_shortcode_classes_w_ui );
 		$wo_ui = apply_filters( 'mdl_shortcodes_shortcode_classes_wo_ui', $this->internal_shortcode_classes_wo_ui );
 		
@@ -201,11 +218,6 @@ class MDL_Shortcodes {
 		if ( empty( $this->registered_shortcodes[ $shortcode_tag ] ) ) {
 			return '';
 		}
-		
-		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_stylesheet();
-		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_icons();
-		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_js();
-		
 		
 		$class = $this->registered_shortcodes[ $shortcode_tag ];
 		return $class::callback( $atts, $content, $shortcode_tag );
@@ -391,6 +403,114 @@ class MDL_Shortcodes {
 		$html .= $script;
 		
 		echo $html;
+	}
+	
+	// help from https://www.youtube.com/watch?v=7usuZRBsyk8 --> https://speakerdeck.com/bftrick/using-the-wordpress-customizer-to-build-beautiful-plugin-settings-pages
+	function mdl_add_wp_admin_options_link(){
+		$url = 'customize.php';
+		
+		// get special MDL Demo / Template page
+		$mdl_demo_page_url = get_permalink( 241 );
+		
+		// if we have the special page, go straight to it
+		// if we don't have the special page, it'll just load the default customize.php (default is the home page)
+		if( $mdl_demo_page_url ) {
+			$url = add_query_arg( 'url', urlencode( $mdl_demo_page_url ), $url );
+		}
+		
+		// get the page to return to (hit X on the Customizer)
+		$url = add_query_arg( 'return', urlencode( admin_url( 'themes.php' ) ), $url );
+		
+		// add flag in the Customizer url so we know we're in MDL Shortcodes editor
+		$url = add_query_arg( self::$mdl_customizer_flag, 'true', $url );
+		
+		// auto-open the MDL Shortcodes editor
+		$url = add_query_arg( 'autofocus[section]', self::$mdl_customizer_colors_section, $url );
+		
+		//add_theme_page( 'MDL Shortcodes Option', 'MDL Shortcodes Options', 'edit_theme_options', $url );
+		add_menu_page( 'MDL Shortcodes', 'MDL Shortcodes Options', 'manage_options', $url, '', 'dashicons-book-alt', 63 );
+	}
+	
+	// if we catch that flag from above function, hide default Customizer controls
+	public function remove_customizer_controls( $wp_customize ) {
+		global $wp_customize;
+		
+		$wp_customize->remove_panel( 'widgets' );
+		
+		$wp_customize->remove_section( 'themes' );
+		$wp_customize->remove_section( 'title_tagline' );
+		$wp_customize->remove_section( 'colors' );
+		$wp_customize->remove_section( 'header_image' );
+		$wp_customize->remove_section( 'background_image' );
+		$wp_customize->remove_section( 'nav' );
+		$wp_customize->remove_section( 'static_front_page' );
+		
+		return true;
+	}
+	
+	// could not get it to function properly
+	// if we catch that flag from above function, hide all Customizer controls that we didn't manually add to the Customizer (except the 'themes' section as of WP 4.2)
+/*
+	function mdl_control_filter( $active, $control ) {
+		if( in_array( $control->section, self::mdl_customizer_options ) ) {
+			return true;
+		}
+		
+		return false;
+	}
+*/
+	
+	function mdl_customizer_options( $wp_customize ) {
+/*
+		// Customizer Panel
+		$wp_customize->add_panel(
+			'mdl_shortcodes_panel',
+			array(
+				'title'			=> __('MDL Shortcodes Settings', 'mdl-shortcodes'),
+				'description'	=> __('Material Design Lite (MDL) Shortcodes Settings', 'mdl-shortcodes'),
+				'priority'		=> 10,
+			)
+		);
+*/
+		
+		// Customizer Section
+		$wp_customize->add_section(
+			self::$mdl_customizer_colors_section,
+			array(
+				'title'			=> __('MDL Shortcodes Color Settings', 'mdl-shortcodes'),
+				'description'	=> __('Color swatches are visible at <a href="http://www.getmdl.io/customize/" target="_blank">GetMDL.io</a> (link opens in a new window)<br>If Primary and Secondary are set to the same, the color combination will default back to Indigo-Pink.', 'mdl-shortcodes'),
+				'priority'		=> 12,
+				//'panel'			=> 'mdl_shortcodes_panel',
+			)
+		);
+			
+			// Primary Color Setting
+			$wp_customize->add_setting( 'mdl_shortcodes_primary_color_setting', array(
+				'default'	=> 'indigo',
+				'type'		=> 'option',
+			));
+			
+			$wp_customize->add_control( 'mdl_shortcodes_primary_color_control', array(
+				'label'		=> __('MDL Primary Color', 'mdl-shortcodes'),
+				'section'	=> self::$mdl_customizer_colors_section,
+				'settings'	=> 'mdl_shortcodes_primary_color_setting',
+				'type'		=> 'select',
+				'choices'	=> MDL_Shortcodes\Shortcodes\Shortcode::mdl_single_color_names( 'all' ),
+			));
+			
+			// Accent Color Setting
+			$wp_customize->add_setting( 'mdl_shortcodes_accent_color_setting', array(
+				'default'	=> 'pink',
+				'type'		=> 'option',
+			));
+			
+			$wp_customize->add_control( 'mdl_shortcodes_accent_color_control', array(
+				'label'		=> __('MDL Accent Color', 'mdl-shortcodes'),
+				'section'	=> self::$mdl_customizer_colors_section,
+				'settings'	=> 'mdl_shortcodes_accent_color_setting',
+				'type'		=> 'select',
+				'choices'	=> MDL_Shortcodes\Shortcodes\Shortcode::mdl_single_color_names( 'accents' ),
+			));
 	}
 
 } // closing MDL_Shortcodes class

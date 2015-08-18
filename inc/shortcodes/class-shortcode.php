@@ -2283,28 +2283,28 @@ public static function mdl_icons_selection_array( $prepend_empty = 'true' ) {
 public static function mdl_single_color_names( $build = 'all' ) {
 	
 	$can_accent = array(
-		'teal',
-		'purple',
-		'deep_purple',
-		'deep_orange',
-		'pink',
-		'indigo',
-		'red',
-		'yellow',
-		'blue',
-		'green',
-		'orange',
-		'light_blue',
-		'amber',
-		'cyan',
-		'light_green',
-		'lime',
+		'yellow'		=> 'Yellow',
+		'amber'			=> 'Amber',
+		'orange'		=> 'Orange',
+		'deep_orange'	=> 'Deep Orange',
+		'red'			=> 'Red',
+		'pink'			=> 'Pink',
+		'purple'		=> 'Purple',
+		'deep_purple'	=> 'Deep Purple',
+		'indigo'		=> 'Indigo',
+		'blue'			=> 'Blue',
+		'light_blue'	=> 'Light Blue',
+		'cyan'			=> 'Cyan',
+		'teal'			=> 'Teal',
+		'green'			=> 'Green',
+		'light_green'	=> 'Light Green',
+		'lime'			=> 'Lime',
 	);
 	
 	$cannot_accent = array(
-		'blue_grey',
-		'brown',
-		'grey',
+		'brown'			=> 'Brown',
+		'blue_grey'		=> 'Blue Grey',
+		'grey'			=> 'Grey',
 	);
 	
 	
@@ -2320,10 +2320,16 @@ public static function mdl_single_color_names( $build = 'all' ) {
 }
 
 // is a valid MDL color name
-public static function mdl_is_valid_mdl_color( $string ) {
+public static function mdl_is_valid_mdl_color( $string, $build = 'all' ) {
 	$string = trim( strtolower( (string) $string ) );
 	
-	if ( in_array( $string, self::mdl_single_color_names() ) ) {
+	$colors = self::mdl_single_color_names( $build );
+	
+	if( empty( $colors ) ) {
+		$colors = self::mdl_single_color_names();
+	}
+	
+	if ( array_key_exists( $string, $colors ) ) {
 		return true;
 	} else {
 		return false;
@@ -2333,9 +2339,7 @@ public static function mdl_is_valid_mdl_color( $string ) {
 
 // edit colors -- make sure proper spelling and color combos from http://www.getmdl.io/customize/
 public static function mdl_primary_color( $default = 'indigo' ) {
-	$color = 'grey'; //set it manually for now
-	
-	$color = strtolower( $color );
+	$color = strtolower( get_option( 'mdl_shortcodes_primary_color_setting', $default ) );
 	
 	if ( self::mdl_is_valid_mdl_color( $color ) ) {
 		return $color;
@@ -2344,12 +2348,10 @@ public static function mdl_primary_color( $default = 'indigo' ) {
 	}
 }
 
-public static function mdl_secondary_color( $default = 'pink' ) {
-	$color = 'purple'; //set it manually for now
+public static function mdl_accent_color( $default = 'pink' ) {
+	$color = strtolower( get_option( 'mdl_shortcodes_accent_color_setting', $default ) );
 	
-	$color = strtolower( $color );
-	
-	if ( self::mdl_is_valid_mdl_color( $color ) ) {
+	if ( self::mdl_is_valid_mdl_color( $color, 'accents' ) ) {
 		return $color;
 	} else {
 		return $default;
@@ -2386,7 +2388,7 @@ public static function mdl_js_handle() {
 
 public static function mdl_stylesheet_src() {
 	if ( self::mdl_hosted_by_google() ) {
-		$src = sprintf('https://storage.googleapis.com/code.getmdl.io/%s/material.%s.min.css', self::mdl_version_number(), self::mdl_color_combo() );
+		$src = sprintf( 'https://storage.googleapis.com/code.getmdl.io/%s/material.%s.min.css', self::mdl_version_number(), self::mdl_color_combo() );
 	} else {
 		$src = ''; //local source
 	}
@@ -2403,11 +2405,10 @@ public static function mdl_all_valid_stylesheet_combos_array() {
 	
 	$allowed_color_combos = array();
     
-    // with some help from ET Cook 2015-07-24. Thanks!
-	foreach( self::mdl_single_color_names( 'all' ) as $primary ) {
-		foreach( self::mdl_single_color_names( 'accents' ) as $accent) {
+	foreach( self::mdl_single_color_names() as $primary => $primary_item ) {
+		foreach( self::mdl_single_color_names( 'accents' ) as $accent => $accent_item ) {
 			if( $primary != $accent ) {
-				$allowed_color_combos[] = $primary . '-' . $accent;
+				$allowed_color_combos[$primary . '-' . $accent] = sprintf( '%s - %s', $primary_item, $accent_item );
 			}
 		}
 	}
@@ -2418,60 +2419,10 @@ public static function mdl_all_valid_stylesheet_combos_array() {
 }
 
 
-public static function mdl_all_valid_stylesheet_combos_br() {	
-/*
-	// RESOURCE INTENSIVE. DO NOT UNCOMMENT AND USE OTHER THAN FOR TESTING. PLUS, NOT REALLY NEEDED AFTER CONFIRMING WITH https://github.com/google/material-design-lite/issues/1206#issuecomment-125570381
-	
-	$allowed_color_names = mdl_single_color_names();
-	
-	$allowed_color_combos = array();
-    	
-    // with some help from ET Cook 2015-07-24. Thanks!
-	foreach( mdl_single_color_names( 'all' ) as $primary ) {
-		foreach( mdl_single_color_names( 'all' ) as $accent) {
-			$allowed_color_combos[] = $primary . '-' . $accent;
-		}
-	}
-    
-	$valid_combo = array();
-	$invalid_combo = array();
-	
-	foreach ( $allowed_color_combos as $test_combo ) {
-		$test = sprintf('https://storage.googleapis.com/code.getmdl.io/%s/material.%s.min.css', mdl_version_number(), $test_combo );
-		
-		$headers = get_headers( $test );
-		
-		if ( false !== strpos( $headers[0], '200' ) ) {
-			$valid_combo[] = $test_combo;
-		} else {
-			$invalid_combo[] = $test_combo;
-		}
-	}
-	
-	$valid_combo = array_unique( $valid_combo );
-	$invalid_combo = array_unique( $invalid_combo );
-	
-	$output = '';
-	foreach( $valid_combo as $combo ) {
-		$output .= $combo . '<br>';
-	}
-*/
-	$output = '';
-	foreach( self::mdl_all_valid_stylesheet_combos_array() as $combo ) {
-		$output .= $combo . '<br>';
-	}
-
-	return $output;
-}
-
 public static function mdl_color_combo( $default = 'indigo-pink' ) {
-	// The result of echoing mdl_all_valid_stylesheet_combos_br() for v1.0.1 on 2015-07-24
+	$combo = self::mdl_primary_color() . '-' . self::mdl_accent_color();
 	
-	// count is 304 unique combinations
-		
-	$combo = self::mdl_primary_color() . '-' . self::mdl_secondary_color();
-	
-	if ( ! in_array( $combo, self::mdl_all_valid_stylesheet_combos_array() ) ) {
+	if ( ! array_key_exists( $combo, self::mdl_all_valid_stylesheet_combos_array() ) ) {
 		$combo = $default;
 	}
 	
