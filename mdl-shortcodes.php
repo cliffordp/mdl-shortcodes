@@ -27,6 +27,8 @@ Because:
 * START notes
 
 TODO:
+- test Customizer color settings prior to WP 4.3 vs in WP 4.3 (not updating on preview)
+- create demo/style examples page and load that in customizer
 - Add icon font sizing. See https://github.com/google/material-design-lite/issues/1227#issuecomment-125573309
 
 Inspirations:
@@ -48,6 +50,7 @@ https://www.google.com/design/articles/expressing-brand-in-material/
 
 Maybe complementary plugins:
 https://wordpress.org/plugins/shortcode-factory/ is a great complement! Doesn't add any styles either. Just what I was looking for, especially if not using Views!
+https://wordpress.org/plugins/easy-google-fonts/ to override fonts, including colors
 https://wordpress.org/plugins/display-posts-shortcode/ -- http://www.billerickson.net/code-tag/display-posts-shortcode/
 https://wordpress.org/plugins/custom-sidebars/
 https://wordpress.org/plugins/amr-shortcode-any-widget/

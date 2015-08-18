@@ -51,7 +51,8 @@ class MDL_Shortcodes {
 		}
 		return self::$instance;
 	}
-
+	
+	
 	/**
 	 * Autoload any of our shortcode classes
 	 */
@@ -74,7 +75,8 @@ class MDL_Shortcodes {
 		}
 
 	}
-
+	
+	
 	/**
 	 * Set up shortcode actions
 	 */
@@ -86,10 +88,10 @@ class MDL_Shortcodes {
 		});
 				
 		add_action( 'customize_register', array( $this, 'mdl_customizer_options' ) );
-		
 		if( isset( $_GET[ self::$mdl_customizer_flag ] ) ) {
-			add_filter( 'customize_register', array( $this, 'remove_customizer_controls' ) );
+			add_filter( 'customize_register', array( $this, 'mdl_remove_customizer_controls' ) );
 			// add_filter( 'customize_control_active', array( $this, 'mdl_control_filter' ), 10, 2 ); // could not get it to work so manually removed ones via remove_customizer_controls() method
+
 		}
 		
 		add_action( 'admin_menu', array( $this, 'mdl_add_wp_admin_options_link' ) );
@@ -97,7 +99,8 @@ class MDL_Shortcodes {
 		add_action( 'after_wp_tiny_mce', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_tinymce_scripts_func' ) ); // note that Shortcake is only loosly coupled with TinyMCE -- the Shortcode UI still works if Visual editor is disabled
 		add_action( 'media_buttons', array( $this, 'shortcode_ui_editor_one_click_insert_buttons' ), 200 ); // higher priority adds it to the right side of all the other buttons (Add Media, Gravity Forms, etc.)
 	}
-
+	
+	
 	/**
 	 * Set up shortcode filters
 	 */
@@ -110,8 +113,8 @@ class MDL_Shortcodes {
 		add_filter( 'mce_css', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_tinymce_stylesheet_icons_func' ) );
 		// add_filter( 'mce_css', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_tinymce_css_php_func' ) );
 	}
-
-
+	
+	
 	/**
 	 * Register all of the shortcodes
 	 */
@@ -152,7 +155,8 @@ class MDL_Shortcodes {
 			$this->action_init_register_duplicate_shortcodes( $wo_ui_dups, false );
 		}
 	}
-
+	
+	
 	/**
 	 * Adapted from action_init_register_shortcodes(), above -- we want this function AFTER that one but BEFORE filter_pre_kses()
 	 * 
@@ -197,7 +201,8 @@ class MDL_Shortcodes {
 			}
 		}
 	}
-
+	
+	
 	/**
 	 * Modify post content before kses is applied
 	 * Used to trans
@@ -209,7 +214,8 @@ class MDL_Shortcodes {
 		}
 		return $content;
 	}
-
+	
+	
 	/**
 	 * Do the shortcode callback
 	 */
@@ -222,7 +228,8 @@ class MDL_Shortcodes {
 		$class = $this->registered_shortcodes[ $shortcode_tag ];
 		return $class::callback( $atts, $content, $shortcode_tag );
 	}
-
+	
+	
 	/**
 	 * Admin dependencies.
 	 * Scripts required to make shortcake previews work correctly in the admin.
@@ -240,7 +247,6 @@ class MDL_Shortcodes {
 		return $r;
 */
 	}	
-	
 	
 		
 	/**
@@ -292,6 +298,7 @@ class MDL_Shortcodes {
 		}
 		return; // did echo above, only return if nothing echoed -- must echo or else admin_enqueue_scripts will not print anything
 	}
+	
 	
 	// adapted from https://github.com/fusioneng/Shortcake/issues/94#issuecomment-68020127
 	function shortcode_ui_editor_one_click_insert_buttons( $editor_id = '' ) { // without $editor_id = '', 'content' gets printed before the button
@@ -405,6 +412,40 @@ class MDL_Shortcodes {
 		echo $html;
 	}
 	
+	
+	/**
+	 * duplicate of plprint() from PageLines DMS
+	 * Debugging, prints nice array.
+	 * Sends to the footer in all cases.
+	 * 
+	 */
+	function mdl_print( $data, $title = false, $echo = false) {
+	
+		if ( ! current_user_can('manage_options') || ( defined( 'DOING_AJAX' ) && true == DOING_AJAX) )
+			return;
+	
+		ob_start();
+	
+			echo '<div class="mdl_print-container"><pre class="mdl_print">';
+	
+			if ( $title )
+				printf('<h3>%s</h3>', $title);
+	
+			echo esc_html( print_r( $data, true ) );
+	
+			echo '</pre></div>';
+	
+		$data = ob_get_clean();
+	
+		if ( $echo )
+			echo $data;
+		elseif ( false === $echo )
+			add_action( 'shutdown', create_function( '', sprintf('echo \'%s\';', $data) ) );
+		else
+			return $data;
+	}
+	
+	
 	// help from https://www.youtube.com/watch?v=7usuZRBsyk8 --> https://speakerdeck.com/bftrick/using-the-wordpress-customizer-to-build-beautiful-plugin-settings-pages
 	function mdl_add_wp_admin_options_link(){
 		$url = 'customize.php';
@@ -431,34 +472,38 @@ class MDL_Shortcodes {
 		add_menu_page( 'MDL Shortcodes', 'MDL Shortcodes Options', 'manage_options', $url, '', 'dashicons-book-alt', 63 );
 	}
 	
+	
 	// if we catch that flag from above function, hide default Customizer controls
-	public function remove_customizer_controls( $wp_customize ) {
+	public function mdl_remove_customizer_controls( $wp_customize ) {
 		global $wp_customize;
 		
 		$wp_customize->remove_panel( 'widgets' );
+		//$wp_customize->remove_panel( 'nav_menus' ); // WP 4.3+
 		
 		$wp_customize->remove_section( 'themes' );
 		$wp_customize->remove_section( 'title_tagline' );
 		$wp_customize->remove_section( 'colors' );
 		$wp_customize->remove_section( 'header_image' );
 		$wp_customize->remove_section( 'background_image' );
-		$wp_customize->remove_section( 'nav' );
+		$wp_customize->remove_section( 'nav' ); // prior to WP 4.3
 		$wp_customize->remove_section( 'static_front_page' );
 		
 		return true;
 	}
 	
+	
 	// could not get it to function properly
 	// if we catch that flag from above function, hide all Customizer controls that we didn't manually add to the Customizer (except the 'themes' section as of WP 4.2)
 /*
 	function mdl_control_filter( $active, $control ) {
-		if( in_array( $control->section, self::mdl_customizer_options ) ) {
+		if( in_array( $control->section, array( self::$mdl_customizer_colors_section ) ) ) {
 			return true;
 		}
 		
 		return false;
 	}
 */
+	
 	
 	function mdl_customizer_options( $wp_customize ) {
 /*
@@ -488,6 +533,7 @@ class MDL_Shortcodes {
 			$wp_customize->add_setting( 'mdl_shortcodes_primary_color_setting', array(
 				'default'	=> 'indigo',
 				'type'		=> 'option',
+				'transport'	=> 'refresh',
 			));
 			
 			$wp_customize->add_control( 'mdl_shortcodes_primary_color_control', array(
@@ -502,6 +548,7 @@ class MDL_Shortcodes {
 			$wp_customize->add_setting( 'mdl_shortcodes_accent_color_setting', array(
 				'default'	=> 'pink',
 				'type'		=> 'option',
+				'transport'	=> 'refresh',
 			));
 			
 			$wp_customize->add_control( 'mdl_shortcodes_accent_color_control', array(
