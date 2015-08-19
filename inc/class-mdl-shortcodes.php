@@ -90,8 +90,7 @@ class MDL_Shortcodes {
 		add_action( 'customize_register', array( $this, 'mdl_customizer_options' ) );
 		if( isset( $_GET[ self::$mdl_customizer_flag ] ) ) {
 			add_filter( 'customize_register', array( $this, 'mdl_remove_customizer_controls' ) );
-			// add_filter( 'customize_control_active', array( $this, 'mdl_control_filter' ), 10, 2 ); // could not get it to work so manually removed ones via remove_customizer_controls() method
-
+			//add_filter( 'customize_control_active', array( $this, 'mdl_control_filter' ), 10, 2 ); // could not get it to work so manually removed ones via remove_customizer_controls() method
 		}
 		
 		// here in addition to action_init_register_shortcodes() so WP Customizer preview works even when not on a page that has a shortcode
@@ -482,16 +481,18 @@ class MDL_Shortcodes {
 	public function mdl_remove_customizer_controls( $wp_customize ) {
 		global $wp_customize;
 		
-		$wp_customize->remove_panel( 'widgets' );
+// 		$wp_customize->remove_panel( 'widgets' );
 		//$wp_customize->remove_panel( 'nav_menus' ); // WP 4.3+
 		
 		$wp_customize->remove_section( 'themes' );
+/*
 		$wp_customize->remove_section( 'title_tagline' );
 		$wp_customize->remove_section( 'colors' );
 		$wp_customize->remove_section( 'header_image' );
 		$wp_customize->remove_section( 'background_image' );
 		$wp_customize->remove_section( 'nav' ); // prior to WP 4.3
 		$wp_customize->remove_section( 'static_front_page' );
+*/
 		
 		return true;
 	}
@@ -499,7 +500,7 @@ class MDL_Shortcodes {
 	
 	// could not get it to function properly
 	// if we catch that flag from above function, hide all Customizer controls that we didn't manually add to the Customizer (except the 'themes' section as of WP 4.2)
-/*
+	// ref: https://developer.wordpress.org/themes/advanced-topics/customizer-api/#contextual-controls-sections-and-panels
 	function mdl_control_filter( $active, $control ) {
 		if( in_array( $control->section, array( self::$mdl_customizer_colors_section ) ) ) {
 			return true;
@@ -507,7 +508,6 @@ class MDL_Shortcodes {
 		
 		return false;
 	}
-*/
 	
 	
 	function mdl_customizer_options( $wp_customize ) {

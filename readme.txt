@@ -2,8 +2,8 @@
 Contributors: cliffpaulick
 Tags: mdl, material design lite, google, shortcodes
 Donate link: http://tourkick.com/pay/
-Requires at least: 3.9
-Tested up to: 4.2.2
+Requires at least: 4.0
+Tested up to: 4.3
 Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
