@@ -2337,9 +2337,16 @@ public static function mdl_is_valid_mdl_color( $string, $build = 'all' ) {
 }
 
 
-// edit colors -- make sure proper spelling and color combos from http://www.getmdl.io/customize/
 public static function mdl_primary_color( $default = 'indigo' ) {
-	$color = strtolower( get_option( 'mdl_shortcodes_primary_color_setting', $default ) );
+	$color = get_option( 'mdl_shortcodes_colors_setting' ); // array
+	
+	if( is_array( $color ) && array_key_exists( 'primary', $color ) ) {
+		$color = $color['primary'];
+	} else {
+		$color = $default;
+	}
+	
+	$color = strtolower( $color );
 	
 	if ( self::mdl_is_valid_mdl_color( $color ) ) {
 		return $color;
@@ -2349,7 +2356,15 @@ public static function mdl_primary_color( $default = 'indigo' ) {
 }
 
 public static function mdl_accent_color( $default = 'pink' ) {
-	$color = strtolower( get_option( 'mdl_shortcodes_accent_color_setting', $default ) );
+	$color = get_option( 'mdl_shortcodes_colors_setting' ); // array
+	
+	if( is_array( $color ) && array_key_exists( 'accent', $color ) ) {
+		$color = $color['accent'];
+	} else {
+		$color = $default;
+	}
+	
+	$color = strtolower( $color );
 	
 	if ( self::mdl_is_valid_mdl_color( $color, 'accents' ) ) {
 		return $color;

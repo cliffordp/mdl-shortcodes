@@ -94,6 +94,11 @@ class MDL_Shortcodes {
 
 		}
 		
+		// here in addition to action_init_register_shortcodes() so WP Customizer preview works even when not on a page that has a shortcode
+		add_action( 'customize_preview_init', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_enqueue_stylesheet' ) );
+		add_action( 'customize_preview_init', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_enqueue_icons' ) );
+		add_action( 'customize_preview_init', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_enqueue_js' ) );
+		
 		add_action( 'admin_menu', array( $this, 'mdl_add_wp_admin_options_link' ) );
 				
 		add_action( 'after_wp_tiny_mce', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_tinymce_scripts_func' ) ); // note that Shortcake is only loosly coupled with TinyMCE -- the Shortcode UI still works if Visual editor is disabled
@@ -120,7 +125,7 @@ class MDL_Shortcodes {
 	 */
 	public function action_init_register_shortcodes() {
 		
-		// global instead of in MDL_Shortcodes::do_shortcode_callback() because we want it to display on all of the site, not just if a shortcode is in use
+		// global here instead of in do_shortcode_callback() because we want it to display site-wide, not just if a shortcode is in use
 		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_stylesheet();
 		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_icons();
 		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_js();
@@ -220,7 +225,7 @@ class MDL_Shortcodes {
 	 * Do the shortcode callback
 	 */
 	public function do_shortcode_callback( $atts, $content = '', $shortcode_tag ) {
-
+				
 		if ( empty( $this->registered_shortcodes[ $shortcode_tag ] ) ) {
 			return '';
 		}
@@ -530,31 +535,29 @@ class MDL_Shortcodes {
 		);
 			
 			// Primary Color Setting
-			$wp_customize->add_setting( 'mdl_shortcodes_primary_color_setting', array(
+			$wp_customize->add_setting( 'mdl_shortcodes_colors_setting[primary]', array(
 				'default'	=> 'indigo',
 				'type'		=> 'option',
-				'transport'	=> 'refresh',
 			));
 			
 			$wp_customize->add_control( 'mdl_shortcodes_primary_color_control', array(
 				'label'		=> __('MDL Primary Color', 'mdl-shortcodes'),
 				'section'	=> self::$mdl_customizer_colors_section,
-				'settings'	=> 'mdl_shortcodes_primary_color_setting',
+				'settings'	=> 'mdl_shortcodes_colors_setting[primary]',
 				'type'		=> 'select',
 				'choices'	=> MDL_Shortcodes\Shortcodes\Shortcode::mdl_single_color_names( 'all' ),
 			));
 			
 			// Accent Color Setting
-			$wp_customize->add_setting( 'mdl_shortcodes_accent_color_setting', array(
+			$wp_customize->add_setting( 'mdl_shortcodes_colors_setting[accent]', array(
 				'default'	=> 'pink',
 				'type'		=> 'option',
-				'transport'	=> 'refresh',
 			));
 			
 			$wp_customize->add_control( 'mdl_shortcodes_accent_color_control', array(
 				'label'		=> __('MDL Accent Color', 'mdl-shortcodes'),
 				'section'	=> self::$mdl_customizer_colors_section,
-				'settings'	=> 'mdl_shortcodes_accent_color_setting',
+				'settings'	=> 'mdl_shortcodes_colors_setting[accent]',
 				'type'		=> 'select',
 				'choices'	=> MDL_Shortcodes\Shortcodes\Shortcode::mdl_single_color_names( 'accents' ),
 			));
