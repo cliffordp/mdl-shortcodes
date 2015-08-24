@@ -21,8 +21,8 @@ class MDL_Grid extends Shortcode {
 			'listItemImage'  => 'dashicons-grid-view',
 			//'add_button'	 => 'icon_only', // no UI so no add_button
 			'inner_content' => array(
-					//'value'			=> '[mdl-cell][/mdl-cell]',
-					'description'	=> __( 'Enter [mdl-cell][/mdl-cell] shortcodes inside [mdl-grid][/mdl-grid] shortcodes.', 'mdl-shortcodes' ),
+				//'value'		=> '[mdl-cell][/mdl-cell]',
+				'description'	=> __( 'Enter [mdl-cell][/mdl-cell] shortcodes inside [mdl-grid][/mdl-grid] shortcodes.', 'mdl-shortcodes' ),
 			),
 			'attrs'          => array(
 				array(

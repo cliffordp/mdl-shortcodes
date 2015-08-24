@@ -52,7 +52,7 @@ class MDL_Menu extends Shortcode {
 					'type'			=> 'text',
 					'description'	=> esc_html__( 'If left blank, one will be automatically generated for you.', 'mdl-shortcodes' ),
 					'meta'			=> array(
-						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
+						'placeholder' => esc_html__( 'my-custom-7-id', 'mdl-shortcodes' ),
 					),
 				),
 				array(
