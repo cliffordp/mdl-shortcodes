@@ -90,7 +90,7 @@ class MDL_Shortcodes {
 				
 		add_action( 'customize_register', array( $this, 'mdl_customizer_options' ) );
 		if( isset( $_GET[ self::$mdl_customizer_flag ] ) ) {
-			add_filter( 'customize_register', array( $this, 'mdl_remove_customizer_controls' ) );
+			//add_filter( 'customize_register', array( $this, 'mdl_remove_customizer_controls' ) ); -- let's just leave it since we put user right into its own settings anyway
 			//add_filter( 'customize_control_active', array( $this, 'mdl_control_filter' ), 10, 2 ); // could not get it to work so manually removed ones via remove_customizer_controls() method
 		}
 		
@@ -482,18 +482,17 @@ class MDL_Shortcodes {
 	public function mdl_remove_customizer_controls( $wp_customize ) {
 		global $wp_customize;
 		
-// 		$wp_customize->remove_panel( 'widgets' );
-		//$wp_customize->remove_panel( 'nav_menus' ); // WP 4.3+
+		$wp_customize->remove_panel( 'widgets' );
+//		$wp_customize->remove_panel( 'nav_menus' ); // WP 4.3+ but does not work. reference: https://core.trac.wordpress.org/ticket/33411
 		
 		$wp_customize->remove_section( 'themes' );
-/*
+		
 		$wp_customize->remove_section( 'title_tagline' );
 		$wp_customize->remove_section( 'colors' );
 		$wp_customize->remove_section( 'header_image' );
 		$wp_customize->remove_section( 'background_image' );
 		$wp_customize->remove_section( 'nav' ); // prior to WP 4.3
 		$wp_customize->remove_section( 'static_front_page' );
-*/
 		
 		return true;
 	}

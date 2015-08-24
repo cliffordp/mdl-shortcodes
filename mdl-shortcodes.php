@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: MDL Shortcodes
-Version: 1.0
+Version: 1.0.0
 Description: Material Design Lite (MDL) components are viewable at http://www.getmdl.io/components/
 Author: TourKick (Clifford P)
 Author URI: http://tourkick.com/
@@ -27,9 +27,10 @@ Because:
 * START notes
 
 TODO:
+- create demo/style examples page and load that in customizer -- https://github.com/google/material-design-lite/blob/master/src/styleguide.scss
 - test Customizer color settings prior to WP 4.3 vs in WP 4.3 (not updating on preview)
-- create demo/style examples page and load that in customizer
 - Add icon font sizing. See https://github.com/google/material-design-lite/issues/1227#issuecomment-125573309
+- WP Customizer colorpicker to either Sass/Scss or to PHP CSS stylesheet to override .primary, .accent, etc --> 81 changes when diff between 2 Google-hosted files (just as an idea of workload) --> not just these few here: https://github.com/google/material-design-lite/blob/master/src/palette/_palette.scss#L2263
 
 Inspirations:
 https://medium.com/google-developers/introducing-material-design-lite-3ce67098c031
@@ -50,6 +51,7 @@ https://www.google.com/design/articles/expressing-brand-in-material/
 
 Maybe complementary plugins:
 https://wordpress.org/plugins/shortcode-factory/ is a great complement! Doesn't add any styles either. Just what I was looking for, especially if not using Views!
+https://wp-types.com/home/views-create-elegant-displays-for-your-content/?aid=5336&affiliate_key=Lsvk04DjJOhq -- WP Views
 https://wordpress.org/plugins/easy-google-fonts/ to override fonts, including colors
 https://wordpress.org/plugins/display-posts-shortcode/ -- http://www.billerickson.net/code-tag/display-posts-shortcode/
 https://wordpress.org/plugins/custom-sidebars/
@@ -61,11 +63,11 @@ https://wordpress.org/plugins/custom-post-widget/
 * END notes
 */
 
-
+defined( 'ABSPATH' ) or die(); //do not allow plugin file to be called directly (security protection)
 
 require_once dirname( __FILE__ ) . '/inc/class-mdl-shortcodes.php';
 
-define( 'MDL_SHORTCODES_VERSION', '1.0' );
+define( 'MDL_SHORTCODES_VERSION', '1.0.0' );
 define( 'MDL_SHORTCODES_URL_ROOT', plugin_dir_url( __FILE__ ) );
 
 /**
