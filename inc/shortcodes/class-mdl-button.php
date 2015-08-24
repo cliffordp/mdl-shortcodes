@@ -109,13 +109,13 @@ class MDL_Button extends Shortcode {
 					'attr'   => 'disabled',
 					'type'   => 'select',
 					'options' => parent::mdl_true_false_selection_array( 'true', 'true', 'false' ),
-					'description'  => esc_html__( 'Adds the standard HTML boolean attribute "disabled"', 'mdl-shortcodes' ),
+					'description'  => __( 'Adds the standard HTML boolean attribute "disabled"', 'mdl-shortcodes' ),
 				),
 				array(
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Span, Link, or Div'),
+					'description'	=> parent::mdl_classes_description_text('', '', 'button element'),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),
@@ -259,7 +259,7 @@ class MDL_Button extends Shortcode {
 		
 		$button = sprintf( '<button class="%s"%s>%s</button>', $classes, $disabled, $text );
 		
-		if( !empty($url) ) {
+		if ( ! empty( $url ) ) {
 			$output .= '<a';
 			if ( $target ) {
 				$output .= sprintf( ' target="%s"', $target );

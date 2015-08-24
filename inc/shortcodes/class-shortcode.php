@@ -70,6 +70,41 @@ abstract class Shortcode {
 	
 	
 	
+	
+	
+	/**
+	 * from plprint() from PageLines DMS 2
+	 * Debugging, prints nice array.
+	 * Sends to the footer in all cases.
+	 * 
+	 */
+	public static function mdl_print( $data, $title = false, $echo = false) {
+	
+		if ( ! current_user_can('manage_options') || ( defined( 'DOING_AJAX' ) && true == DOING_AJAX) )
+			return;
+	
+		ob_start();
+	
+			echo '<div class="mdl_print-container"><pre class="mdl_print">';
+	
+			if ( $title )
+				printf('<h3>%s</h3>', $title);
+	
+			echo esc_html( print_r( $data, true ) );
+	
+			echo '</pre></div>';
+	
+		$data = ob_get_clean();
+	
+		if ( $echo )
+			echo $data;
+		elseif ( false === $echo )
+			add_action( 'shutdown', create_function( '', sprintf('echo \'%s\';', $data) ) );
+		else
+			return $data;
+	}
+	
+	
 	// adapted from PageLines DMS 2
 	public static function mdl_get_post_types_support_fimages( $fallback = 'any', $type = 'wp_query_post_type_array' ){
 		

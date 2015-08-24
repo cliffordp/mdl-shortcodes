@@ -87,6 +87,8 @@ class MDL_Shortcodes {
 		add_action( 'shortcode_ui_after_do_shortcode', function( $shortcode ) {
 			return $this::get_shortcake_admin_dependencies();
 		});
+		
+		register_activation_hook( __FILE__, array( 'MDL_Shortcodes', 'mdl_create_demo_page' ) );
 				
 		add_action( 'customize_register', array( $this, 'mdl_customizer_options' ) );
 		if( isset( $_GET[ self::$mdl_customizer_flag ] ) ) {
@@ -418,45 +420,59 @@ class MDL_Shortcodes {
 	}
 	
 	
-	/**
-	 * duplicate of plprint() from PageLines DMS
-	 * Debugging, prints nice array.
-	 * Sends to the footer in all cases.
-	 * 
-	 */
-	function mdl_print( $data, $title = false, $echo = false) {
-	
-		if ( ! current_user_can('manage_options') || ( defined( 'DOING_AJAX' ) && true == DOING_AJAX) )
-			return;
-	
-		ob_start();
-	
-			echo '<div class="mdl_print-container"><pre class="mdl_print">';
-	
-			if ( $title )
-				printf('<h3>%s</h3>', $title);
-	
-			echo esc_html( print_r( $data, true ) );
-	
-			echo '</pre></div>';
-	
-		$data = ob_get_clean();
-	
-		if ( $echo )
-			echo $data;
-		elseif ( false === $echo )
-			add_action( 'shutdown', create_function( '', sprintf('echo \'%s\';', $data) ) );
-		else
-			return $data;
+	function mdl_create_demo_page() {
+		$demo_page_title = 'MDL Shortcodes Plugin Demo Examples';
+		
+		$page_id = $this->mdl_get_demo_page_id();
+
+		$page_check = get_page_by_title( $demo_page_title ); // NULL if no page by this title
+		if( ! empty( $page_check ) ) {
+			$page_check_id = $page_check->ID;
+			if( $page_id !== $page_check_id ) {
+				update_option( 'mdl_shortcodes_demo_page_id', $page_check_id ); // will create/update value
+			}
+		}
+		
+		if( empty( $page_id ) && ! empty( $page_check_id ) ) {
+			$page_id = $page_check_id;
+		}
+				
+		if( empty( $page_id ) ) { // no post ID of zero so empty() instead of !isset()
+			$new_page_content = 'This is the page content';
+			
+			$new_page = array(
+				'post_type'			=> 'page',
+				'post_title'		=> $demo_page_title,
+				'post_content'		=> $new_page_content,
+				'post_status'		=> 'draft', // only need it to work on WP Customizer instead of actually being published
+				'comment_status'	=> 'closed',
+			);
+			
+			$page_id = wp_insert_post( $new_page ); // create new page and set variable value to the post ID of the created page
+		}
+		
+		update_option( 'mdl_shortcodes_demo_page_id', $page_id ); // will create/update value
 	}
 	
+	function mdl_get_demo_page_id() {
+		$demo_page_id = get_option( 'mdl_shortcodes_demo_page_id' ); // false if non-existent
+		$demo_page_id = apply_filters( 'mdl_shortcodes_demo_page_id_filter', $demo_page_id );
+
+		return $demo_page_id;
+	}
 	
 	// help from https://www.youtube.com/watch?v=7usuZRBsyk8 --> https://speakerdeck.com/bftrick/using-the-wordpress-customizer-to-build-beautiful-plugin-settings-pages
-	function mdl_add_wp_admin_options_link(){
+	function mdl_build_wp_admin_options_link(){
 		$url = 'customize.php';
 		
+		$page = $this->mdl_get_demo_page_id();
+		if( empty( $page ) ) {
+			$this->mdl_create_demo_page(); // try to create the demo page since it does not exist
+			$page = $this->mdl_get_demo_page_id();
+		}
+		
 		// get special MDL Demo / Template page
-		$mdl_demo_page_url = get_permalink( 241 );
+		$mdl_demo_page_url = get_permalink( $page );
 		
 		// if we have the special page, go straight to it
 		// if we don't have the special page, it'll just load the default customize.php (default is the home page)
@@ -472,6 +488,12 @@ class MDL_Shortcodes {
 		
 		// auto-open the MDL Shortcodes editor
 		$url = add_query_arg( 'autofocus[section]', self::$mdl_customizer_colors_section, $url );
+		
+		return $url;
+	}
+	
+	function mdl_add_wp_admin_options_link(){
+		$url = $this->mdl_build_wp_admin_options_link();
 		
 		//add_theme_page( 'MDL Shortcodes Option', 'MDL Shortcodes Options', 'edit_theme_options', $url );
 		add_menu_page( 'MDL Shortcodes', 'MDL Shortcodes Options', 'manage_options', $url, '', 'dashicons-book-alt', 63 );
