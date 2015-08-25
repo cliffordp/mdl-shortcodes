@@ -93,7 +93,7 @@ class MDL_Shortcodes {
 		add_action( 'customize_register', array( $this, 'mdl_customizer_options' ) );
 		if( isset( $_GET[ self::$mdl_customizer_flag ] ) ) {
 			//add_filter( 'customize_register', array( $this, 'mdl_remove_customizer_controls' ) ); -- let's just leave it since we put user right into its own settings anyway
-			//add_filter( 'customize_control_active', array( $this, 'mdl_control_filter' ), 10, 2 ); // could not get it to work so manually removed ones via remove_customizer_controls() method
+			//add_filter( 'customize_control_active', array( $this, 'mdl_control_filter' ), 10, 2 ); // could not get it to work so manually removed ones via remove_customizer_controls() method -- this is probably the issue: https://core.trac.wordpress.org/ticket/32766
 		}
 		
 		// here in addition to action_init_register_shortcodes() so WP Customizer preview works even when not on a page that has a shortcode
@@ -429,16 +429,157 @@ class MDL_Shortcodes {
 		if( ! empty( $page_check ) ) {
 			$page_check_id = $page_check->ID;
 			if( $page_id !== $page_check_id ) {
+				$page_id = $page_check_id;
 				update_option( 'mdl_shortcodes_demo_page_id', $page_check_id ); // will create/update value
 			}
 		}
 		
-		if( empty( $page_id ) && ! empty( $page_check_id ) ) {
-			$page_id = $page_check_id;
-		}
-				
-		if( empty( $page_id ) ) { // no post ID of zero so empty() instead of !isset()
-			$new_page_content = 'This is the page content';
+		if( empty( $page_id ) ) { // no post ID or 0 so empty() instead of !isset()
+			$post_id_w_fimage = MDL_Shortcodes\Shortcodes\Shortcode::mdl_get_posts_w_fimage_set( 1, 'post' );
+			if ( empty( $post_id_w_fimage ) ) {
+				$post_id_w_fimage = MDL_Shortcodes\Shortcodes\Shortcode::mdl_get_posts_w_fimage_set( 1 );
+			}
+			if ( empty( $post_id_w_fimage ) ) {
+				$post_id_w_fimage = false;
+			} else {
+				$post_id_w_fimage = reset($post_id_w_fimage);
+			}
+			
+			$card = '';
+			if( false !== $post_id_w_fimage ) {
+				$card .= '<h2>MDL Card (pulling in a single Post ID)</h2>
+[mdl-card postid="' . $post_id_w_fimage . '" menu="info" menulink="http://www.getmdl.io/components/index.html#cards-section" menutarget="_blank" mediaplacement="mediaarea" supporting="Overriding excerpt text here... that is, if it had an excerpt." actionstarget="_blank" shadow="2"]';
+			}
+			$card .= '<h2>MDL Card (manually created)</h2>
+[mdl-card title="Custom Title Text Here" menu="info" menulink="http://www.getmdl.io/components/index.html#cards-section" menutarget="_blank" supporting="Supporting text here." actions="An MDL Card" actionsicon="event" shadow="2"]';
+			
+			
+			$single_nav_id = MDL_Shortcodes\Shortcodes\Shortcode::mdl_nav_menus_selection_array( 'false' );
+			if( empty( $single_nav_id ) ) {
+				$menu = 'Could not demo [ mdl-menu ] because no menus existed at the time of page creation. But you could delete this page and then go to MDL Shortcodes Options to get the page re-created.';
+			} else {
+				$single_nav_id = array_flip( $single_nav_id ); // flip keys and values
+				$single_nav_id = reset( $single_nav_id ); // get first value (i.e. the menu ID of the first menu in the selection array
+				$menu = sprintf( '[mdl-menu nav="%d"]', $single_nav_id );
+			}
+			
+			
+			$new_page_content = '<h2>MDL Icon</h2>
+[mdl-icon icon="router" color="mdl-color-text--pink" bgcolor="mdl-color--black" class="hello special"]
+<h2>MDL Badge</h2>
+[mdl-badge badgetext="Followers" data="74"]
+<h2>MDL Button</h2>
+[mdl-button type="fab" icon="flip_to_front" url="http://www.getmdl.io/components/index.html#buttons-section" target="_blank"]';
+			$new_page_content .= $card;
+			$new_page_content .= '<h2>MDL Grid: MDL Cell: 8 + 4</h2>
+[mdl-grid]
+
+[mdl-cell size=8]something here that will be 8 columns wide[/mdl-cell]
+
+[mdl-cell]something here that will be 4 columns wide, since 4 is the default size[/mdl-cell]
+
+[/mdl-grid]
+<h2>MDL Grid (no spacing): MDL Cell: 3 (text and bg color) + 3 (bg color) + 3 (bg color) + 3 (bg color)</h2>
+[mdl-grid spacing=false]
+
+[mdl-cell size="3" desktop="0" tablet="0" phone="0" color="mdl-color-text--white" bgcolor="mdl-color--blue-A700"]1st quarter
+second line
+
+BR was above
+
+added a P here[/mdl-cell]
+
+[mdl-cell size="3" desktop="0" tablet="0" phone="0" bgcolor="mdl-color--orange-A700"]2nd quarter[/mdl-cell]
+
+[mdl-cell size="3" desktop="0" tablet="0" phone="0" bgcolor="mdl-color--deep-purple-50"]third quarter[/mdl-cell]
+
+[mdl-cell size="3" desktop="0" tablet="0" phone="0" bgcolor="mdl-color--lime-200"]4th quarter[/mdl-cell]
+
+[/mdl-grid]
+<h2>MDL Grid (text and bg color): MDL Cell: 1 (empty--used for offset, hidden on Tablet) + 10 (has content, hidden on Tablet) + 1 (empty--used for offset, hidden on Tablet)</h2>
+[mdl-grid color="mdl-color-text--grey-600" bgcolor="mdl-color--light-blue-50"]
+
+[mdl-cell size=1 tablethide="true"][/mdl-cell]
+
+[mdl-cell size="10" desktop="0" tablet="0" phone="0" tablethide="true"]Ten wide with 1 column on each side for gutter effect. Lorem ipsum dolor sit amet, cum posse accumsan prodesset ne. Tale graeci cu ius, nec ne partem labores partiendo, id vel elitr primis veritus.[/mdl-cell]
+
+[mdl-cell size=1 tablethide="true"][/mdl-cell]
+
+[/mdl-grid]
+<h2>MDL Grid: MDL Cell: Half Width on all devices (6 on Desktop, 4 on Tablet, 2 on Phone) -- and nested MDL Grids and MDL Cells</h2>
+[mdl-grid]
+
+[mdl-cell desktop="6" tablet="4" phone="2"]Left side half-width
+	[mdl-grid-a]
+	[mdl-cell-a size=10 align="middle"]MDL-Cell-A (size 10, Flexbox align Middle) inside MDL-Grid-A inside MDL-Cell
+		[mdl-grid-b]
+			[mdl-cell-b size=12]MDL-Cell-B (size 12) inside MDL-Grid-B inside MDL-Cell-A[/mdl-cell-b]
+		[/mdl-grid-b]
+	[/mdl-cell-a]
+	[mdl-cell-a size=2]MDL-Cell-A again (size 2). We can use MDL-Cell-A again because we already closed it. But we could also use MDL-Cell-F or whatever else if we wanted to...[/mdl-cell-a]
+	[/mdl-grid-a]
+[/mdl-cell]
+
+[mdl-cell size="0" desktop="6" tablet="4" phone="2" align="top" text="justify"]Right side half-width[/mdl-cell]
+
+[/mdl-grid]
+
+<h2>MDL Tabs</h2>
+[mdl-tab-group]
+
+[mdl-tab title="Starks" active="true"]
+<ul>
+	<li>Eddard</li>
+	<li>Catelyn</li>
+	<li>Robb</li>
+	<li>Sansa</li>
+	<li>Brandon</li>
+	<li>Arya</li>
+	<li>Rickon</li>
+</ul>
+[/mdl-tab]
+
+[mdl-tab title="Lannisters"]
+<ul>
+	<li>Tywin</li>
+	<li>Cersei</li>
+	<li>Jamie</li>
+	<li>Tyrion</li>
+</ul>
+[/mdl-tab]
+
+[mdl-tab title="Targaryens"]
+<ul>
+	<li>Viserys</li>
+	<li>Daenerys</li>
+</ul>
+[/mdl-tab]
+
+[/mdl-tab-group]
+<h2>MDL Tabs (without Click Effects)</h2>
+[mdl-tab-group effect="false"]
+
+[mdl-tab title="Lannisters"]
+<ul>
+	<li>Tywin</li>
+	<li>Cersei</li>
+	<li>Jamie</li>
+	<li>Tyrion</li>
+</ul>
+[/mdl-tab]
+
+[mdl-tab title="Targaryens" active="true"]
+<ul>
+	<li>Viserys</li>
+	<li>Daenerys</li>
+</ul>
+[/mdl-tab]
+
+[/mdl-tab-group]
+<h2>MDL Menu</h2>';
+			$new_page_content .= $menu;
+			$new_page_content .= '<h2>MDL Tooltip</h2>
+[mdl-tooltip text="XML"]eXtensible Markup Language[/mdl-tooltip]';
 			
 			$new_page = array(
 				'post_type'			=> 'page',
@@ -457,6 +598,20 @@ class MDL_Shortcodes {
 	function mdl_get_demo_page_id() {
 		$demo_page_id = get_option( 'mdl_shortcodes_demo_page_id' ); // false if non-existent
 		$demo_page_id = apply_filters( 'mdl_shortcodes_demo_page_id_filter', $demo_page_id );
+		if( 'trash' === get_post_status( $demo_page_id ) ) {
+/* cannot ever delete a post! which would be fine, but we want to allow re-creating it... so delete if in trash and re-create
+			$post = array(
+				'ID'			=> $demo_page_id,
+				'post_status'	=> 'draft',
+			);
+			wp_update_post( $post );
+*/
+			wp_delete_post( $demo_page_id, true );
+			$this->mdl_create_demo_page();
+		} elseif ( false === get_post_status( $demo_page_id ) ) { // https://tommcfarlin.com/wordpress-post-exists-by-id/
+			$demo_page_id = '';
+			update_option( 'mdl_shortcodes_demo_page_id', $demo_page_id ); // will create/update value
+		}
 
 		return $demo_page_id;
 	}

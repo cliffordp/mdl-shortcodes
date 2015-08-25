@@ -141,12 +141,12 @@ abstract class Shortcode {
 	}
 	
 	
-	public static function mdl_get_posts_w_fimage_set( $fields = 'ids' ) {
+	public static function mdl_get_posts_w_fimage_set( $posts_per_page = -1, $post_type = 'any', $post_status = 'publish', $fields = 'ids' ) {
 		
 		$args = array(
-			'posts_per_page'	=> -1,
-			'post_type'			=> 'any',
-			'post_status'		=> 'publish',
+			'posts_per_page'	=> $posts_per_page,
+			'post_type'			=> $post_type,
+			'post_status'		=> $post_status,
 			'meta_query'		=> array(
 				array( 'key' => '_thumbnail_id' ), // has a featured image set
 			),
@@ -851,8 +851,8 @@ abstract class Shortcode {
 	
 	
 	public static function mdl_text_background_colors_same( $text_color = '', $background_color = '' ) {
-		$text_color = sanitize_html_class( strtolower( $text_color ) );
-		$background_color = sanitize_html_class( strtolower( $background_color ) );
+		$text_color = sanitize_html_class( $text_color );
+		$background_color = sanitize_html_class( $background_color );
 		
 		if ( ! array_key_exists( $text_color, self::mdl_color_palette_classes_selection_array( 'false', 'text' ) ) ) {
 			$text_color = '';

@@ -178,13 +178,13 @@ TODO:
 		$header_background = '';
 		
 		// Header colors
-		$header_text = sanitize_html_class( strtolower( $atts['headercolor'] ) ); // not mdl_sanitize_html_classes() because only allowing one class
+		$header_text = sanitize_html_class( $atts['headercolor'] ); // not mdl_sanitize_html_classes() because only allowing one class
 		if ( ! array_key_exists( $header_text, parent::mdl_color_palette_classes_selection_array( 'false', 'text' ) ) ) {
 			$header_text = '';
 		}
 		
 /*
-		$header_background = sanitize_html_class( strtolower( $atts['headerbgcolor'] ) ); // not mdl_sanitize_html_classes() because only allowing one class
+		$header_background = sanitize_html_class( $atts['headerbgcolor'] ); // not mdl_sanitize_html_classes() because only allowing one class
 		if ( ! array_key_exists( $header_background, parent::mdl_color_palette_classes_selection_array( 'false', 'background' ) ) ) {
 			$header_background = '';
 		}
@@ -200,13 +200,13 @@ TODO:
 		$drawer_background = '';
 		
 		// Drawer colors
-		$drawer_text = sanitize_html_class( strtolower( $atts['drawercolor'] ) ); // not mdl_sanitize_html_classes() because only allowing one class
+		$drawer_text = sanitize_html_class( $atts['drawercolor'] ); // not mdl_sanitize_html_classes() because only allowing one class
 		if ( ! array_key_exists( $drawer_text, parent::mdl_color_palette_classes_selection_array( 'false', 'text' ) ) ) {
 			$drawer_text = '';
 		}
 		
 /*
-		$drawer_background = sanitize_html_class( strtolower( $atts['drawerbgcolor'] ) ); // not mdl_sanitize_html_classes() because only allowing one class
+		$drawer_background = sanitize_html_class( $atts['drawerbgcolor'] ); // not mdl_sanitize_html_classes() because only allowing one class
 		if ( ! array_key_exists( $drawer_background, parent::mdl_color_palette_classes_selection_array( 'false', 'background' ) ) ) {
 			$drawer_background = '';
 		}

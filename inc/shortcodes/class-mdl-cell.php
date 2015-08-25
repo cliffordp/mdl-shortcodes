@@ -154,7 +154,7 @@ class MDL_Cell extends Shortcode {
 					'attr'   => 'text',
 					'type'   => 'select',
 					'options' => parent::mdl_typography_text_array( 'true' ),
-					'description'  => __( '', 'mdl-shortcodes' ),
+					//'description'  => __( '', 'mdl-shortcodes' ),
 				),
 				array(
 					'label'  => esc_html__( 'Text Color', 'mdl-shortcodes' ),
@@ -212,12 +212,12 @@ class MDL_Cell extends Shortcode {
 		$align			= strtolower( $atts['align'] );
 		$text			= strtolower( $atts['text'] );
 		
-		$color_text = sanitize_html_class( strtolower( $atts['color'] ) ); // not mdl_sanitize_html_classes() because only allowing one class
+		$color_text = sanitize_html_class( $atts['color'] ); // not mdl_sanitize_html_classes() because only allowing one class
 		if ( ! array_key_exists( $color_text, parent::mdl_color_palette_classes_selection_array( 'false', 'text' ) ) ) {
 			$color_text = '';
 		}
 		
-		$color_background = sanitize_html_class( strtolower( $atts['bgcolor'] ) ); // not mdl_sanitize_html_classes() because only allowing one class
+		$color_background = sanitize_html_class( $atts['bgcolor'] ); // not mdl_sanitize_html_classes() because only allowing one class
 		if ( ! array_key_exists( $color_background, parent::mdl_color_palette_classes_selection_array( 'false', 'background' ) ) ) {
 			$color_background = '';
 		}

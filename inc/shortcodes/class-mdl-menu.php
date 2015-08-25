@@ -23,14 +23,15 @@ class MDL_Menu extends Shortcode {
 					'attr'   => 'nav',
 					'type'   => 'select',
 					'options' => parent::mdl_nav_menus_selection_array(),
-					'description'  => esc_html__( 'Enter a WordPress Navigation Menu\'s ID and a Button Menu will be created. If entered, this shortcode\'s manually-entered arguments (like url, target, etc.) will be ignored, and the Icon will default to more_vert.', 'mdl-shortcodes' ),
+					'description'  => __( 'If blank, Menu Button will not display.', 'mdl-shortcodes' ),
+					//'description'  => __( 'Enter the ID of a WordPress Navigation Menu and a Button Menu will be created. If entered, this shortcode\'s manually-entered arguments (like url, target, etc.) will be ignored, and the Icon will default to more_vert.', 'mdl-shortcodes' ),
 				),
 				array(
 					'label'  => esc_html__( 'Menu Position', 'mdl-shortcodes' ),
 					'attr'   => 'position',
 					'type'   => 'select',
 					'options' => parent::mdl_menu_positions_selection_array(),
-					'description'  => esc_html__( 'Menu position in relation to the Menu Button. Default: Lower Left.', 'mdl-shortcodes' ),
+					'description'  => esc_html__( 'Menu display position in relation to the Menu Button. Default: Lower Left.', 'mdl-shortcodes' ),
 				),
 				array(
 					'label'  => esc_html__( 'Icon', 'mdl-shortcodes' ),
@@ -93,14 +94,14 @@ class MDL_Menu extends Shortcode {
 			$nav = '';
 		}
 		
-		// Invalid Menu Position
-		if( ! array_key_exists( $position, parent::mdl_menu_positions_selection_array( 'false' ) ) ) {
-			$position = '';
-		}
-		
 		// bail if no Nav
 		if( empty( $nav ) ) {
 			return '';
+		}
+		
+		// Invalid Menu Position
+		if( ! array_key_exists( $position, parent::mdl_menu_positions_selection_array( 'false' ) ) ) {
+			$position = '';
 		}
 		
 		// Invalid Icon Name

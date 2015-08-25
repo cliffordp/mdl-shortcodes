@@ -138,13 +138,13 @@ class MDL_Card extends Shortcode {
 				),
 */
 				array(
-					'label'  => esc_html__( 'Media Image', 'mdl-shortcodes' ),
-					'attr'   => 'mediaid',
-					'type'   => 'attachment',
+					'label'  		=> esc_html__( 'Media Image (if blank and postid is set, will default to its Featured Image)', 'mdl-shortcodes' ),
+					'attr'   		=> 'mediaid',
+					'type'			=> 'attachment',
 					'libraryType'	=> array( 'image' ),
-					'addButton'		=> esc_html__( 'Select Image' ),
-					'frameTitle'	=> esc_html__( 'Select Image' ),
-					'description'  => esc_html__( 'The Item ID / Post ID of the Media Attachment (image) you want to use as the Card Media area. Will override Title Area Background Color. Will override Post Featured Image if postid argument is set.', 'mdl-shortcodes' ),
+					'addButton'		=> esc_html__( 'Select/Upload Image', 'mdl-shortcodes' ),
+					'frameTitle'	=> esc_html__( 'Select/Upload Image', 'mdl-shortcodes' ),
+					'description'  	=> esc_html__( 'The Item ID / Post ID of the Media Attachment (image) you want to use as the Card Media area. Will override Title Area Background Color. Will override Post Featured Image if postid argument is set.', 'mdl-shortcodes' ),
 				),
 				array(
 					'label'  => esc_html__( 'Media Image Size', 'mdl-shortcodes' ),
@@ -357,12 +357,12 @@ class MDL_Card extends Shortcode {
 			$menu .= ']';
 		}
 		
-		$title_color = sanitize_html_class( strtolower( $atts['titlecolor'] ) );
+		$title_color = sanitize_html_class( $atts['titlecolor'] );
 		if ( ! array_key_exists( $title_color, parent::mdl_color_palette_classes_selection_array( 'false', 'text' ) ) ) {
 			$title_color = '';
 		}
 		
-		$title_bgcolor = sanitize_html_class( strtolower( $atts['titlebgcolor'] ) ); // not mdl_sanitize_html_classes() because only allowing one class
+		$title_bgcolor = sanitize_html_class( $atts['titlebgcolor'] ); // not mdl_sanitize_html_classes() because only allowing one class
 		if ( ! array_key_exists( $title_bgcolor, parent::mdl_color_palette_classes_selection_array( 'false', 'background' ) ) ) {
 			$title_bgcolor = 'mdl-color--accent';
 		}
@@ -474,7 +474,7 @@ class MDL_Card extends Shortcode {
 					'mediaplacement'	=> $media_placement,
 					'mediapadding'		=> $media_padding,
 					'supporting'		=> $post_supporting, // different
-					'actions'			=> $actions,
+					'actions'			=> $post_actions,
 					'actionslink'		=> $post_actionslink, // different
 					'actionstarget'		=> $actionstarget,
 					'actionsicon'		=> $actions_icon,

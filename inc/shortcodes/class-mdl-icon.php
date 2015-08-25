@@ -76,12 +76,12 @@ class MDL_Icon extends Shortcode {
 			return '';
 		}
 		
-		$color_text = sanitize_html_class( strtolower( $atts['color'] ) ); // not mdl_sanitize_html_classes() because only allowing one class
+		$color_text = sanitize_html_class( $atts['color'] ); // not mdl_sanitize_html_classes() because only allowing one class
 		if ( ! array_key_exists( $color_text, parent::mdl_color_palette_classes_selection_array( 'false', 'text' ) ) ) {
 			$color_text = '';
 		}
 		
-		$color_background = sanitize_html_class( strtolower( $atts['bgcolor'] ) ); // not mdl_sanitize_html_classes() because only allowing one class
+		$color_background = sanitize_html_class( $atts['bgcolor'] ); // not mdl_sanitize_html_classes() because only allowing one class
 		if ( ! array_key_exists( $color_background, parent::mdl_color_palette_classes_selection_array( 'false', 'background' ) ) ) {
 			$color_background = '';
 		}

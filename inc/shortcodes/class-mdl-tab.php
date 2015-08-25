@@ -122,11 +122,12 @@ class MDL_Tab extends Shortcode {
 		$title_classes = sprintf( '%s%smdl-tabs__tab', $class, $active ); // put custom and active classes first for [mdl-tab-group] parsing
 		
 		$panel_classes = sprintf( '%s%smdl-tabs__panel', $class, $active ); // put custom and active classes first for [mdl-tab-group] parsing
-
+		
 		
 		// Build Title
 		$output .= '<!-- mdl-tab-title-start -->'; // removed via [mdl-tab-group] parsing
 		$output .= sprintf( '<a href="#panel-%s" class="%s">%s</a>', $tab_id, $title_classes, $title );
+		// $output .= sprintf( '<a href="%s#panel-%s" class="%s">%s</a>', get_permalink(), $tab_id, $title_classes, $title ); // added get_permalink() to make URLs absolute -- issue with WP Customizer: https://core.trac.wordpress.org/ticket/23225 -- but then it still reloads entire page --> but should use https://kovshenin.com/2012/current-url-in-wordpress/ instead of get_permalink
 		$output .= '<!-- mdl-tab-title-end -->'; // removed via [mdl-tab-group] parsing
 		
 		// Build Panel
