@@ -12,7 +12,7 @@ Making it easy to use MDL components in WordPress via shortcodes
 
 == Description ==
 Making it easy to use MDL components in WordPress via shortcodes. Material Design Lite (MDL) components are viewable at http://www.getmdl.io/components/
-Integrates with https://wordpress.org/plugins/shortcode-ui/ so building shortcodes is super easy!
+Integrates with https://wordpress.org/plugins/shortcode-ui/ so building shortcodes (even ones with complex options) is super easy!
 
 == Frequently Asked Questions ==
 Work with my theme?
