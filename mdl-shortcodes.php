@@ -12,6 +12,13 @@ Domain Path: /languages
 License: GPLv3
 */
 
+defined( 'ABSPATH' ) or die(); //do not allow plugin file to be called directly (security protection)
+
+define( 'MDL_SHORTCODES_VERSION', '1.0' );
+define( 'MDL_SHORTCODES_URL_ROOT', plugin_dir_url( __FILE__ ) );
+
+
+
 /*
 	
 	LICENSE INFO:
@@ -77,12 +84,8 @@ License: GPLv3
 * END notes
 */
 
-defined( 'ABSPATH' ) or die(); //do not allow plugin file to be called directly (security protection)
 
-require_once dirname( __FILE__ ) . '/inc/class-mdl-shortcodes.php';
 
-define( 'MDL_SHORTCODES_VERSION', '1.0' );
-define( 'MDL_SHORTCODES_URL_ROOT', plugin_dir_url( __FILE__ ) );
 
 /**
  * Load the MDL Shortcodes
@@ -93,6 +96,9 @@ function MDL_Shortcodes() {
 }
 // @codingStandardsIgnoreEnd
 add_action( 'after_setup_theme', 'MDL_Shortcodes' );
+
+
+require_once dirname( __FILE__ ) . '/inc/class-mdl-shortcodes.php';
 
 
 

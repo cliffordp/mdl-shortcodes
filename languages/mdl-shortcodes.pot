@@ -1,0 +1,2453 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: MDL Shortcodes\n"
+"POT-Creation-Date: 2015-08-27 09:27-0500\n"
+"PO-Revision-Date: 2015-08-27 08:46-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: mdl-shortcodes.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: class-tgm-plugin-activation.php\n"
+
+#: inc/class-mdl-shortcodes.php:707
+msgid "MDL Shortcodes Color Settings"
+msgstr ""
+
+#: inc/class-mdl-shortcodes.php:708
+#, php-format
+msgid ""
+"Color swatches are visible at %s (link opens in a new window)%sIf Primary "
+"and Secondary are set to the same, the color combination will default back "
+"to Indigo-Pink."
+msgstr ""
+
+#: inc/class-mdl-shortcodes.php:721
+msgid "MDL Primary Color"
+msgstr ""
+
+#: inc/class-mdl-shortcodes.php:735
+msgid "MDL Accent Color"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:19
+msgid "MDL Badge"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:24
+msgid "Badge Type"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:28
+#: inc/shortcodes/class-mdl-tooltip.php:50
+msgid "Span"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:29
+msgid "Link"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:30
+#: inc/shortcodes/class-mdl-tooltip.php:52
+msgid "Div"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:32
+msgid "Type of HTML element (Default: Span)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:35
+msgid "Display Badge over an Icon (Required unless using badgetext)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:39
+#, php-format
+msgid ""
+"If no Icon chosen here, Badge will be displayed over the text you enter for "
+"%s. "
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:42
+msgid "(OR) Display Badge over Text"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:45
+msgid ""
+"Display Badge over this text. If you choose an Icon, this content will be "
+"ignored."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:47
+msgid "Example: Updates"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:51
+msgid "Badge Data (Required)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:54
+msgid "Content inside the Badge (3 or fewer characters). Typically a number."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:56
+msgid "Example: 12"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:60 inc/shortcodes/class-mdl-button.php:92
+msgid "Link URL"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:63
+msgid "Required if Link type, otherwise ignored."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:69
+#: inc/shortcodes/class-mdl-button.php:101
+msgid "Link Target"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:73
+msgid "Optional if Link type, otherwise ignored."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:76
+msgid "Disable Data Background?"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:79
+msgid ""
+"The Theme sets the Badge text and background colors. Check this box to "
+"disable adding the background class/styling."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:82
+#: inc/shortcodes/class-mdl-button.php:115
+#: inc/shortcodes/class-mdl-card.php:240 inc/shortcodes/class-mdl-cell.php:174
+#: inc/shortcodes/class-mdl-grid.php:50 inc/shortcodes/class-mdl-icon.php:44
+#: inc/shortcodes/class-mdl-menu.php:60 inc/shortcodes/class-mdl-nav.php:98
+#: inc/shortcodes/class-mdl-tab-group.php:55
+#: inc/shortcodes/class-mdl-tab.php:61 inc/shortcodes/class-mdl-tooltip.php:66
+msgid "Custom CSS Class(es)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:85 inc/shortcodes/class-mdl-card.php:243
+#: inc/shortcodes/class-mdl-cell.php:177 inc/shortcodes/class-mdl-grid.php:53
+#: inc/shortcodes/class-mdl-icon.php:47 inc/shortcodes/class-mdl-menu.php:63
+#: inc/shortcodes/class-mdl-nav.php:101
+#: inc/shortcodes/class-mdl-tab-group.php:58
+#: inc/shortcodes/class-mdl-tab.php:64
+msgid "Span, Link, or Div"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-badge.php:87
+#: inc/shortcodes/class-mdl-button.php:120
+#: inc/shortcodes/class-mdl-card.php:245 inc/shortcodes/class-mdl-cell.php:179
+#: inc/shortcodes/class-mdl-grid.php:55 inc/shortcodes/class-mdl-icon.php:49
+#: inc/shortcodes/class-mdl-menu.php:65 inc/shortcodes/class-mdl-nav.php:103
+#: inc/shortcodes/class-mdl-tab-group.php:60
+#: inc/shortcodes/class-mdl-tab.php:66 inc/shortcodes/class-mdl-tooltip.php:71
+msgid "my-class-1 other-custom-class"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:28
+msgid "MDL Button"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:33
+msgid "Button Type"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:37
+msgid "None / Flat"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:38
+msgid "Raised"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:39
+msgid "FAB (Floating Action Button) / Circle"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:40
+msgid "Mini-FAB"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:42
+msgid "Default: None."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:45
+msgid "Icon as Button"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:49
+msgid "Display Icon inside Button"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:52
+msgid "Icon Display"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:56
+msgid "Icon Button (plain circular with padding around icon)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:57
+msgid "Mini-Icon (plain circular tight to icon)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:58
+msgid "Nested (to allow using Raised, FAB, or Mini-FAB type)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:60
+msgid "If using an Icon, how should the Icon be displayed?"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:64
+msgid "(OR) Button Text"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:67
+msgid "Will be ignored if Icon is set, above."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:69 inc/shortcodes/class-mdl-card.php:191
+msgid "Example: Click Here"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:73
+msgid "Button Color Scheme"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:77
+msgid "Colored / Default Scheme"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:78
+#: inc/shortcodes/class-shortcode.php:902
+msgid "Primary"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:79
+#: inc/shortcodes/class-shortcode.php:905
+#: inc/shortcodes/class-shortcode.php:917
+msgid "Accent"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:80
+msgid "None / Transparent"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:82
+msgid "Default: Colored"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:85
+msgid "Button Click Effect"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:89 inc/shortcodes/class-mdl-menu.php:48
+#: inc/shortcodes/class-mdl-tab-group.php:52
+msgid "Default: Ripple"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:95
+msgid "If entered, Button goes to this URL."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:105
+#: inc/shortcodes/class-mdl-card.php:208
+msgid "Ignored if no Link URL"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:108
+msgid "Button Disabled"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:112
+#, php-format
+msgid "Adds the standard HTML boolean attribute %s"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-button.php:118
+msgid "button element"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:54
+msgid "MDL Card"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:59
+msgid "Post(s) to display"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:65
+msgid ""
+"Drop down list is all Published posts of all post types. This shortcode "
+"argument can accept one or more comma-separated post IDs."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:68 inc/shortcodes/class-mdl-nav.php:36
+msgid "Title Text"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:71
+msgid ""
+"Required if postid argument is not set, otherwise is an optional override of "
+"Post Title."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:73
+msgid "Example: An Excellent Decision"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:77
+msgid "Menu Button Icon"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:81
+msgid "Icon in upper-right corner of Card. "
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:84
+msgid "Menu Button Link"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:87
+msgid "If not set, Menu Icon will not be displayed."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:93
+msgid "Menu Button Link Target"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:97
+msgid "Ignored if no Menu Button Link"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:100
+msgid "Title Heading Tag"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:104
+msgid "Default is h2. Allows h1-h6."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:107
+msgid "Title Color"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:111
+msgid "Title and Menu Button color. Default: White. "
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:114
+msgid "Title Area Background Color"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:118
+msgid "Default: Accent. "
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:118
+msgid " (Disallowed from choosing same color as Title Color.)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:141
+msgid ""
+"Media Image (if blank and postid is set, will default to its Featured Image)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:145 inc/shortcodes/class-mdl-card.php:146
+msgid "Select/Upload Image"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:147
+msgid ""
+"The Item ID / Post ID of the Media Attachment (image) you want to use as the "
+"Card Media area. Will override Title Area Background Color. Will override "
+"Post Featured Image if postid argument is set."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:150
+msgid "Media Image Size"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:154
+msgid ""
+"Image size to use. Ignored unless Media Image is selected. Default: thumbnail"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:157
+msgid "Media Image Placement"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:161
+msgid "Title Area Background"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:162
+msgid "Entire Card Background"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:163
+msgid "Separate Media Area (below Title Area)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:165
+msgid ""
+"If Media Image is set, choose to display it as the Title Area background "
+"(Default) or in a separate Media Area below the Title Area."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:168
+msgid "Media Area Image Padding"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:171
+msgid ""
+"Padding around Media Image in separate Media Area. Ignored unless "
+"mediaplacement argument is set to display separate Media Area. Default is "
+"10px."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:173
+msgid "Example: 5%"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:177
+msgid "Supporting Text"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:180
+msgid ""
+"If postid argument is set, this is an optional override of Post Excerpt. If "
+"this is not set, Supporting Text area will not be displayed."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:182
+msgid "Excerpt text here..."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:186
+msgid "Actions Text"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:189
+#, php-format
+msgid ""
+"Defaults to %s Button Text if postid argument is set or actionslink argument "
+"is set. If neither and this argument is set, it will display as regular text."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:195
+msgid "Actions Button Link"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:198
+msgid ""
+"If postid argument is set, this is an optional override of Post Permalink. "
+"If this is not set, Actions Text will not become a Button."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:204
+msgid "Actions Button Link Target"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:211
+msgid "Actions Area Right-Side Icon"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:215
+msgid "Icon on right side of Actions Area."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:218
+msgid "Actions Border"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:222
+msgid "Display Border around the Actions Area. Default: True."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:225
+msgid "Card Shadow Size"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:229
+msgid "None / Zero"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:230 inc/shortcodes/class-shortcode.php:776
+msgid "2"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:231 inc/shortcodes/class-shortcode.php:777
+msgid "3"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:232 inc/shortcodes/class-shortcode.php:778
+msgid "4"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:233 inc/shortcodes/class-shortcode.php:783
+msgid "6"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:234 inc/shortcodes/class-shortcode.php:785
+msgid "8"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:235
+msgid "16"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-card.php:237
+msgid "Size of shadow in Density-Independent Pixels (dp). Default: None."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:89
+msgid "MDL Cell (Columns inside MDL Grid)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:93
+msgid ""
+"REQUIRED. Any content can go inside here and it will be handled by the mdl-"
+"grid and mdl-cell properties you set."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:97
+msgid "Size / Column Width"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:101
+msgid "Default: 4"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:104
+msgid "Desktop Size/Width"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:108
+msgid "Custom column sizing on devices greater than or equal to 840px"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:111
+msgid "Tablet Size/Width"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:115
+msgid "Custom column sizing on devices 480px to 839px"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:118
+msgid "Phone Size/Width"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:122
+msgid "Custom column sizing on devices less than 480px"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:125
+msgid "Hidden on Desktop"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:129
+msgid "If True, content will be hidden on Desktop-width devices."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:132
+msgid "Hidden on Tablet"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:136
+msgid "If True, content will be hidden on Tablet-width devices."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:139
+msgid "Hidden on Phone"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:143
+msgid "If True, content will be hidden on Phone-width devices."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:146
+msgid "Cell Flexbox Alignment (CSS align-self)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:150
+#, php-format
+msgid ""
+"Override the CSS Flexbox alignment for this Cell. Default: Stretch. "
+"Reference: %s"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:153
+msgid "Cell Typography Text"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:160 inc/shortcodes/class-mdl-grid.php:36
+msgid "Text Color"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:167 inc/shortcodes/class-mdl-grid.php:43
+msgid "Background Color"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-cell.php:171
+msgid " (Disallowed from choosing same color as Text color.)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-grid.php:20
+msgid "MDL Grid (Single Row)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-grid.php:25
+#, php-format
+msgid "Enter %s shortcodes inside %s shortcodes."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-grid.php:29
+msgid "Spacing between Cells"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-grid.php:33
+#, php-format
+msgid "False adds %s to remove spacing between cells."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-grid.php:47 inc/shortcodes/class-mdl-icon.php:41
+msgid ""
+" (Disallowed from choosing same color as Icon color to avoid displaying a "
+"colored square.)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-icon.php:18
+msgid "MDL Material Design Icon"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-icon.php:23
+msgid "Icon Name (required)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-icon.php:30
+msgid "Icon Color"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-icon.php:37
+msgid "Icon Background Color"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:17
+msgid "MDL Menu Button"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:22
+msgid "Menu Button Nav"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:26
+msgid "If blank, Menu Button will not display."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:30
+msgid "Menu Position"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:34
+msgid ""
+"Menu display position in relation to the Menu Button. Default: Lower Left."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:37 inc/shortcodes/class-mdl-tooltip.php:30
+msgid "Icon"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:41
+msgid "Default: more_vert. "
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:44
+msgid "Menu Item Click Effect"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:51
+msgid "Menu Button ID"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:54 inc/shortcodes/class-mdl-tooltip.php:60
+msgid "If left blank, one will be automatically generated for you."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-menu.php:56
+msgid "my-custom-7-id"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:25
+msgid "MDL Navigation Menu"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:39
+msgid "Navigation Title Text"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:41
+msgid "Default: Menu"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:45
+msgid "Nav Type"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:49
+msgid "Default: Transparent Header, Collapsible Drawer."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:52
+msgid "Header Nav"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:59
+msgid "Drawer Nav"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:63
+msgid ""
+"If not set and Header Nav is set, will be the same as Header Nav. Otherwise "
+"will be None."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:66
+msgid "Header Text Color"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-nav.php:82
+msgid "Drawer Text Color"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab-group.php:39
+msgid "MDL Tab Group"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab-group.php:44
+#, php-format
+msgid "Enter %s shortcodes inside."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab-group.php:48
+msgid "Tabs Click Effect"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab.php:36
+msgid "MDL Tab"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab.php:41
+#, php-format
+msgid "(REQUIRED) Tab Panel content. Make sure you wrap this %s inside %s !"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab.php:45
+msgid "Tab Titles"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab.php:48
+msgid "Default: Tab"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab.php:50
+msgid "Student List"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab.php:54
+msgid "Set as the initially-Active Tab"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tab.php:58
+msgid "Make sure to set 1 Tab (and ONLY 1 Tab) as Active per Tab Group."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:15
+msgid "MDL Tooltip"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:20
+msgid ""
+"Enter your tooltip text here. If left blank, Tooltip will not be displayed "
+"at all. Example: eXtensible Markup Language (to explain the XML acronym). "
+"NOTE: Text Editor Tooltip hovering preview does not work."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:24
+msgid "Large Tooltip Text Size?"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:27
+msgid "Check the box to display the Tooltip Text in a larger font size."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:34
+msgid "Default: add. "
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:37
+msgid "(OR) Tooltip target text (instead of an Icon)"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:40
+msgid ""
+"Display Tooltip over this text. If you choose an Icon, this content will be "
+"ignored."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:42
+msgid "Example: XML"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:46
+msgid "Tooltip Target Element Type"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:51
+msgid "Paragraph"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:54
+msgid ""
+"Type of HTML element. Default: Span. NOTE: MDL styling defaults to "
+"displaying as inline-block so changing from Span to Div will not have that "
+"block display unless you add your own styling."
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:57
+msgid "Tooltip ID"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:62
+msgid "tooltip1"
+msgstr ""
+
+#: inc/shortcodes/class-mdl-tooltip.php:69
+msgid "Tooltip (not content that Tooltip targets)."
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:194
+msgid "Transparent Header, Collapsible Drawer"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:195
+msgid "No Header, Fixed Drawer"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:196
+msgid "Fixed Header, Collapsible Drawer"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:197
+msgid "Fixed Header, Fixed Drawer"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:198
+msgid "Scrolling Header, Collapsible Drawer"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:199
+msgid "Waterfall Header, Collapsible Drawer"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:214
+msgid "Lower Left"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:215
+msgid "Lower Right"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:216
+msgid "Top Left"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:217
+msgid "Top Right"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:477
+msgid "h2 (Default)"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:478
+msgid "h1"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:479
+msgid "h3"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:480
+msgid "h4"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:481
+msgid "h5"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:482
+msgid "h6"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:576
+msgid "True"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:580
+msgid "False"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:734
+msgid "Text-Align Left"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:735
+msgid "Text-Align Right"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:736
+msgid "Text-Align Center"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:737
+msgid "Text-Align Justify"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:738
+msgid "White-Space NoWrap"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:739
+msgid "Text-Transform Lowercase"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:740
+msgid "Text-Transform Uppercase"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:741
+msgid "Text-Transform Capitalize"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:757
+msgid "Ripple"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:758
+msgid "None"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:775
+msgid "1"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:782
+msgid "5"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:784
+msgid "7"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:790
+msgid "9"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:791
+msgid "10"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:792
+msgid "11"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:793
+msgid "12"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:813
+msgid "Default"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:824
+msgid "Stretch"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:825
+msgid "Top"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:826
+msgid "Middle"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:827
+msgid "Bottom"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:841
+#, php-format
+msgid "%sValid Material Icon name from %s%s"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:845
+#, php-format
+msgid ""
+"%sPrimary and Accent colors are from your theme. Preview all color choices "
+"at %s%s"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:849
+#, php-format
+msgid "%s(Advanced) Add custom CSS class(es) to %s.%s"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:903
+#: inc/shortcodes/class-shortcode.php:915
+msgid "Primary Contrast"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:904
+#: inc/shortcodes/class-shortcode.php:916
+msgid "Primary Dark"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:906
+#: inc/shortcodes/class-shortcode.php:918
+msgid "Accent Contrast"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:914
+msgid "Primary color"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:914
+#: inc/shortcodes/class-shortcode.php:915
+#: inc/shortcodes/class-shortcode.php:916
+#: inc/shortcodes/class-shortcode.php:917
+#: inc/shortcodes/class-shortcode.php:918
+#: inc/shortcodes/class-shortcode.php:1210
+#: inc/shortcodes/class-shortcode.php:1211
+#: inc/shortcodes/class-shortcode.php:1213
+#: inc/shortcodes/class-shortcode.php:1214
+#: inc/shortcodes/class-shortcode.php:1215
+#: inc/shortcodes/class-shortcode.php:1216
+#: inc/shortcodes/class-shortcode.php:1217
+#: inc/shortcodes/class-shortcode.php:1218
+#: inc/shortcodes/class-shortcode.php:1219
+#: inc/shortcodes/class-shortcode.php:1220
+#: inc/shortcodes/class-shortcode.php:1221
+#: inc/shortcodes/class-shortcode.php:1222
+#: inc/shortcodes/class-shortcode.php:1223
+#: inc/shortcodes/class-shortcode.php:1224
+#: inc/shortcodes/class-shortcode.php:1225
+#: inc/shortcodes/class-shortcode.php:1226
+#: inc/shortcodes/class-shortcode.php:1228
+#: inc/shortcodes/class-shortcode.php:1229
+#: inc/shortcodes/class-shortcode.php:1230
+#: inc/shortcodes/class-shortcode.php:1231
+#: inc/shortcodes/class-shortcode.php:1232
+#: inc/shortcodes/class-shortcode.php:1233
+#: inc/shortcodes/class-shortcode.php:1234
+#: inc/shortcodes/class-shortcode.php:1235
+#: inc/shortcodes/class-shortcode.php:1236
+#: inc/shortcodes/class-shortcode.php:1237
+#: inc/shortcodes/class-shortcode.php:1238
+#: inc/shortcodes/class-shortcode.php:1239
+#: inc/shortcodes/class-shortcode.php:1240
+#: inc/shortcodes/class-shortcode.php:1241
+#: inc/shortcodes/class-shortcode.php:1243
+#: inc/shortcodes/class-shortcode.php:1244
+#: inc/shortcodes/class-shortcode.php:1245
+#: inc/shortcodes/class-shortcode.php:1246
+#: inc/shortcodes/class-shortcode.php:1247
+#: inc/shortcodes/class-shortcode.php:1248
+#: inc/shortcodes/class-shortcode.php:1249
+#: inc/shortcodes/class-shortcode.php:1250
+#: inc/shortcodes/class-shortcode.php:1251
+#: inc/shortcodes/class-shortcode.php:1252
+#: inc/shortcodes/class-shortcode.php:1253
+#: inc/shortcodes/class-shortcode.php:1254
+#: inc/shortcodes/class-shortcode.php:1255
+#: inc/shortcodes/class-shortcode.php:1256
+#: inc/shortcodes/class-shortcode.php:1258
+#: inc/shortcodes/class-shortcode.php:1259
+#: inc/shortcodes/class-shortcode.php:1260
+#: inc/shortcodes/class-shortcode.php:1261
+#: inc/shortcodes/class-shortcode.php:1262
+#: inc/shortcodes/class-shortcode.php:1263
+#: inc/shortcodes/class-shortcode.php:1264
+#: inc/shortcodes/class-shortcode.php:1265
+#: inc/shortcodes/class-shortcode.php:1266
+#: inc/shortcodes/class-shortcode.php:1267
+#: inc/shortcodes/class-shortcode.php:1268
+#: inc/shortcodes/class-shortcode.php:1269
+#: inc/shortcodes/class-shortcode.php:1270
+#: inc/shortcodes/class-shortcode.php:1271
+#: inc/shortcodes/class-shortcode.php:1273
+#: inc/shortcodes/class-shortcode.php:1274
+#: inc/shortcodes/class-shortcode.php:1275
+#: inc/shortcodes/class-shortcode.php:1276
+#: inc/shortcodes/class-shortcode.php:1277
+#: inc/shortcodes/class-shortcode.php:1278
+#: inc/shortcodes/class-shortcode.php:1279
+#: inc/shortcodes/class-shortcode.php:1280
+#: inc/shortcodes/class-shortcode.php:1281
+#: inc/shortcodes/class-shortcode.php:1282
+#: inc/shortcodes/class-shortcode.php:1283
+#: inc/shortcodes/class-shortcode.php:1284
+#: inc/shortcodes/class-shortcode.php:1285
+#: inc/shortcodes/class-shortcode.php:1286
+#: inc/shortcodes/class-shortcode.php:1288
+#: inc/shortcodes/class-shortcode.php:1289
+#: inc/shortcodes/class-shortcode.php:1290
+#: inc/shortcodes/class-shortcode.php:1291
+#: inc/shortcodes/class-shortcode.php:1292
+#: inc/shortcodes/class-shortcode.php:1293
+#: inc/shortcodes/class-shortcode.php:1294
+#: inc/shortcodes/class-shortcode.php:1295
+#: inc/shortcodes/class-shortcode.php:1296
+#: inc/shortcodes/class-shortcode.php:1297
+#: inc/shortcodes/class-shortcode.php:1298
+#: inc/shortcodes/class-shortcode.php:1299
+#: inc/shortcodes/class-shortcode.php:1300
+#: inc/shortcodes/class-shortcode.php:1301
+#: inc/shortcodes/class-shortcode.php:1303
+#: inc/shortcodes/class-shortcode.php:1304
+#: inc/shortcodes/class-shortcode.php:1305
+#: inc/shortcodes/class-shortcode.php:1306
+#: inc/shortcodes/class-shortcode.php:1307
+#: inc/shortcodes/class-shortcode.php:1308
+#: inc/shortcodes/class-shortcode.php:1309
+#: inc/shortcodes/class-shortcode.php:1310
+#: inc/shortcodes/class-shortcode.php:1311
+#: inc/shortcodes/class-shortcode.php:1312
+#: inc/shortcodes/class-shortcode.php:1313
+#: inc/shortcodes/class-shortcode.php:1314
+#: inc/shortcodes/class-shortcode.php:1315
+#: inc/shortcodes/class-shortcode.php:1316
+#: inc/shortcodes/class-shortcode.php:1318
+#: inc/shortcodes/class-shortcode.php:1319
+#: inc/shortcodes/class-shortcode.php:1320
+#: inc/shortcodes/class-shortcode.php:1321
+#: inc/shortcodes/class-shortcode.php:1322
+#: inc/shortcodes/class-shortcode.php:1323
+#: inc/shortcodes/class-shortcode.php:1324
+#: inc/shortcodes/class-shortcode.php:1325
+#: inc/shortcodes/class-shortcode.php:1326
+#: inc/shortcodes/class-shortcode.php:1327
+#: inc/shortcodes/class-shortcode.php:1328
+#: inc/shortcodes/class-shortcode.php:1329
+#: inc/shortcodes/class-shortcode.php:1330
+#: inc/shortcodes/class-shortcode.php:1331
+#: inc/shortcodes/class-shortcode.php:1333
+#: inc/shortcodes/class-shortcode.php:1334
+#: inc/shortcodes/class-shortcode.php:1335
+#: inc/shortcodes/class-shortcode.php:1336
+#: inc/shortcodes/class-shortcode.php:1337
+#: inc/shortcodes/class-shortcode.php:1338
+#: inc/shortcodes/class-shortcode.php:1339
+#: inc/shortcodes/class-shortcode.php:1340
+#: inc/shortcodes/class-shortcode.php:1341
+#: inc/shortcodes/class-shortcode.php:1342
+#: inc/shortcodes/class-shortcode.php:1343
+#: inc/shortcodes/class-shortcode.php:1344
+#: inc/shortcodes/class-shortcode.php:1345
+#: inc/shortcodes/class-shortcode.php:1346
+#: inc/shortcodes/class-shortcode.php:1348
+#: inc/shortcodes/class-shortcode.php:1349
+#: inc/shortcodes/class-shortcode.php:1350
+#: inc/shortcodes/class-shortcode.php:1351
+#: inc/shortcodes/class-shortcode.php:1352
+#: inc/shortcodes/class-shortcode.php:1353
+#: inc/shortcodes/class-shortcode.php:1354
+#: inc/shortcodes/class-shortcode.php:1355
+#: inc/shortcodes/class-shortcode.php:1356
+#: inc/shortcodes/class-shortcode.php:1357
+#: inc/shortcodes/class-shortcode.php:1358
+#: inc/shortcodes/class-shortcode.php:1359
+#: inc/shortcodes/class-shortcode.php:1360
+#: inc/shortcodes/class-shortcode.php:1361
+#: inc/shortcodes/class-shortcode.php:1363
+#: inc/shortcodes/class-shortcode.php:1364
+#: inc/shortcodes/class-shortcode.php:1365
+#: inc/shortcodes/class-shortcode.php:1366
+#: inc/shortcodes/class-shortcode.php:1367
+#: inc/shortcodes/class-shortcode.php:1368
+#: inc/shortcodes/class-shortcode.php:1369
+#: inc/shortcodes/class-shortcode.php:1370
+#: inc/shortcodes/class-shortcode.php:1371
+#: inc/shortcodes/class-shortcode.php:1372
+#: inc/shortcodes/class-shortcode.php:1373
+#: inc/shortcodes/class-shortcode.php:1374
+#: inc/shortcodes/class-shortcode.php:1375
+#: inc/shortcodes/class-shortcode.php:1376
+#: inc/shortcodes/class-shortcode.php:1378
+#: inc/shortcodes/class-shortcode.php:1379
+#: inc/shortcodes/class-shortcode.php:1380
+#: inc/shortcodes/class-shortcode.php:1381
+#: inc/shortcodes/class-shortcode.php:1382
+#: inc/shortcodes/class-shortcode.php:1383
+#: inc/shortcodes/class-shortcode.php:1384
+#: inc/shortcodes/class-shortcode.php:1385
+#: inc/shortcodes/class-shortcode.php:1386
+#: inc/shortcodes/class-shortcode.php:1387
+#: inc/shortcodes/class-shortcode.php:1388
+#: inc/shortcodes/class-shortcode.php:1389
+#: inc/shortcodes/class-shortcode.php:1390
+#: inc/shortcodes/class-shortcode.php:1391
+#: inc/shortcodes/class-shortcode.php:1393
+#: inc/shortcodes/class-shortcode.php:1394
+#: inc/shortcodes/class-shortcode.php:1395
+#: inc/shortcodes/class-shortcode.php:1396
+#: inc/shortcodes/class-shortcode.php:1397
+#: inc/shortcodes/class-shortcode.php:1398
+#: inc/shortcodes/class-shortcode.php:1399
+#: inc/shortcodes/class-shortcode.php:1400
+#: inc/shortcodes/class-shortcode.php:1401
+#: inc/shortcodes/class-shortcode.php:1402
+#: inc/shortcodes/class-shortcode.php:1403
+#: inc/shortcodes/class-shortcode.php:1404
+#: inc/shortcodes/class-shortcode.php:1405
+#: inc/shortcodes/class-shortcode.php:1406
+#: inc/shortcodes/class-shortcode.php:1408
+#: inc/shortcodes/class-shortcode.php:1409
+#: inc/shortcodes/class-shortcode.php:1410
+#: inc/shortcodes/class-shortcode.php:1411
+#: inc/shortcodes/class-shortcode.php:1412
+#: inc/shortcodes/class-shortcode.php:1413
+#: inc/shortcodes/class-shortcode.php:1414
+#: inc/shortcodes/class-shortcode.php:1415
+#: inc/shortcodes/class-shortcode.php:1416
+#: inc/shortcodes/class-shortcode.php:1417
+#: inc/shortcodes/class-shortcode.php:1418
+#: inc/shortcodes/class-shortcode.php:1419
+#: inc/shortcodes/class-shortcode.php:1420
+#: inc/shortcodes/class-shortcode.php:1421
+#: inc/shortcodes/class-shortcode.php:1423
+#: inc/shortcodes/class-shortcode.php:1424
+#: inc/shortcodes/class-shortcode.php:1425
+#: inc/shortcodes/class-shortcode.php:1426
+#: inc/shortcodes/class-shortcode.php:1427
+#: inc/shortcodes/class-shortcode.php:1428
+#: inc/shortcodes/class-shortcode.php:1429
+#: inc/shortcodes/class-shortcode.php:1430
+#: inc/shortcodes/class-shortcode.php:1431
+#: inc/shortcodes/class-shortcode.php:1432
+#: inc/shortcodes/class-shortcode.php:1433
+#: inc/shortcodes/class-shortcode.php:1434
+#: inc/shortcodes/class-shortcode.php:1435
+#: inc/shortcodes/class-shortcode.php:1436
+#: inc/shortcodes/class-shortcode.php:1438
+#: inc/shortcodes/class-shortcode.php:1439
+#: inc/shortcodes/class-shortcode.php:1440
+#: inc/shortcodes/class-shortcode.php:1441
+#: inc/shortcodes/class-shortcode.php:1442
+#: inc/shortcodes/class-shortcode.php:1443
+#: inc/shortcodes/class-shortcode.php:1444
+#: inc/shortcodes/class-shortcode.php:1445
+#: inc/shortcodes/class-shortcode.php:1446
+#: inc/shortcodes/class-shortcode.php:1447
+#: inc/shortcodes/class-shortcode.php:1448
+#: inc/shortcodes/class-shortcode.php:1449
+#: inc/shortcodes/class-shortcode.php:1450
+#: inc/shortcodes/class-shortcode.php:1451
+#: inc/shortcodes/class-shortcode.php:1453
+#: inc/shortcodes/class-shortcode.php:1454
+#: inc/shortcodes/class-shortcode.php:1455
+#: inc/shortcodes/class-shortcode.php:1456
+#: inc/shortcodes/class-shortcode.php:1457
+#: inc/shortcodes/class-shortcode.php:1458
+#: inc/shortcodes/class-shortcode.php:1459
+#: inc/shortcodes/class-shortcode.php:1460
+#: inc/shortcodes/class-shortcode.php:1461
+#: inc/shortcodes/class-shortcode.php:1462
+#: inc/shortcodes/class-shortcode.php:1464
+#: inc/shortcodes/class-shortcode.php:1465
+#: inc/shortcodes/class-shortcode.php:1466
+#: inc/shortcodes/class-shortcode.php:1467
+#: inc/shortcodes/class-shortcode.php:1468
+#: inc/shortcodes/class-shortcode.php:1469
+#: inc/shortcodes/class-shortcode.php:1470
+#: inc/shortcodes/class-shortcode.php:1471
+#: inc/shortcodes/class-shortcode.php:1472
+#: inc/shortcodes/class-shortcode.php:1473
+#: inc/shortcodes/class-shortcode.php:1475
+#: inc/shortcodes/class-shortcode.php:1476
+#: inc/shortcodes/class-shortcode.php:1477
+#: inc/shortcodes/class-shortcode.php:1478
+#: inc/shortcodes/class-shortcode.php:1479
+#: inc/shortcodes/class-shortcode.php:1480
+#: inc/shortcodes/class-shortcode.php:1481
+#: inc/shortcodes/class-shortcode.php:1482
+#: inc/shortcodes/class-shortcode.php:1483
+#: inc/shortcodes/class-shortcode.php:1484
+msgid "as background"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:927
+#: inc/shortcodes/class-shortcode.php:1210
+msgid "Black"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:928
+#: inc/shortcodes/class-shortcode.php:1211
+msgid "White"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:930
+#: inc/shortcodes/class-shortcode.php:931
+#: inc/shortcodes/class-shortcode.php:932
+#: inc/shortcodes/class-shortcode.php:933
+#: inc/shortcodes/class-shortcode.php:934
+#: inc/shortcodes/class-shortcode.php:935
+#: inc/shortcodes/class-shortcode.php:936
+#: inc/shortcodes/class-shortcode.php:937
+#: inc/shortcodes/class-shortcode.php:938
+#: inc/shortcodes/class-shortcode.php:939
+#: inc/shortcodes/class-shortcode.php:940
+#: inc/shortcodes/class-shortcode.php:941
+#: inc/shortcodes/class-shortcode.php:942
+#: inc/shortcodes/class-shortcode.php:943
+#: inc/shortcodes/class-shortcode.php:1213
+#: inc/shortcodes/class-shortcode.php:1214
+#: inc/shortcodes/class-shortcode.php:1215
+#: inc/shortcodes/class-shortcode.php:1216
+#: inc/shortcodes/class-shortcode.php:1217
+#: inc/shortcodes/class-shortcode.php:1218
+#: inc/shortcodes/class-shortcode.php:1219
+#: inc/shortcodes/class-shortcode.php:1220
+#: inc/shortcodes/class-shortcode.php:1221
+#: inc/shortcodes/class-shortcode.php:1222
+#: inc/shortcodes/class-shortcode.php:1223
+#: inc/shortcodes/class-shortcode.php:1224
+#: inc/shortcodes/class-shortcode.php:1225
+#: inc/shortcodes/class-shortcode.php:1226
+msgid "Red"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:930
+#: inc/shortcodes/class-shortcode.php:945
+#: inc/shortcodes/class-shortcode.php:960
+#: inc/shortcodes/class-shortcode.php:975
+#: inc/shortcodes/class-shortcode.php:990
+#: inc/shortcodes/class-shortcode.php:1005
+#: inc/shortcodes/class-shortcode.php:1020
+#: inc/shortcodes/class-shortcode.php:1035
+#: inc/shortcodes/class-shortcode.php:1050
+#: inc/shortcodes/class-shortcode.php:1065
+#: inc/shortcodes/class-shortcode.php:1080
+#: inc/shortcodes/class-shortcode.php:1095
+#: inc/shortcodes/class-shortcode.php:1110
+#: inc/shortcodes/class-shortcode.php:1125
+#: inc/shortcodes/class-shortcode.php:1140
+#: inc/shortcodes/class-shortcode.php:1155
+#: inc/shortcodes/class-shortcode.php:1170
+#: inc/shortcodes/class-shortcode.php:1181
+#: inc/shortcodes/class-shortcode.php:1192
+#: inc/shortcodes/class-shortcode.php:1213
+#: inc/shortcodes/class-shortcode.php:1228
+#: inc/shortcodes/class-shortcode.php:1243
+#: inc/shortcodes/class-shortcode.php:1258
+#: inc/shortcodes/class-shortcode.php:1273
+#: inc/shortcodes/class-shortcode.php:1288
+#: inc/shortcodes/class-shortcode.php:1303
+#: inc/shortcodes/class-shortcode.php:1318
+#: inc/shortcodes/class-shortcode.php:1333
+#: inc/shortcodes/class-shortcode.php:1348
+#: inc/shortcodes/class-shortcode.php:1363
+#: inc/shortcodes/class-shortcode.php:1378
+#: inc/shortcodes/class-shortcode.php:1393
+#: inc/shortcodes/class-shortcode.php:1408
+#: inc/shortcodes/class-shortcode.php:1423
+#: inc/shortcodes/class-shortcode.php:1438
+#: inc/shortcodes/class-shortcode.php:1453
+#: inc/shortcodes/class-shortcode.php:1464
+#: inc/shortcodes/class-shortcode.php:1475
+msgid "500"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:931
+#: inc/shortcodes/class-shortcode.php:946
+#: inc/shortcodes/class-shortcode.php:961
+#: inc/shortcodes/class-shortcode.php:976
+#: inc/shortcodes/class-shortcode.php:991
+#: inc/shortcodes/class-shortcode.php:1006
+#: inc/shortcodes/class-shortcode.php:1021
+#: inc/shortcodes/class-shortcode.php:1036
+#: inc/shortcodes/class-shortcode.php:1051
+#: inc/shortcodes/class-shortcode.php:1066
+#: inc/shortcodes/class-shortcode.php:1081
+#: inc/shortcodes/class-shortcode.php:1096
+#: inc/shortcodes/class-shortcode.php:1111
+#: inc/shortcodes/class-shortcode.php:1126
+#: inc/shortcodes/class-shortcode.php:1141
+#: inc/shortcodes/class-shortcode.php:1156
+#: inc/shortcodes/class-shortcode.php:1171
+#: inc/shortcodes/class-shortcode.php:1182
+#: inc/shortcodes/class-shortcode.php:1193
+#: inc/shortcodes/class-shortcode.php:1214
+#: inc/shortcodes/class-shortcode.php:1229
+#: inc/shortcodes/class-shortcode.php:1244
+#: inc/shortcodes/class-shortcode.php:1259
+#: inc/shortcodes/class-shortcode.php:1274
+#: inc/shortcodes/class-shortcode.php:1289
+#: inc/shortcodes/class-shortcode.php:1304
+#: inc/shortcodes/class-shortcode.php:1319
+#: inc/shortcodes/class-shortcode.php:1334
+#: inc/shortcodes/class-shortcode.php:1349
+#: inc/shortcodes/class-shortcode.php:1364
+#: inc/shortcodes/class-shortcode.php:1379
+#: inc/shortcodes/class-shortcode.php:1394
+#: inc/shortcodes/class-shortcode.php:1409
+#: inc/shortcodes/class-shortcode.php:1424
+#: inc/shortcodes/class-shortcode.php:1439
+#: inc/shortcodes/class-shortcode.php:1454
+#: inc/shortcodes/class-shortcode.php:1465
+#: inc/shortcodes/class-shortcode.php:1476
+msgid "50"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:932
+#: inc/shortcodes/class-shortcode.php:947
+#: inc/shortcodes/class-shortcode.php:962
+#: inc/shortcodes/class-shortcode.php:977
+#: inc/shortcodes/class-shortcode.php:992
+#: inc/shortcodes/class-shortcode.php:1007
+#: inc/shortcodes/class-shortcode.php:1022
+#: inc/shortcodes/class-shortcode.php:1037
+#: inc/shortcodes/class-shortcode.php:1052
+#: inc/shortcodes/class-shortcode.php:1067
+#: inc/shortcodes/class-shortcode.php:1082
+#: inc/shortcodes/class-shortcode.php:1097
+#: inc/shortcodes/class-shortcode.php:1112
+#: inc/shortcodes/class-shortcode.php:1127
+#: inc/shortcodes/class-shortcode.php:1142
+#: inc/shortcodes/class-shortcode.php:1157
+#: inc/shortcodes/class-shortcode.php:1172
+#: inc/shortcodes/class-shortcode.php:1183
+#: inc/shortcodes/class-shortcode.php:1194
+#: inc/shortcodes/class-shortcode.php:1215
+#: inc/shortcodes/class-shortcode.php:1230
+#: inc/shortcodes/class-shortcode.php:1245
+#: inc/shortcodes/class-shortcode.php:1260
+#: inc/shortcodes/class-shortcode.php:1275
+#: inc/shortcodes/class-shortcode.php:1290
+#: inc/shortcodes/class-shortcode.php:1305
+#: inc/shortcodes/class-shortcode.php:1320
+#: inc/shortcodes/class-shortcode.php:1335
+#: inc/shortcodes/class-shortcode.php:1350
+#: inc/shortcodes/class-shortcode.php:1365
+#: inc/shortcodes/class-shortcode.php:1380
+#: inc/shortcodes/class-shortcode.php:1395
+#: inc/shortcodes/class-shortcode.php:1410
+#: inc/shortcodes/class-shortcode.php:1425
+#: inc/shortcodes/class-shortcode.php:1440
+#: inc/shortcodes/class-shortcode.php:1455
+#: inc/shortcodes/class-shortcode.php:1466
+#: inc/shortcodes/class-shortcode.php:1477
+msgid "100"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:933
+#: inc/shortcodes/class-shortcode.php:948
+#: inc/shortcodes/class-shortcode.php:963
+#: inc/shortcodes/class-shortcode.php:978
+#: inc/shortcodes/class-shortcode.php:993
+#: inc/shortcodes/class-shortcode.php:1008
+#: inc/shortcodes/class-shortcode.php:1023
+#: inc/shortcodes/class-shortcode.php:1038
+#: inc/shortcodes/class-shortcode.php:1053
+#: inc/shortcodes/class-shortcode.php:1068
+#: inc/shortcodes/class-shortcode.php:1083
+#: inc/shortcodes/class-shortcode.php:1098
+#: inc/shortcodes/class-shortcode.php:1113
+#: inc/shortcodes/class-shortcode.php:1128
+#: inc/shortcodes/class-shortcode.php:1143
+#: inc/shortcodes/class-shortcode.php:1158
+#: inc/shortcodes/class-shortcode.php:1173
+#: inc/shortcodes/class-shortcode.php:1184
+#: inc/shortcodes/class-shortcode.php:1195
+#: inc/shortcodes/class-shortcode.php:1216
+#: inc/shortcodes/class-shortcode.php:1231
+#: inc/shortcodes/class-shortcode.php:1246
+#: inc/shortcodes/class-shortcode.php:1261
+#: inc/shortcodes/class-shortcode.php:1276
+#: inc/shortcodes/class-shortcode.php:1291
+#: inc/shortcodes/class-shortcode.php:1306
+#: inc/shortcodes/class-shortcode.php:1321
+#: inc/shortcodes/class-shortcode.php:1336
+#: inc/shortcodes/class-shortcode.php:1351
+#: inc/shortcodes/class-shortcode.php:1366
+#: inc/shortcodes/class-shortcode.php:1381
+#: inc/shortcodes/class-shortcode.php:1396
+#: inc/shortcodes/class-shortcode.php:1411
+#: inc/shortcodes/class-shortcode.php:1426
+#: inc/shortcodes/class-shortcode.php:1441
+#: inc/shortcodes/class-shortcode.php:1456
+#: inc/shortcodes/class-shortcode.php:1467
+#: inc/shortcodes/class-shortcode.php:1478
+msgid "200"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:934
+#: inc/shortcodes/class-shortcode.php:949
+#: inc/shortcodes/class-shortcode.php:964
+#: inc/shortcodes/class-shortcode.php:979
+#: inc/shortcodes/class-shortcode.php:994
+#: inc/shortcodes/class-shortcode.php:1009
+#: inc/shortcodes/class-shortcode.php:1024
+#: inc/shortcodes/class-shortcode.php:1039
+#: inc/shortcodes/class-shortcode.php:1054
+#: inc/shortcodes/class-shortcode.php:1069
+#: inc/shortcodes/class-shortcode.php:1084
+#: inc/shortcodes/class-shortcode.php:1099
+#: inc/shortcodes/class-shortcode.php:1114
+#: inc/shortcodes/class-shortcode.php:1129
+#: inc/shortcodes/class-shortcode.php:1144
+#: inc/shortcodes/class-shortcode.php:1159
+#: inc/shortcodes/class-shortcode.php:1174
+#: inc/shortcodes/class-shortcode.php:1185
+#: inc/shortcodes/class-shortcode.php:1196
+#: inc/shortcodes/class-shortcode.php:1217
+#: inc/shortcodes/class-shortcode.php:1232
+#: inc/shortcodes/class-shortcode.php:1247
+#: inc/shortcodes/class-shortcode.php:1262
+#: inc/shortcodes/class-shortcode.php:1277
+#: inc/shortcodes/class-shortcode.php:1292
+#: inc/shortcodes/class-shortcode.php:1307
+#: inc/shortcodes/class-shortcode.php:1322
+#: inc/shortcodes/class-shortcode.php:1337
+#: inc/shortcodes/class-shortcode.php:1352
+#: inc/shortcodes/class-shortcode.php:1367
+#: inc/shortcodes/class-shortcode.php:1382
+#: inc/shortcodes/class-shortcode.php:1397
+#: inc/shortcodes/class-shortcode.php:1412
+#: inc/shortcodes/class-shortcode.php:1427
+#: inc/shortcodes/class-shortcode.php:1442
+#: inc/shortcodes/class-shortcode.php:1457
+#: inc/shortcodes/class-shortcode.php:1468
+#: inc/shortcodes/class-shortcode.php:1479
+msgid "300"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:935
+#: inc/shortcodes/class-shortcode.php:950
+#: inc/shortcodes/class-shortcode.php:965
+#: inc/shortcodes/class-shortcode.php:980
+#: inc/shortcodes/class-shortcode.php:995
+#: inc/shortcodes/class-shortcode.php:1010
+#: inc/shortcodes/class-shortcode.php:1025
+#: inc/shortcodes/class-shortcode.php:1040
+#: inc/shortcodes/class-shortcode.php:1055
+#: inc/shortcodes/class-shortcode.php:1070
+#: inc/shortcodes/class-shortcode.php:1085
+#: inc/shortcodes/class-shortcode.php:1100
+#: inc/shortcodes/class-shortcode.php:1115
+#: inc/shortcodes/class-shortcode.php:1130
+#: inc/shortcodes/class-shortcode.php:1145
+#: inc/shortcodes/class-shortcode.php:1160
+#: inc/shortcodes/class-shortcode.php:1175
+#: inc/shortcodes/class-shortcode.php:1186
+#: inc/shortcodes/class-shortcode.php:1197
+#: inc/shortcodes/class-shortcode.php:1218
+#: inc/shortcodes/class-shortcode.php:1233
+#: inc/shortcodes/class-shortcode.php:1248
+#: inc/shortcodes/class-shortcode.php:1263
+#: inc/shortcodes/class-shortcode.php:1278
+#: inc/shortcodes/class-shortcode.php:1293
+#: inc/shortcodes/class-shortcode.php:1308
+#: inc/shortcodes/class-shortcode.php:1323
+#: inc/shortcodes/class-shortcode.php:1338
+#: inc/shortcodes/class-shortcode.php:1353
+#: inc/shortcodes/class-shortcode.php:1368
+#: inc/shortcodes/class-shortcode.php:1383
+#: inc/shortcodes/class-shortcode.php:1398
+#: inc/shortcodes/class-shortcode.php:1413
+#: inc/shortcodes/class-shortcode.php:1428
+#: inc/shortcodes/class-shortcode.php:1443
+#: inc/shortcodes/class-shortcode.php:1458
+#: inc/shortcodes/class-shortcode.php:1469
+#: inc/shortcodes/class-shortcode.php:1480
+msgid "400"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:936
+#: inc/shortcodes/class-shortcode.php:951
+#: inc/shortcodes/class-shortcode.php:966
+#: inc/shortcodes/class-shortcode.php:981
+#: inc/shortcodes/class-shortcode.php:996
+#: inc/shortcodes/class-shortcode.php:1011
+#: inc/shortcodes/class-shortcode.php:1026
+#: inc/shortcodes/class-shortcode.php:1041
+#: inc/shortcodes/class-shortcode.php:1056
+#: inc/shortcodes/class-shortcode.php:1071
+#: inc/shortcodes/class-shortcode.php:1086
+#: inc/shortcodes/class-shortcode.php:1101
+#: inc/shortcodes/class-shortcode.php:1116
+#: inc/shortcodes/class-shortcode.php:1131
+#: inc/shortcodes/class-shortcode.php:1146
+#: inc/shortcodes/class-shortcode.php:1161
+#: inc/shortcodes/class-shortcode.php:1176
+#: inc/shortcodes/class-shortcode.php:1187
+#: inc/shortcodes/class-shortcode.php:1198
+#: inc/shortcodes/class-shortcode.php:1219
+#: inc/shortcodes/class-shortcode.php:1234
+#: inc/shortcodes/class-shortcode.php:1249
+#: inc/shortcodes/class-shortcode.php:1264
+#: inc/shortcodes/class-shortcode.php:1279
+#: inc/shortcodes/class-shortcode.php:1294
+#: inc/shortcodes/class-shortcode.php:1309
+#: inc/shortcodes/class-shortcode.php:1324
+#: inc/shortcodes/class-shortcode.php:1339
+#: inc/shortcodes/class-shortcode.php:1354
+#: inc/shortcodes/class-shortcode.php:1369
+#: inc/shortcodes/class-shortcode.php:1384
+#: inc/shortcodes/class-shortcode.php:1399
+#: inc/shortcodes/class-shortcode.php:1414
+#: inc/shortcodes/class-shortcode.php:1429
+#: inc/shortcodes/class-shortcode.php:1444
+#: inc/shortcodes/class-shortcode.php:1459
+#: inc/shortcodes/class-shortcode.php:1470
+#: inc/shortcodes/class-shortcode.php:1481
+msgid "600"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:937
+#: inc/shortcodes/class-shortcode.php:952
+#: inc/shortcodes/class-shortcode.php:967
+#: inc/shortcodes/class-shortcode.php:982
+#: inc/shortcodes/class-shortcode.php:997
+#: inc/shortcodes/class-shortcode.php:1012
+#: inc/shortcodes/class-shortcode.php:1027
+#: inc/shortcodes/class-shortcode.php:1042
+#: inc/shortcodes/class-shortcode.php:1057
+#: inc/shortcodes/class-shortcode.php:1072
+#: inc/shortcodes/class-shortcode.php:1087
+#: inc/shortcodes/class-shortcode.php:1102
+#: inc/shortcodes/class-shortcode.php:1117
+#: inc/shortcodes/class-shortcode.php:1132
+#: inc/shortcodes/class-shortcode.php:1147
+#: inc/shortcodes/class-shortcode.php:1162
+#: inc/shortcodes/class-shortcode.php:1177
+#: inc/shortcodes/class-shortcode.php:1188
+#: inc/shortcodes/class-shortcode.php:1199
+#: inc/shortcodes/class-shortcode.php:1220
+#: inc/shortcodes/class-shortcode.php:1235
+#: inc/shortcodes/class-shortcode.php:1250
+#: inc/shortcodes/class-shortcode.php:1265
+#: inc/shortcodes/class-shortcode.php:1280
+#: inc/shortcodes/class-shortcode.php:1295
+#: inc/shortcodes/class-shortcode.php:1310
+#: inc/shortcodes/class-shortcode.php:1325
+#: inc/shortcodes/class-shortcode.php:1340
+#: inc/shortcodes/class-shortcode.php:1355
+#: inc/shortcodes/class-shortcode.php:1370
+#: inc/shortcodes/class-shortcode.php:1385
+#: inc/shortcodes/class-shortcode.php:1400
+#: inc/shortcodes/class-shortcode.php:1415
+#: inc/shortcodes/class-shortcode.php:1430
+#: inc/shortcodes/class-shortcode.php:1445
+#: inc/shortcodes/class-shortcode.php:1460
+#: inc/shortcodes/class-shortcode.php:1471
+#: inc/shortcodes/class-shortcode.php:1482
+msgid "700"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:938
+#: inc/shortcodes/class-shortcode.php:953
+#: inc/shortcodes/class-shortcode.php:968
+#: inc/shortcodes/class-shortcode.php:983
+#: inc/shortcodes/class-shortcode.php:998
+#: inc/shortcodes/class-shortcode.php:1013
+#: inc/shortcodes/class-shortcode.php:1028
+#: inc/shortcodes/class-shortcode.php:1043
+#: inc/shortcodes/class-shortcode.php:1058
+#: inc/shortcodes/class-shortcode.php:1073
+#: inc/shortcodes/class-shortcode.php:1088
+#: inc/shortcodes/class-shortcode.php:1103
+#: inc/shortcodes/class-shortcode.php:1118
+#: inc/shortcodes/class-shortcode.php:1133
+#: inc/shortcodes/class-shortcode.php:1148
+#: inc/shortcodes/class-shortcode.php:1163
+#: inc/shortcodes/class-shortcode.php:1178
+#: inc/shortcodes/class-shortcode.php:1189
+#: inc/shortcodes/class-shortcode.php:1200
+#: inc/shortcodes/class-shortcode.php:1221
+#: inc/shortcodes/class-shortcode.php:1236
+#: inc/shortcodes/class-shortcode.php:1251
+#: inc/shortcodes/class-shortcode.php:1266
+#: inc/shortcodes/class-shortcode.php:1281
+#: inc/shortcodes/class-shortcode.php:1296
+#: inc/shortcodes/class-shortcode.php:1311
+#: inc/shortcodes/class-shortcode.php:1326
+#: inc/shortcodes/class-shortcode.php:1341
+#: inc/shortcodes/class-shortcode.php:1356
+#: inc/shortcodes/class-shortcode.php:1371
+#: inc/shortcodes/class-shortcode.php:1386
+#: inc/shortcodes/class-shortcode.php:1401
+#: inc/shortcodes/class-shortcode.php:1416
+#: inc/shortcodes/class-shortcode.php:1431
+#: inc/shortcodes/class-shortcode.php:1446
+#: inc/shortcodes/class-shortcode.php:1461
+#: inc/shortcodes/class-shortcode.php:1472
+#: inc/shortcodes/class-shortcode.php:1483
+msgid "800"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:939
+#: inc/shortcodes/class-shortcode.php:954
+#: inc/shortcodes/class-shortcode.php:969
+#: inc/shortcodes/class-shortcode.php:984
+#: inc/shortcodes/class-shortcode.php:999
+#: inc/shortcodes/class-shortcode.php:1014
+#: inc/shortcodes/class-shortcode.php:1029
+#: inc/shortcodes/class-shortcode.php:1044
+#: inc/shortcodes/class-shortcode.php:1059
+#: inc/shortcodes/class-shortcode.php:1074
+#: inc/shortcodes/class-shortcode.php:1089
+#: inc/shortcodes/class-shortcode.php:1104
+#: inc/shortcodes/class-shortcode.php:1119
+#: inc/shortcodes/class-shortcode.php:1134
+#: inc/shortcodes/class-shortcode.php:1149
+#: inc/shortcodes/class-shortcode.php:1164
+#: inc/shortcodes/class-shortcode.php:1179
+#: inc/shortcodes/class-shortcode.php:1190
+#: inc/shortcodes/class-shortcode.php:1201
+#: inc/shortcodes/class-shortcode.php:1222
+#: inc/shortcodes/class-shortcode.php:1237
+#: inc/shortcodes/class-shortcode.php:1252
+#: inc/shortcodes/class-shortcode.php:1267
+#: inc/shortcodes/class-shortcode.php:1282
+#: inc/shortcodes/class-shortcode.php:1297
+#: inc/shortcodes/class-shortcode.php:1312
+#: inc/shortcodes/class-shortcode.php:1327
+#: inc/shortcodes/class-shortcode.php:1342
+#: inc/shortcodes/class-shortcode.php:1357
+#: inc/shortcodes/class-shortcode.php:1372
+#: inc/shortcodes/class-shortcode.php:1387
+#: inc/shortcodes/class-shortcode.php:1402
+#: inc/shortcodes/class-shortcode.php:1417
+#: inc/shortcodes/class-shortcode.php:1432
+#: inc/shortcodes/class-shortcode.php:1447
+#: inc/shortcodes/class-shortcode.php:1462
+#: inc/shortcodes/class-shortcode.php:1473
+#: inc/shortcodes/class-shortcode.php:1484
+msgid "900"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:940
+#: inc/shortcodes/class-shortcode.php:955
+#: inc/shortcodes/class-shortcode.php:970
+#: inc/shortcodes/class-shortcode.php:985
+#: inc/shortcodes/class-shortcode.php:1000
+#: inc/shortcodes/class-shortcode.php:1015
+#: inc/shortcodes/class-shortcode.php:1030
+#: inc/shortcodes/class-shortcode.php:1045
+#: inc/shortcodes/class-shortcode.php:1060
+#: inc/shortcodes/class-shortcode.php:1075
+#: inc/shortcodes/class-shortcode.php:1090
+#: inc/shortcodes/class-shortcode.php:1105
+#: inc/shortcodes/class-shortcode.php:1120
+#: inc/shortcodes/class-shortcode.php:1135
+#: inc/shortcodes/class-shortcode.php:1150
+#: inc/shortcodes/class-shortcode.php:1165
+#: inc/shortcodes/class-shortcode.php:1223
+#: inc/shortcodes/class-shortcode.php:1238
+#: inc/shortcodes/class-shortcode.php:1253
+#: inc/shortcodes/class-shortcode.php:1268
+#: inc/shortcodes/class-shortcode.php:1283
+#: inc/shortcodes/class-shortcode.php:1298
+#: inc/shortcodes/class-shortcode.php:1313
+#: inc/shortcodes/class-shortcode.php:1328
+#: inc/shortcodes/class-shortcode.php:1343
+#: inc/shortcodes/class-shortcode.php:1358
+#: inc/shortcodes/class-shortcode.php:1373
+#: inc/shortcodes/class-shortcode.php:1388
+#: inc/shortcodes/class-shortcode.php:1403
+#: inc/shortcodes/class-shortcode.php:1418
+#: inc/shortcodes/class-shortcode.php:1433
+#: inc/shortcodes/class-shortcode.php:1448
+msgid "A100"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:941
+#: inc/shortcodes/class-shortcode.php:956
+#: inc/shortcodes/class-shortcode.php:971
+#: inc/shortcodes/class-shortcode.php:986
+#: inc/shortcodes/class-shortcode.php:1001
+#: inc/shortcodes/class-shortcode.php:1016
+#: inc/shortcodes/class-shortcode.php:1031
+#: inc/shortcodes/class-shortcode.php:1046
+#: inc/shortcodes/class-shortcode.php:1061
+#: inc/shortcodes/class-shortcode.php:1076
+#: inc/shortcodes/class-shortcode.php:1091
+#: inc/shortcodes/class-shortcode.php:1106
+#: inc/shortcodes/class-shortcode.php:1121
+#: inc/shortcodes/class-shortcode.php:1136
+#: inc/shortcodes/class-shortcode.php:1151
+#: inc/shortcodes/class-shortcode.php:1166
+#: inc/shortcodes/class-shortcode.php:1224
+#: inc/shortcodes/class-shortcode.php:1239
+#: inc/shortcodes/class-shortcode.php:1254
+#: inc/shortcodes/class-shortcode.php:1269
+#: inc/shortcodes/class-shortcode.php:1284
+#: inc/shortcodes/class-shortcode.php:1299
+#: inc/shortcodes/class-shortcode.php:1314
+#: inc/shortcodes/class-shortcode.php:1329
+#: inc/shortcodes/class-shortcode.php:1344
+#: inc/shortcodes/class-shortcode.php:1359
+#: inc/shortcodes/class-shortcode.php:1374
+#: inc/shortcodes/class-shortcode.php:1389
+#: inc/shortcodes/class-shortcode.php:1404
+#: inc/shortcodes/class-shortcode.php:1419
+#: inc/shortcodes/class-shortcode.php:1434
+#: inc/shortcodes/class-shortcode.php:1449
+msgid "A200"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:942
+#: inc/shortcodes/class-shortcode.php:957
+#: inc/shortcodes/class-shortcode.php:972
+#: inc/shortcodes/class-shortcode.php:987
+#: inc/shortcodes/class-shortcode.php:1002
+#: inc/shortcodes/class-shortcode.php:1017
+#: inc/shortcodes/class-shortcode.php:1032
+#: inc/shortcodes/class-shortcode.php:1047
+#: inc/shortcodes/class-shortcode.php:1062
+#: inc/shortcodes/class-shortcode.php:1077
+#: inc/shortcodes/class-shortcode.php:1092
+#: inc/shortcodes/class-shortcode.php:1107
+#: inc/shortcodes/class-shortcode.php:1122
+#: inc/shortcodes/class-shortcode.php:1137
+#: inc/shortcodes/class-shortcode.php:1152
+#: inc/shortcodes/class-shortcode.php:1167
+#: inc/shortcodes/class-shortcode.php:1225
+#: inc/shortcodes/class-shortcode.php:1240
+#: inc/shortcodes/class-shortcode.php:1255
+#: inc/shortcodes/class-shortcode.php:1270
+#: inc/shortcodes/class-shortcode.php:1285
+#: inc/shortcodes/class-shortcode.php:1300
+#: inc/shortcodes/class-shortcode.php:1315
+#: inc/shortcodes/class-shortcode.php:1330
+#: inc/shortcodes/class-shortcode.php:1345
+#: inc/shortcodes/class-shortcode.php:1360
+#: inc/shortcodes/class-shortcode.php:1375
+#: inc/shortcodes/class-shortcode.php:1390
+#: inc/shortcodes/class-shortcode.php:1405
+#: inc/shortcodes/class-shortcode.php:1420
+#: inc/shortcodes/class-shortcode.php:1435
+#: inc/shortcodes/class-shortcode.php:1450
+msgid "A400"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:943
+#: inc/shortcodes/class-shortcode.php:958
+#: inc/shortcodes/class-shortcode.php:973
+#: inc/shortcodes/class-shortcode.php:988
+#: inc/shortcodes/class-shortcode.php:1003
+#: inc/shortcodes/class-shortcode.php:1018
+#: inc/shortcodes/class-shortcode.php:1033
+#: inc/shortcodes/class-shortcode.php:1048
+#: inc/shortcodes/class-shortcode.php:1063
+#: inc/shortcodes/class-shortcode.php:1078
+#: inc/shortcodes/class-shortcode.php:1093
+#: inc/shortcodes/class-shortcode.php:1108
+#: inc/shortcodes/class-shortcode.php:1123
+#: inc/shortcodes/class-shortcode.php:1138
+#: inc/shortcodes/class-shortcode.php:1153
+#: inc/shortcodes/class-shortcode.php:1168
+#: inc/shortcodes/class-shortcode.php:1226
+#: inc/shortcodes/class-shortcode.php:1241
+#: inc/shortcodes/class-shortcode.php:1256
+#: inc/shortcodes/class-shortcode.php:1271
+#: inc/shortcodes/class-shortcode.php:1286
+#: inc/shortcodes/class-shortcode.php:1301
+#: inc/shortcodes/class-shortcode.php:1316
+#: inc/shortcodes/class-shortcode.php:1331
+#: inc/shortcodes/class-shortcode.php:1346
+#: inc/shortcodes/class-shortcode.php:1361
+#: inc/shortcodes/class-shortcode.php:1376
+#: inc/shortcodes/class-shortcode.php:1391
+#: inc/shortcodes/class-shortcode.php:1406
+#: inc/shortcodes/class-shortcode.php:1421
+#: inc/shortcodes/class-shortcode.php:1436
+#: inc/shortcodes/class-shortcode.php:1451
+msgid "A700"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:945
+#: inc/shortcodes/class-shortcode.php:946
+#: inc/shortcodes/class-shortcode.php:947
+#: inc/shortcodes/class-shortcode.php:948
+#: inc/shortcodes/class-shortcode.php:949
+#: inc/shortcodes/class-shortcode.php:950
+#: inc/shortcodes/class-shortcode.php:951
+#: inc/shortcodes/class-shortcode.php:952
+#: inc/shortcodes/class-shortcode.php:953
+#: inc/shortcodes/class-shortcode.php:954
+#: inc/shortcodes/class-shortcode.php:955
+#: inc/shortcodes/class-shortcode.php:956
+#: inc/shortcodes/class-shortcode.php:957
+#: inc/shortcodes/class-shortcode.php:958
+#: inc/shortcodes/class-shortcode.php:1228
+#: inc/shortcodes/class-shortcode.php:1229
+#: inc/shortcodes/class-shortcode.php:1230
+#: inc/shortcodes/class-shortcode.php:1231
+#: inc/shortcodes/class-shortcode.php:1232
+#: inc/shortcodes/class-shortcode.php:1233
+#: inc/shortcodes/class-shortcode.php:1234
+#: inc/shortcodes/class-shortcode.php:1235
+#: inc/shortcodes/class-shortcode.php:1236
+#: inc/shortcodes/class-shortcode.php:1237
+#: inc/shortcodes/class-shortcode.php:1238
+#: inc/shortcodes/class-shortcode.php:1239
+#: inc/shortcodes/class-shortcode.php:1240
+#: inc/shortcodes/class-shortcode.php:1241
+msgid "Pink"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:960
+#: inc/shortcodes/class-shortcode.php:961
+#: inc/shortcodes/class-shortcode.php:962
+#: inc/shortcodes/class-shortcode.php:963
+#: inc/shortcodes/class-shortcode.php:964
+#: inc/shortcodes/class-shortcode.php:965
+#: inc/shortcodes/class-shortcode.php:966
+#: inc/shortcodes/class-shortcode.php:967
+#: inc/shortcodes/class-shortcode.php:968
+#: inc/shortcodes/class-shortcode.php:969
+#: inc/shortcodes/class-shortcode.php:970
+#: inc/shortcodes/class-shortcode.php:971
+#: inc/shortcodes/class-shortcode.php:972
+#: inc/shortcodes/class-shortcode.php:973
+#: inc/shortcodes/class-shortcode.php:1243
+#: inc/shortcodes/class-shortcode.php:1244
+#: inc/shortcodes/class-shortcode.php:1245
+#: inc/shortcodes/class-shortcode.php:1246
+#: inc/shortcodes/class-shortcode.php:1247
+#: inc/shortcodes/class-shortcode.php:1248
+#: inc/shortcodes/class-shortcode.php:1249
+#: inc/shortcodes/class-shortcode.php:1250
+#: inc/shortcodes/class-shortcode.php:1251
+#: inc/shortcodes/class-shortcode.php:1252
+#: inc/shortcodes/class-shortcode.php:1253
+#: inc/shortcodes/class-shortcode.php:1254
+#: inc/shortcodes/class-shortcode.php:1255
+#: inc/shortcodes/class-shortcode.php:1256
+msgid "Purple"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:975
+#: inc/shortcodes/class-shortcode.php:976
+#: inc/shortcodes/class-shortcode.php:977
+#: inc/shortcodes/class-shortcode.php:978
+#: inc/shortcodes/class-shortcode.php:979
+#: inc/shortcodes/class-shortcode.php:980
+#: inc/shortcodes/class-shortcode.php:981
+#: inc/shortcodes/class-shortcode.php:982
+#: inc/shortcodes/class-shortcode.php:983
+#: inc/shortcodes/class-shortcode.php:984
+#: inc/shortcodes/class-shortcode.php:985
+#: inc/shortcodes/class-shortcode.php:986
+#: inc/shortcodes/class-shortcode.php:987
+#: inc/shortcodes/class-shortcode.php:988
+#: inc/shortcodes/class-shortcode.php:1258
+#: inc/shortcodes/class-shortcode.php:1259
+#: inc/shortcodes/class-shortcode.php:1260
+#: inc/shortcodes/class-shortcode.php:1261
+#: inc/shortcodes/class-shortcode.php:1262
+#: inc/shortcodes/class-shortcode.php:1263
+#: inc/shortcodes/class-shortcode.php:1264
+#: inc/shortcodes/class-shortcode.php:1265
+#: inc/shortcodes/class-shortcode.php:1266
+#: inc/shortcodes/class-shortcode.php:1267
+#: inc/shortcodes/class-shortcode.php:1268
+#: inc/shortcodes/class-shortcode.php:1269
+#: inc/shortcodes/class-shortcode.php:1270
+#: inc/shortcodes/class-shortcode.php:1271
+msgid "Deep Purple"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:990
+#: inc/shortcodes/class-shortcode.php:991
+#: inc/shortcodes/class-shortcode.php:992
+#: inc/shortcodes/class-shortcode.php:993
+#: inc/shortcodes/class-shortcode.php:994
+#: inc/shortcodes/class-shortcode.php:995
+#: inc/shortcodes/class-shortcode.php:996
+#: inc/shortcodes/class-shortcode.php:997
+#: inc/shortcodes/class-shortcode.php:998
+#: inc/shortcodes/class-shortcode.php:999
+#: inc/shortcodes/class-shortcode.php:1000
+#: inc/shortcodes/class-shortcode.php:1001
+#: inc/shortcodes/class-shortcode.php:1002
+#: inc/shortcodes/class-shortcode.php:1003
+#: inc/shortcodes/class-shortcode.php:1273
+#: inc/shortcodes/class-shortcode.php:1274
+#: inc/shortcodes/class-shortcode.php:1275
+#: inc/shortcodes/class-shortcode.php:1276
+#: inc/shortcodes/class-shortcode.php:1277
+#: inc/shortcodes/class-shortcode.php:1278
+#: inc/shortcodes/class-shortcode.php:1279
+#: inc/shortcodes/class-shortcode.php:1280
+#: inc/shortcodes/class-shortcode.php:1281
+#: inc/shortcodes/class-shortcode.php:1282
+#: inc/shortcodes/class-shortcode.php:1283
+#: inc/shortcodes/class-shortcode.php:1284
+#: inc/shortcodes/class-shortcode.php:1285
+#: inc/shortcodes/class-shortcode.php:1286
+msgid "Indigo"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1005
+#: inc/shortcodes/class-shortcode.php:1006
+#: inc/shortcodes/class-shortcode.php:1007
+#: inc/shortcodes/class-shortcode.php:1008
+#: inc/shortcodes/class-shortcode.php:1009
+#: inc/shortcodes/class-shortcode.php:1010
+#: inc/shortcodes/class-shortcode.php:1011
+#: inc/shortcodes/class-shortcode.php:1012
+#: inc/shortcodes/class-shortcode.php:1013
+#: inc/shortcodes/class-shortcode.php:1014
+#: inc/shortcodes/class-shortcode.php:1015
+#: inc/shortcodes/class-shortcode.php:1016
+#: inc/shortcodes/class-shortcode.php:1017
+#: inc/shortcodes/class-shortcode.php:1018
+#: inc/shortcodes/class-shortcode.php:1288
+#: inc/shortcodes/class-shortcode.php:1289
+#: inc/shortcodes/class-shortcode.php:1290
+#: inc/shortcodes/class-shortcode.php:1291
+#: inc/shortcodes/class-shortcode.php:1292
+#: inc/shortcodes/class-shortcode.php:1293
+#: inc/shortcodes/class-shortcode.php:1294
+#: inc/shortcodes/class-shortcode.php:1295
+#: inc/shortcodes/class-shortcode.php:1296
+#: inc/shortcodes/class-shortcode.php:1297
+#: inc/shortcodes/class-shortcode.php:1298
+#: inc/shortcodes/class-shortcode.php:1299
+#: inc/shortcodes/class-shortcode.php:1300
+#: inc/shortcodes/class-shortcode.php:1301
+msgid "Blue"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1020
+#: inc/shortcodes/class-shortcode.php:1021
+#: inc/shortcodes/class-shortcode.php:1022
+#: inc/shortcodes/class-shortcode.php:1023
+#: inc/shortcodes/class-shortcode.php:1024
+#: inc/shortcodes/class-shortcode.php:1025
+#: inc/shortcodes/class-shortcode.php:1026
+#: inc/shortcodes/class-shortcode.php:1027
+#: inc/shortcodes/class-shortcode.php:1028
+#: inc/shortcodes/class-shortcode.php:1029
+#: inc/shortcodes/class-shortcode.php:1030
+#: inc/shortcodes/class-shortcode.php:1031
+#: inc/shortcodes/class-shortcode.php:1032
+#: inc/shortcodes/class-shortcode.php:1033
+#: inc/shortcodes/class-shortcode.php:1303
+#: inc/shortcodes/class-shortcode.php:1304
+#: inc/shortcodes/class-shortcode.php:1305
+#: inc/shortcodes/class-shortcode.php:1306
+#: inc/shortcodes/class-shortcode.php:1307
+#: inc/shortcodes/class-shortcode.php:1308
+#: inc/shortcodes/class-shortcode.php:1309
+#: inc/shortcodes/class-shortcode.php:1310
+#: inc/shortcodes/class-shortcode.php:1311
+#: inc/shortcodes/class-shortcode.php:1312
+#: inc/shortcodes/class-shortcode.php:1313
+#: inc/shortcodes/class-shortcode.php:1314
+#: inc/shortcodes/class-shortcode.php:1315
+#: inc/shortcodes/class-shortcode.php:1316
+msgid "Light Blue"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1035
+#: inc/shortcodes/class-shortcode.php:1036
+#: inc/shortcodes/class-shortcode.php:1037
+#: inc/shortcodes/class-shortcode.php:1038
+#: inc/shortcodes/class-shortcode.php:1039
+#: inc/shortcodes/class-shortcode.php:1040
+#: inc/shortcodes/class-shortcode.php:1041
+#: inc/shortcodes/class-shortcode.php:1042
+#: inc/shortcodes/class-shortcode.php:1043
+#: inc/shortcodes/class-shortcode.php:1044
+#: inc/shortcodes/class-shortcode.php:1045
+#: inc/shortcodes/class-shortcode.php:1046
+#: inc/shortcodes/class-shortcode.php:1047
+#: inc/shortcodes/class-shortcode.php:1048
+#: inc/shortcodes/class-shortcode.php:1318
+#: inc/shortcodes/class-shortcode.php:1319
+#: inc/shortcodes/class-shortcode.php:1320
+#: inc/shortcodes/class-shortcode.php:1321
+#: inc/shortcodes/class-shortcode.php:1322
+#: inc/shortcodes/class-shortcode.php:1323
+#: inc/shortcodes/class-shortcode.php:1324
+#: inc/shortcodes/class-shortcode.php:1325
+#: inc/shortcodes/class-shortcode.php:1326
+#: inc/shortcodes/class-shortcode.php:1327
+#: inc/shortcodes/class-shortcode.php:1328
+#: inc/shortcodes/class-shortcode.php:1329
+#: inc/shortcodes/class-shortcode.php:1330
+#: inc/shortcodes/class-shortcode.php:1331
+msgid "Cyan"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1050
+#: inc/shortcodes/class-shortcode.php:1051
+#: inc/shortcodes/class-shortcode.php:1052
+#: inc/shortcodes/class-shortcode.php:1053
+#: inc/shortcodes/class-shortcode.php:1054
+#: inc/shortcodes/class-shortcode.php:1055
+#: inc/shortcodes/class-shortcode.php:1056
+#: inc/shortcodes/class-shortcode.php:1057
+#: inc/shortcodes/class-shortcode.php:1058
+#: inc/shortcodes/class-shortcode.php:1059
+#: inc/shortcodes/class-shortcode.php:1060
+#: inc/shortcodes/class-shortcode.php:1061
+#: inc/shortcodes/class-shortcode.php:1062
+#: inc/shortcodes/class-shortcode.php:1063
+#: inc/shortcodes/class-shortcode.php:1333
+#: inc/shortcodes/class-shortcode.php:1334
+#: inc/shortcodes/class-shortcode.php:1335
+#: inc/shortcodes/class-shortcode.php:1336
+#: inc/shortcodes/class-shortcode.php:1337
+#: inc/shortcodes/class-shortcode.php:1338
+#: inc/shortcodes/class-shortcode.php:1339
+#: inc/shortcodes/class-shortcode.php:1340
+#: inc/shortcodes/class-shortcode.php:1341
+#: inc/shortcodes/class-shortcode.php:1342
+#: inc/shortcodes/class-shortcode.php:1343
+#: inc/shortcodes/class-shortcode.php:1344
+#: inc/shortcodes/class-shortcode.php:1345
+#: inc/shortcodes/class-shortcode.php:1346
+msgid "Teal"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1065
+#: inc/shortcodes/class-shortcode.php:1066
+#: inc/shortcodes/class-shortcode.php:1067
+#: inc/shortcodes/class-shortcode.php:1068
+#: inc/shortcodes/class-shortcode.php:1069
+#: inc/shortcodes/class-shortcode.php:1070
+#: inc/shortcodes/class-shortcode.php:1071
+#: inc/shortcodes/class-shortcode.php:1072
+#: inc/shortcodes/class-shortcode.php:1073
+#: inc/shortcodes/class-shortcode.php:1074
+#: inc/shortcodes/class-shortcode.php:1075
+#: inc/shortcodes/class-shortcode.php:1076
+#: inc/shortcodes/class-shortcode.php:1077
+#: inc/shortcodes/class-shortcode.php:1078
+#: inc/shortcodes/class-shortcode.php:1348
+#: inc/shortcodes/class-shortcode.php:1349
+#: inc/shortcodes/class-shortcode.php:1350
+#: inc/shortcodes/class-shortcode.php:1351
+#: inc/shortcodes/class-shortcode.php:1352
+#: inc/shortcodes/class-shortcode.php:1353
+#: inc/shortcodes/class-shortcode.php:1354
+#: inc/shortcodes/class-shortcode.php:1355
+#: inc/shortcodes/class-shortcode.php:1356
+#: inc/shortcodes/class-shortcode.php:1357
+#: inc/shortcodes/class-shortcode.php:1358
+#: inc/shortcodes/class-shortcode.php:1359
+#: inc/shortcodes/class-shortcode.php:1360
+#: inc/shortcodes/class-shortcode.php:1361
+msgid "Green"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1080
+#: inc/shortcodes/class-shortcode.php:1081
+#: inc/shortcodes/class-shortcode.php:1082
+#: inc/shortcodes/class-shortcode.php:1083
+#: inc/shortcodes/class-shortcode.php:1084
+#: inc/shortcodes/class-shortcode.php:1085
+#: inc/shortcodes/class-shortcode.php:1086
+#: inc/shortcodes/class-shortcode.php:1087
+#: inc/shortcodes/class-shortcode.php:1088
+#: inc/shortcodes/class-shortcode.php:1089
+#: inc/shortcodes/class-shortcode.php:1090
+#: inc/shortcodes/class-shortcode.php:1091
+#: inc/shortcodes/class-shortcode.php:1092
+#: inc/shortcodes/class-shortcode.php:1093
+#: inc/shortcodes/class-shortcode.php:1363
+#: inc/shortcodes/class-shortcode.php:1364
+#: inc/shortcodes/class-shortcode.php:1365
+#: inc/shortcodes/class-shortcode.php:1366
+#: inc/shortcodes/class-shortcode.php:1367
+#: inc/shortcodes/class-shortcode.php:1368
+#: inc/shortcodes/class-shortcode.php:1369
+#: inc/shortcodes/class-shortcode.php:1370
+#: inc/shortcodes/class-shortcode.php:1371
+#: inc/shortcodes/class-shortcode.php:1372
+#: inc/shortcodes/class-shortcode.php:1373
+#: inc/shortcodes/class-shortcode.php:1374
+#: inc/shortcodes/class-shortcode.php:1375
+#: inc/shortcodes/class-shortcode.php:1376
+msgid "Light Green"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1095
+#: inc/shortcodes/class-shortcode.php:1096
+#: inc/shortcodes/class-shortcode.php:1097
+#: inc/shortcodes/class-shortcode.php:1098
+#: inc/shortcodes/class-shortcode.php:1099
+#: inc/shortcodes/class-shortcode.php:1100
+#: inc/shortcodes/class-shortcode.php:1101
+#: inc/shortcodes/class-shortcode.php:1102
+#: inc/shortcodes/class-shortcode.php:1103
+#: inc/shortcodes/class-shortcode.php:1104
+#: inc/shortcodes/class-shortcode.php:1105
+#: inc/shortcodes/class-shortcode.php:1106
+#: inc/shortcodes/class-shortcode.php:1107
+#: inc/shortcodes/class-shortcode.php:1108
+#: inc/shortcodes/class-shortcode.php:1378
+#: inc/shortcodes/class-shortcode.php:1379
+#: inc/shortcodes/class-shortcode.php:1380
+#: inc/shortcodes/class-shortcode.php:1381
+#: inc/shortcodes/class-shortcode.php:1382
+#: inc/shortcodes/class-shortcode.php:1383
+#: inc/shortcodes/class-shortcode.php:1384
+#: inc/shortcodes/class-shortcode.php:1385
+#: inc/shortcodes/class-shortcode.php:1386
+#: inc/shortcodes/class-shortcode.php:1387
+#: inc/shortcodes/class-shortcode.php:1388
+#: inc/shortcodes/class-shortcode.php:1389
+#: inc/shortcodes/class-shortcode.php:1390
+#: inc/shortcodes/class-shortcode.php:1391
+msgid "Lime"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1110
+#: inc/shortcodes/class-shortcode.php:1111
+#: inc/shortcodes/class-shortcode.php:1112
+#: inc/shortcodes/class-shortcode.php:1113
+#: inc/shortcodes/class-shortcode.php:1114
+#: inc/shortcodes/class-shortcode.php:1115
+#: inc/shortcodes/class-shortcode.php:1116
+#: inc/shortcodes/class-shortcode.php:1117
+#: inc/shortcodes/class-shortcode.php:1118
+#: inc/shortcodes/class-shortcode.php:1119
+#: inc/shortcodes/class-shortcode.php:1120
+#: inc/shortcodes/class-shortcode.php:1121
+#: inc/shortcodes/class-shortcode.php:1122
+#: inc/shortcodes/class-shortcode.php:1123
+#: inc/shortcodes/class-shortcode.php:1393
+#: inc/shortcodes/class-shortcode.php:1394
+#: inc/shortcodes/class-shortcode.php:1395
+#: inc/shortcodes/class-shortcode.php:1396
+#: inc/shortcodes/class-shortcode.php:1397
+#: inc/shortcodes/class-shortcode.php:1398
+#: inc/shortcodes/class-shortcode.php:1399
+#: inc/shortcodes/class-shortcode.php:1400
+#: inc/shortcodes/class-shortcode.php:1401
+#: inc/shortcodes/class-shortcode.php:1402
+#: inc/shortcodes/class-shortcode.php:1403
+#: inc/shortcodes/class-shortcode.php:1404
+#: inc/shortcodes/class-shortcode.php:1405
+#: inc/shortcodes/class-shortcode.php:1406
+msgid "Yellow"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1125
+#: inc/shortcodes/class-shortcode.php:1126
+#: inc/shortcodes/class-shortcode.php:1127
+#: inc/shortcodes/class-shortcode.php:1128
+#: inc/shortcodes/class-shortcode.php:1129
+#: inc/shortcodes/class-shortcode.php:1130
+#: inc/shortcodes/class-shortcode.php:1131
+#: inc/shortcodes/class-shortcode.php:1132
+#: inc/shortcodes/class-shortcode.php:1133
+#: inc/shortcodes/class-shortcode.php:1134
+#: inc/shortcodes/class-shortcode.php:1135
+#: inc/shortcodes/class-shortcode.php:1136
+#: inc/shortcodes/class-shortcode.php:1137
+#: inc/shortcodes/class-shortcode.php:1138
+#: inc/shortcodes/class-shortcode.php:1408
+#: inc/shortcodes/class-shortcode.php:1409
+#: inc/shortcodes/class-shortcode.php:1410
+#: inc/shortcodes/class-shortcode.php:1411
+#: inc/shortcodes/class-shortcode.php:1412
+#: inc/shortcodes/class-shortcode.php:1413
+#: inc/shortcodes/class-shortcode.php:1414
+#: inc/shortcodes/class-shortcode.php:1415
+#: inc/shortcodes/class-shortcode.php:1416
+#: inc/shortcodes/class-shortcode.php:1417
+#: inc/shortcodes/class-shortcode.php:1418
+#: inc/shortcodes/class-shortcode.php:1419
+#: inc/shortcodes/class-shortcode.php:1420
+#: inc/shortcodes/class-shortcode.php:1421
+msgid "Amber"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1140
+#: inc/shortcodes/class-shortcode.php:1141
+#: inc/shortcodes/class-shortcode.php:1142
+#: inc/shortcodes/class-shortcode.php:1143
+#: inc/shortcodes/class-shortcode.php:1144
+#: inc/shortcodes/class-shortcode.php:1145
+#: inc/shortcodes/class-shortcode.php:1146
+#: inc/shortcodes/class-shortcode.php:1147
+#: inc/shortcodes/class-shortcode.php:1148
+#: inc/shortcodes/class-shortcode.php:1149
+#: inc/shortcodes/class-shortcode.php:1150
+#: inc/shortcodes/class-shortcode.php:1151
+#: inc/shortcodes/class-shortcode.php:1152
+#: inc/shortcodes/class-shortcode.php:1153
+#: inc/shortcodes/class-shortcode.php:1423
+#: inc/shortcodes/class-shortcode.php:1424
+#: inc/shortcodes/class-shortcode.php:1425
+#: inc/shortcodes/class-shortcode.php:1426
+#: inc/shortcodes/class-shortcode.php:1427
+#: inc/shortcodes/class-shortcode.php:1428
+#: inc/shortcodes/class-shortcode.php:1429
+#: inc/shortcodes/class-shortcode.php:1430
+#: inc/shortcodes/class-shortcode.php:1431
+#: inc/shortcodes/class-shortcode.php:1432
+#: inc/shortcodes/class-shortcode.php:1433
+#: inc/shortcodes/class-shortcode.php:1434
+#: inc/shortcodes/class-shortcode.php:1435
+#: inc/shortcodes/class-shortcode.php:1436
+msgid "Orange"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1155
+#: inc/shortcodes/class-shortcode.php:1156
+#: inc/shortcodes/class-shortcode.php:1157
+#: inc/shortcodes/class-shortcode.php:1158
+#: inc/shortcodes/class-shortcode.php:1159
+#: inc/shortcodes/class-shortcode.php:1160
+#: inc/shortcodes/class-shortcode.php:1161
+#: inc/shortcodes/class-shortcode.php:1162
+#: inc/shortcodes/class-shortcode.php:1163
+#: inc/shortcodes/class-shortcode.php:1164
+#: inc/shortcodes/class-shortcode.php:1165
+#: inc/shortcodes/class-shortcode.php:1166
+#: inc/shortcodes/class-shortcode.php:1167
+#: inc/shortcodes/class-shortcode.php:1168
+#: inc/shortcodes/class-shortcode.php:1438
+#: inc/shortcodes/class-shortcode.php:1439
+#: inc/shortcodes/class-shortcode.php:1440
+#: inc/shortcodes/class-shortcode.php:1441
+#: inc/shortcodes/class-shortcode.php:1442
+#: inc/shortcodes/class-shortcode.php:1443
+#: inc/shortcodes/class-shortcode.php:1444
+#: inc/shortcodes/class-shortcode.php:1445
+#: inc/shortcodes/class-shortcode.php:1446
+#: inc/shortcodes/class-shortcode.php:1447
+#: inc/shortcodes/class-shortcode.php:1448
+#: inc/shortcodes/class-shortcode.php:1449
+#: inc/shortcodes/class-shortcode.php:1450
+#: inc/shortcodes/class-shortcode.php:1451
+msgid "Deep Orange"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1170
+#: inc/shortcodes/class-shortcode.php:1171
+#: inc/shortcodes/class-shortcode.php:1172
+#: inc/shortcodes/class-shortcode.php:1173
+#: inc/shortcodes/class-shortcode.php:1174
+#: inc/shortcodes/class-shortcode.php:1175
+#: inc/shortcodes/class-shortcode.php:1176
+#: inc/shortcodes/class-shortcode.php:1177
+#: inc/shortcodes/class-shortcode.php:1178
+#: inc/shortcodes/class-shortcode.php:1179
+#: inc/shortcodes/class-shortcode.php:1453
+#: inc/shortcodes/class-shortcode.php:1454
+#: inc/shortcodes/class-shortcode.php:1455
+#: inc/shortcodes/class-shortcode.php:1456
+#: inc/shortcodes/class-shortcode.php:1457
+#: inc/shortcodes/class-shortcode.php:1458
+#: inc/shortcodes/class-shortcode.php:1459
+#: inc/shortcodes/class-shortcode.php:1460
+#: inc/shortcodes/class-shortcode.php:1461
+#: inc/shortcodes/class-shortcode.php:1462
+msgid "Brown"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1181
+#: inc/shortcodes/class-shortcode.php:1182
+#: inc/shortcodes/class-shortcode.php:1183
+#: inc/shortcodes/class-shortcode.php:1184
+#: inc/shortcodes/class-shortcode.php:1185
+#: inc/shortcodes/class-shortcode.php:1186
+#: inc/shortcodes/class-shortcode.php:1187
+#: inc/shortcodes/class-shortcode.php:1188
+#: inc/shortcodes/class-shortcode.php:1189
+#: inc/shortcodes/class-shortcode.php:1190
+#: inc/shortcodes/class-shortcode.php:1464
+#: inc/shortcodes/class-shortcode.php:1465
+#: inc/shortcodes/class-shortcode.php:1466
+#: inc/shortcodes/class-shortcode.php:1467
+#: inc/shortcodes/class-shortcode.php:1468
+#: inc/shortcodes/class-shortcode.php:1469
+#: inc/shortcodes/class-shortcode.php:1470
+#: inc/shortcodes/class-shortcode.php:1471
+#: inc/shortcodes/class-shortcode.php:1472
+#: inc/shortcodes/class-shortcode.php:1473
+msgid "Grey"
+msgstr ""
+
+#: inc/shortcodes/class-shortcode.php:1192
+#: inc/shortcodes/class-shortcode.php:1193
+#: inc/shortcodes/class-shortcode.php:1194
+#: inc/shortcodes/class-shortcode.php:1195
+#: inc/shortcodes/class-shortcode.php:1196
+#: inc/shortcodes/class-shortcode.php:1197
+#: inc/shortcodes/class-shortcode.php:1198
+#: inc/shortcodes/class-shortcode.php:1199
+#: inc/shortcodes/class-shortcode.php:1200
+#: inc/shortcodes/class-shortcode.php:1201
+#: inc/shortcodes/class-shortcode.php:1475
+#: inc/shortcodes/class-shortcode.php:1476
+#: inc/shortcodes/class-shortcode.php:1477
+#: inc/shortcodes/class-shortcode.php:1478
+#: inc/shortcodes/class-shortcode.php:1479
+#: inc/shortcodes/class-shortcode.php:1480
+#: inc/shortcodes/class-shortcode.php:1481
+#: inc/shortcodes/class-shortcode.php:1482
+#: inc/shortcodes/class-shortcode.php:1483
+#: inc/shortcodes/class-shortcode.php:1484
+msgid "Blue Grey"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "MDL Shortcodes"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://tourkick.com/mdl-shortcodes/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Material Design Lite (MDL) components are viewable at http://www.getmdl.io/"
+"components/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "TourKick (Clifford P)"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://tourkick.com/"
+msgstr ""
