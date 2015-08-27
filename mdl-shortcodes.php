@@ -2,7 +2,6 @@
 
 /*
 Plugin Name: MDL Shortcodes
-Version: 1.0
 Description: Material Design Lite (MDL) components are viewable at http://www.getmdl.io/components/
 Author: TourKick (Clifford P)
 Author URI: http://tourkick.com/
@@ -10,6 +9,7 @@ Plugin URI: http://tourkick.com/mdl-shortcodes/
 Text Domain: mdl-shortcodes
 Domain Path: /languages
 License: GPLv3
+Version: 1.0
 */
 
 defined( 'ABSPATH' ) or die(); //do not allow plugin file to be called directly (security protection)
