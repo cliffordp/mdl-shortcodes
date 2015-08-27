@@ -511,8 +511,8 @@ abstract class Shortcode {
 	public static function mdl_restrict_css_unit_value( $string, $default = '' ) {
 		$string = trim( strtolower( (string) $string ) );
 		
-		if ( strpos( $string, 'auto') !== false
-			|| strpos( $string, '0') !== false
+		if ( false !== strpos( $string, 'auto')
+			|| false !== strpos( $string, '0')
 			|| preg_match( '/^[+-]?[0-9]+.?([0-9]+)?(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)$/', $string )
 		) {
 			return $string;
@@ -674,7 +674,7 @@ abstract class Shortcode {
 			$start = stripos($source, $key1);
 			$end = stripos($source, $key2);
 		}
-		if ( $start === false || $end === false ) {
+		if ( false === $start || false === $end ) {
 			return false;
 		}
 		if ( $start > $end ) {
