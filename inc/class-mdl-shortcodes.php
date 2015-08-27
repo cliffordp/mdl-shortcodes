@@ -96,6 +96,8 @@ class MDL_Shortcodes {
 			//add_filter( 'customize_control_active', array( $this, 'mdl_control_filter' ), 10, 2 ); // could not get it to work so manually removed ones via remove_customizer_controls() method -- this is probably the issue: https://core.trac.wordpress.org/ticket/32766
 		}
 		
+		add_action( 'wp_enqueue_scripts', array( $this, 'mdl_enqueues' ) );
+		
 		// here in addition to action_init_register_shortcodes() so WP Customizer preview works even when not on a page that has a shortcode
 		add_action( 'customize_preview_init', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_enqueue_stylesheet' ) );
 		add_action( 'customize_preview_init', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_enqueue_icons' ) );
@@ -105,6 +107,15 @@ class MDL_Shortcodes {
 				
 		add_action( 'after_wp_tiny_mce', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_tinymce_scripts_func' ) ); // note that Shortcake is only loosly coupled with TinyMCE -- the Shortcode UI still works if Visual editor is disabled
 		add_action( 'media_buttons', array( $this, 'shortcode_ui_editor_one_click_insert_buttons' ), 200 ); // higher priority adds it to the right side of all the other buttons (Add Media, Gravity Forms, etc.)
+	}
+	
+	
+	public static function mdl_enqueues() {
+		// this causes stuff to load on wp-admin too, not just in post editor!
+		// global here instead of in do_shortcode_callback() because we want it to display site-wide, not just if a shortcode is in use
+		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_stylesheet();
+		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_icons();
+		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_js();
 	}
 	
 	
@@ -126,12 +137,7 @@ class MDL_Shortcodes {
 	 * Register all of the shortcodes
 	 */
 	public function action_init_register_shortcodes() {
-		
-		// global here instead of in do_shortcode_callback() because we want it to display site-wide, not just if a shortcode is in use
-		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_stylesheet();
-		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_icons();
-		MDL_Shortcodes\Shortcodes\Shortcode::mdl_enqueue_js();
-				
+						
 		$w_ui = apply_filters( 'mdl_shortcodes_shortcode_classes_w_ui', $this->internal_shortcode_classes_w_ui );
 		$wo_ui = apply_filters( 'mdl_shortcodes_shortcode_classes_wo_ui', $this->internal_shortcode_classes_wo_ui );
 		
