@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: MDL Shortcodes
-Version: 1.0.0
+Version: 1.0
 Description: Material Design Lite (MDL) components are viewable at http://www.getmdl.io/components/
 Author: TourKick (Clifford P)
 Author URI: http://tourkick.com/
@@ -13,58 +13,67 @@ License: GPLv3
 */
 
 /*
-LICENSE FAQ:
-Why not "GPLv2" or "GPLv2 or later"?
-Because:
-- http://www.getmdl.io/started/index.html#license is licensed as Apache-2
-- https://wordpress.org/plugins/about/guidelines/ requires "GPLv2 or later" (which includes GPLv3)
-- https://www.gnu.org/licenses/rms-why-gplv3.html says GPLv3 is compatible with Apache licensing but GPLv2 is not
-- http://www.apache.org/licenses/GPL-compatibility.html agrees Apache v2 is compatible with GPLv3 but not GPLv2
+	
+	LICENSE INFO:
+	
+	1)
+	Plugin core structure forked from https://wordpress.org/plugins/shortcake-bakery/
+	Thanks, guys!
+	
+	2)
+	Why not "GPLv2" or "GPLv2 or later"?
+	Because:
+	- http://www.getmdl.io/started/index.html#license is licensed as Apache-2
+	- https://wordpress.org/plugins/about/guidelines/ requires "GPLv2 or later" (which includes GPLv3)
+	- https://www.gnu.org/licenses/rms-why-gplv3.html says GPLv3 is compatible with Apache licensing but GPLv2 is not
+	- http://www.apache.org/licenses/GPL-compatibility.html agrees Apache v2 is compatible with GPLv3 but not GPLv2
+	
 */
 
 
 /*
-* START notes
-
-TODO:
-- http://tgmpluginactivation.com/ for others besides Shortcake (Shortcake is already done)
-- test Customizer color settings prior to WP 4.3 vs in WP 4.3 (not updating on preview)
-- Possibly add icon font sizing (CSS and shortcode option). See https://github.com/google/material-design-lite/issues/1227#issuecomment-125573309
-- WP Customizer colorpicker to either Sass/Scss or to PHP CSS stylesheet to override .primary, .accent, etc --> 81 changes when diff between 2 Google-hosted files (just as an idea of workload) --> not just these few here: https://github.com/google/material-design-lite/blob/master/src/palette/_palette.scss#L2263 --> http://mdlhut.com/2015/08/creating-an-mdl-theme/
-- resolve <br> in nested Grid/Cell
-- why don't Icons appear in some Shortcake previews?
-- not affect all of wp-admin
-- more useful Quick Add buttons (single click add snippet)
-
-
-Inspirations:
-https://medium.com/google-developers/introducing-material-design-lite-3ce67098c031
-https://wordpress.org/themes/corpobox-lite/
-http://www.premiumwp.com/premium-and-free-material-design-wordpress-themes/
-http://themeforest.net/item/material-design-wordpress-theme-rare/11408042
-http://www.getmdl.io/templates/
-http://www.getmdl.io/components/
-http://www.getmdl.io/styles/
-http://www.getmdl.io/faq/
-https://www.google.com/design/icons/
-https://www.google.com/design/spec/components/
-http://mdlhut.com/
-http://www.materialpalette.com/light-blue/deep-orange
-https://material.angularjs.org/
-http://materialdesignblog.com/material-design-wordpress/
-https://www.google.com/design/articles/expressing-brand-in-material/
-
-Maybe complementary plugins:
-https://wordpress.org/plugins/shortcode-factory/ is a great complement! Doesn't add any styles either. Just what I was looking for, especially if not using Views!
-https://wp-types.com/home/views-create-elegant-displays-for-your-content/?aid=5336&affiliate_key=Lsvk04DjJOhq -- WP Views
-https://wordpress.org/plugins/easy-google-fonts/ to override fonts, including colors
-https://wordpress.org/plugins/display-posts-shortcode/ -- http://www.billerickson.net/code-tag/display-posts-shortcode/
-https://wordpress.org/plugins/custom-sidebars/
-https://wordpress.org/plugins/amr-shortcode-any-widget/
-https://wordpress.org/plugins/wp-page-widget/
-https://wordpress.org/plugins/custom-post-widget/
-
-
+	* START notes
+	
+	TODO:
+	- http://tgmpluginactivation.com/ for others besides Shortcake (Shortcake is already done)
+	- test Customizer color settings prior to WP 4.3 vs in WP 4.3 (not updating on preview)
+	- Possibly add icon font sizing (CSS and shortcode option). See https://github.com/google/material-design-lite/issues/1227#issuecomment-125573309
+	- WP Customizer colorpicker to either Sass/Scss or to PHP CSS stylesheet to override .primary, .accent, etc --> 81 changes when diff between 2 Google-hosted files (just as an idea of workload) --> not just these few here: https://github.com/google/material-design-lite/blob/master/src/palette/_palette.scss#L2263 --> http://mdlhut.com/2015/08/creating-an-mdl-theme/
+	- resolve <br> in nested Grid/Cell
+	- why don't Icons appear in some Shortcake previews?
+	- not affect all of wp-admin
+	- more useful Quick Add buttons (single click add snippet)
+	- add Footer component?
+	- add hooks throughout
+	
+	
+	Inspirations:
+	https://medium.com/google-developers/introducing-material-design-lite-3ce67098c031
+	https://wordpress.org/themes/corpobox-lite/
+	http://www.premiumwp.com/premium-and-free-material-design-wordpress-themes/
+	http://themeforest.net/item/material-design-wordpress-theme-rare/11408042
+	http://www.getmdl.io/templates/
+	http://www.getmdl.io/components/
+	http://www.getmdl.io/styles/
+	http://www.getmdl.io/faq/
+	https://www.google.com/design/icons/
+	https://www.google.com/design/spec/components/
+	http://mdlhut.com/
+	http://www.materialpalette.com/light-blue/deep-orange
+	https://material.angularjs.org/
+	http://materialdesignblog.com/material-design-wordpress/
+	https://www.google.com/design/articles/expressing-brand-in-material/
+	
+	Maybe complementary plugins:
+	https://wordpress.org/plugins/shortcode-factory/ is a great complement! Doesn't add any styles either. Just what I was looking for, especially if not using Views!
+	https://wp-types.com/home/views-create-elegant-displays-for-your-content/?aid=5336&affiliate_key=Lsvk04DjJOhq -- WP Views
+	https://wordpress.org/plugins/easy-google-fonts/ to override fonts, including colors
+	https://wordpress.org/plugins/display-posts-shortcode/ -- http://www.billerickson.net/code-tag/display-posts-shortcode/
+	https://wordpress.org/plugins/custom-sidebars/
+	https://wordpress.org/plugins/amr-shortcode-any-widget/
+	https://wordpress.org/plugins/wp-page-widget/
+	https://wordpress.org/plugins/custom-post-widget/
+	
 * END notes
 */
 
@@ -72,7 +81,7 @@ defined( 'ABSPATH' ) or die(); //do not allow plugin file to be called directly 
 
 require_once dirname( __FILE__ ) . '/inc/class-mdl-shortcodes.php';
 
-define( 'MDL_SHORTCODES_VERSION', '1.0.0' );
+define( 'MDL_SHORTCODES_VERSION', '1.0' );
 define( 'MDL_SHORTCODES_URL_ROOT', plugin_dir_url( __FILE__ ) );
 
 /**
@@ -136,9 +145,9 @@ function mdl_shortcodes_tgm_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'Shortcake (Shortcode UI)',
-			'slug'      => 'shortcode-ui',
-			'required'  => false,
+			'name'		=> 'Shortcake (Shortcode UI)',
+			'slug'		=> 'shortcode-ui',
+			'required'	=> false,
 		),
 	);
 
@@ -152,10 +161,10 @@ function mdl_shortcodes_tgm_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'mdl_tgmpa',             // Unique ID for hashing notices for multiple instances of TGMPA.
-		'has_notices'  => true,                    // Show admin notices or not.
-		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-		'is_automatic' => true,                   // Automatically activate plugins after installation or not.
+		'id'           => 'mdl_tgmpa',	// Unique ID for hashing notices for multiple instances of TGMPA.
+		'has_notices'  => true,			// Show admin notices or not.
+		'dismissable'  => true,			// If false, a user cannot dismiss the nag message.
+		'is_automatic' => true,			// Automatically activate plugins after installation or not.
 	);
 
 	tgmpa( $plugins, $config );

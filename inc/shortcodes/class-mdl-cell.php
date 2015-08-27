@@ -147,14 +147,14 @@ class MDL_Cell extends Shortcode {
 					'attr'   => 'align',
 					'type'   => 'select',
 					'options' => parent::mdl_cell_flex_align_array( 'true' ),
-					'description'  => __( 'Override this Cell\'s CSS Flexbox alignment. Default: Stretch. Reference: https://css-tricks.com/almanac/properties/a/align-self/', 'mdl-shortcodes' ),
+					'description'  => sprintf( esc_html__( 'Override the CSS Flexbox alignment for this Cell. Default: Stretch. Reference: %s', 'mdl-shortcodes' ), 'https://css-tricks.com/almanac/properties/a/align-self/' ),
 				),
 				array(
 					'label'  => esc_html__( 'Cell Typography Text', 'mdl-shortcodes' ),
 					'attr'   => 'text',
 					'type'   => 'select',
 					'options' => parent::mdl_typography_text_array( 'true' ),
-					//'description'  => __( '', 'mdl-shortcodes' ),
+					//'description'  => esc_html__( '', 'mdl-shortcodes' ),
 				),
 				array(
 					'label'  => esc_html__( 'Text Color', 'mdl-shortcodes' ),
@@ -168,13 +168,13 @@ class MDL_Cell extends Shortcode {
 					'attr'   => 'bgcolor',
 					'type'   => 'select',
 					'options' => parent::mdl_color_palette_classes_selection_array( 'true', 'background' ),
-					'description'  => parent::mdl_color_description_text( '', ' (Disallowed from choosing same color as Text color.)' ),
+					'description'  => parent::mdl_color_description_text( '', esc_html__( ' (Disallowed from choosing same color as Text color.)', 'mdl-shortcodes' ) ),
 				),
 				array(
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Span, Link, or Div'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'Span, Link, or Div', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),

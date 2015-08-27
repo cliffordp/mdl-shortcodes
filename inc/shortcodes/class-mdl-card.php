@@ -78,7 +78,7 @@ class MDL_Card extends Shortcode {
 					'attr'   => 'menu',
 					'type'   => 'select',
 					'options' => parent::mdl_icons_selection_array(),
-					'description'  => parent::mdl_icon_description_text( 'Icon in upper-right corner of Card. ' ),
+					'description'  => parent::mdl_icon_description_text( esc_html__( 'Icon in upper-right corner of Card. ', 'mdl-shortcodes' ) ),
 				),
 				array(
 					'label'  => esc_html__( 'Menu Button Link', 'mdl-shortcodes' ),
@@ -86,7 +86,7 @@ class MDL_Card extends Shortcode {
 					'type'   => 'url',
 					'description'  => esc_html__( 'If not set, Menu Icon will not be displayed.', 'mdl-shortcodes' ),
 					'meta' => array(
-						'placeholder' => __( 'http://' ),
+						'placeholder' => 'http://',
 					),
 				),
 				array(
@@ -108,14 +108,14 @@ class MDL_Card extends Shortcode {
 					'attr'   => 'titlecolor',
 					'type'   => 'select',
 					'options' => parent::mdl_color_palette_classes_selection_array( 'true', 'text' ),
-					'description'  => parent::mdl_color_description_text( 'Title and Menu Button color. Default: White. ', '' ),
+					'description'  => parent::mdl_color_description_text( esc_html__( 'Title and Menu Button color. Default: White. ', 'mdl-shortcodes' ), '' ),
 				),
 				array(
 					'label'  => esc_html__( 'Title Area Background Color', 'mdl-shortcodes' ),
 					'attr'   => 'titlebgcolor',
 					'type'   => 'select',
 					'options' => parent::mdl_color_palette_classes_selection_array( 'true', 'background' ),
-					'description'  => parent::mdl_color_description_text( 'Default: Accent. ', ' (Disallowed from choosing same color as Title Color.)' ),
+					'description'  => parent::mdl_color_description_text( esc_html__( 'Default: Accent. ', 'mdl-shortcodes' ), esc_html__( ' (Disallowed from choosing same color as Title Color.)', 'mdl-shortcodes' ) ),
 				),
 /*
 				array(
@@ -186,7 +186,7 @@ class MDL_Card extends Shortcode {
 					'label'  => esc_html__( 'Actions Text', 'mdl-shortcodes' ),
 					'attr'   => 'actions',
 					'type'   => 'text',
-					'description'  => __( 'Defaults to "Read More" Button Text if postid argument is set or actionslink argument is set. If neither and this argument is set, it will display as regular text.', 'mdl-shortcodes' ),
+					'description'  => sprintf( esc_html__( 'Defaults to %s Button Text if postid argument is set or actionslink argument is set. If neither and this argument is set, it will display as regular text.', 'mdl-shortcodes' ), '"Read More"' ),
 					'meta' => array(
 						'placeholder' => esc_html__( 'Example: Click Here', 'mdl-shortcodes' ),
 					),
@@ -197,7 +197,7 @@ class MDL_Card extends Shortcode {
 					'type'   => 'url',
 					'description'  => esc_html__( 'If postid argument is set, this is an optional override of Post Permalink. If this is not set, Actions Text will not become a Button.', 'mdl-shortcodes' ),
 					'meta' => array(
-						'placeholder' => __( 'http://' ),
+						'placeholder' => 'http://',
 					),
 				),
 				array(
@@ -212,7 +212,7 @@ class MDL_Card extends Shortcode {
 					'attr'   => 'actionsicon',
 					'type'   => 'select',
 					'options' => parent::mdl_icons_selection_array(),
-					'description'  => parent::mdl_icon_description_text( 'Icon on right side of Actions Area.' ),
+					'description'  => parent::mdl_icon_description_text( esc_html__( 'Icon on right side of Actions Area.', 'mdl-shortcodes' ) ),
 				),
 				array(
 					'label'  => esc_html__( 'Actions Border', 'mdl-shortcodes' ),
@@ -240,7 +240,7 @@ class MDL_Card extends Shortcode {
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Span, Link, or Div'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'Span, Link, or Div', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),

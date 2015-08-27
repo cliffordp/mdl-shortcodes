@@ -22,7 +22,7 @@ class MDL_Grid extends Shortcode {
 			//'add_button'	 => 'icon_only', // no UI so no add_button
 			'inner_content' => array(
 				//'value'		=> '[mdl-cell][/mdl-cell]',
-				'description'	=> __( 'Enter [mdl-cell][/mdl-cell] shortcodes inside [mdl-grid][/mdl-grid] shortcodes.', 'mdl-shortcodes' ),
+				'description'	=> sprintf( esc_html__( 'Enter %s shortcodes inside %s shortcodes.', 'mdl-shortcodes' ), '[mdl-cell][/mdl-cell]', '[mdl-grid][/mdl-grid]' ),
 			),
 			'attrs'          => array(
 				array(
@@ -30,7 +30,7 @@ class MDL_Grid extends Shortcode {
 					'attr'   => 'spacing',
 					'type'   => 'select',
 					'options' => parent::mdl_true_false_selection_array( 'true', 'false', 'true' ),
-					'description'  => esc_html__( 'False adds .mdl-grid--no-spacing to remove spacing between cells.', 'mdl-shortcodes' ),
+					'description'  => sprintf( esc_html__( 'False adds %s to remove spacing between cells.', 'mdl-shortcodes' ), '.mdl-grid--no-spacing' ),
 				),
 				array(
 					'label'  => esc_html__( 'Text Color', 'mdl-shortcodes' ),
@@ -44,13 +44,13 @@ class MDL_Grid extends Shortcode {
 					'attr'   => 'bgcolor',
 					'type'   => 'select',
 					'options' => parent::mdl_color_palette_classes_selection_array( 'true', 'background' ),
-					'description'  => parent::mdl_color_description_text( '', ' (Disallowed from choosing same color as Icon color to avoid displaying a colored square.)' ),
+					'description'  => parent::mdl_color_description_text( '', esc_html__( ' (Disallowed from choosing same color as Icon color to avoid displaying a colored square.)', 'mdl-shortcodes' ) ),
 				),
 				array(
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Span, Link, or Div'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'Span, Link, or Div', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),

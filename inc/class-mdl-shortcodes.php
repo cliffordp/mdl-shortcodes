@@ -693,8 +693,8 @@ added a P here[/mdl-cell]
 		$wp_customize->add_panel(
 			'mdl_shortcodes_panel',
 			array(
-				'title'			=> __('MDL Shortcodes Settings', 'mdl-shortcodes'),
-				'description'	=> __('Material Design Lite (MDL) Shortcodes Settings', 'mdl-shortcodes'),
+				'title'			=> esc_html__('MDL Shortcodes Settings', 'mdl-shortcodes'),
+				'description'	=> esc_html__('Material Design Lite (MDL) Shortcodes Settings', 'mdl-shortcodes'),
 				'priority'		=> 10,
 			)
 		);
@@ -704,8 +704,8 @@ added a P here[/mdl-cell]
 		$wp_customize->add_section(
 			self::$mdl_customizer_colors_section,
 			array(
-				'title'			=> __('MDL Shortcodes Color Settings', 'mdl-shortcodes'),
-				'description'	=> __('Color swatches are visible at <a href="http://www.getmdl.io/customize/" target="_blank">GetMDL.io</a> (link opens in a new window)<br>If Primary and Secondary are set to the same, the color combination will default back to Indigo-Pink.', 'mdl-shortcodes'),
+				'title'			=> esc_html__('MDL Shortcodes Color Settings', 'mdl-shortcodes'),
+				'description'	=> sprintf( esc_html__( 'Color swatches are visible at %s (link opens in a new window)%sIf Primary and Secondary are set to the same, the color combination will default back to Indigo-Pink.', 'mdl-shortcodes' ), '<a href="http://www.getmdl.io/customize/" target="_blank">GetMDL.io</a>', '<br>' ),
 				'priority'		=> 12,
 				//'panel'			=> 'mdl_shortcodes_panel',
 			)
@@ -718,7 +718,7 @@ added a P here[/mdl-cell]
 			));
 			
 			$wp_customize->add_control( 'mdl_shortcodes_primary_color_control', array(
-				'label'		=> __('MDL Primary Color', 'mdl-shortcodes'),
+				'label'		=> esc_html__('MDL Primary Color', 'mdl-shortcodes'),
 				'section'	=> self::$mdl_customizer_colors_section,
 				'settings'	=> 'mdl_shortcodes_colors_setting[primary]',
 				'type'		=> 'select',
@@ -732,7 +732,7 @@ added a P here[/mdl-cell]
 			));
 			
 			$wp_customize->add_control( 'mdl_shortcodes_accent_color_control', array(
-				'label'		=> __('MDL Accent Color', 'mdl-shortcodes'),
+				'label'		=> esc_html__('MDL Accent Color', 'mdl-shortcodes'),
 				'section'	=> self::$mdl_customizer_colors_section,
 				'settings'	=> 'mdl_shortcodes_colors_setting[accent]',
 				'type'		=> 'select',

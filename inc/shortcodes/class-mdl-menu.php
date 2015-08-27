@@ -23,8 +23,8 @@ class MDL_Menu extends Shortcode {
 					'attr'   => 'nav',
 					'type'   => 'select',
 					'options' => parent::mdl_nav_menus_selection_array(),
-					'description'  => __( 'If blank, Menu Button will not display.', 'mdl-shortcodes' ),
-					//'description'  => __( 'Enter the ID of a WordPress Navigation Menu and a Button Menu will be created. If entered, this shortcode\'s manually-entered arguments (like url, target, etc.) will be ignored, and the Icon will default to more_vert.', 'mdl-shortcodes' ),
+					'description'  => esc_html__( 'If blank, Menu Button will not display.', 'mdl-shortcodes' ),
+					//'description'  => esc_html__( 'Enter the ID of a WordPress Navigation Menu and a Button Menu will be created. If entered, the manually-entered arguments (like url, target, etc.) will be ignored, and the Icon will default to more_vert.', 'mdl-shortcodes' ),
 				),
 				array(
 					'label'  => esc_html__( 'Menu Position', 'mdl-shortcodes' ),
@@ -38,7 +38,7 @@ class MDL_Menu extends Shortcode {
 					'attr'   => 'icon',
 					'type'   => 'select',
 					'options' => parent::mdl_icons_selection_array(),
-					'description'  => parent::mdl_icon_description_text( 'Default: more_vert. ' ),
+					'description'  => parent::mdl_icon_description_text( esc_html__( 'Default: more_vert. ', 'mdl-shortcodes' ) ),
 				),
 				array(
 					'label'  => esc_html__( 'Menu Item Click Effect', 'mdl-shortcodes' ),
@@ -60,7 +60,7 @@ class MDL_Menu extends Shortcode {
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Span, Link, or Div'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'Span, Link, or Div', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),

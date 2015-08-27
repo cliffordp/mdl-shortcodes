@@ -26,7 +26,7 @@ class MDL_Badge extends Shortcode {
 					'type'   => 'select',
 					'options' => array(
 						''	=> esc_html__( 'Span', 'mdl-shortcodes' ),
-						'link'	=> __( 'Link <a>', 'mdl-shortcodes' ),
+						'link'	=> esc_html__( 'Link', 'mdl-shortcodes' ) . ' <a>',
 						'div'	=> esc_html__( 'Div', 'mdl-shortcodes' ),
 					),
 					'description'  => esc_html__( 'Type of HTML element (Default: Span)', 'mdl-shortcodes' ),
@@ -36,7 +36,7 @@ class MDL_Badge extends Shortcode {
 					'attr'   => 'icon',
 					'type'   => 'select',
 					'options' => parent::mdl_icons_selection_array(),
-					'description'  => parent::mdl_icon_description_text( 'If no Icon chosen here, Badge will be displayed over the text you enter for "badgetext". ' ),
+					'description'  => parent::mdl_icon_description_text( sprintf( esc_html__( 'If no Icon chosen here, Badge will be displayed over the text you enter for %s. ', 'mdl-shortcodes' ), '"badgetext"' ) ),
 				),
 				array(
 					'label'  => esc_html__( '(OR) Display Badge over Text', 'mdl-shortcodes' ),
@@ -62,7 +62,7 @@ class MDL_Badge extends Shortcode {
 					'type'   => 'url',
 					'description'  => esc_html__( 'Required if Link type, otherwise ignored.', 'mdl-shortcodes' ),
 					'meta' => array(
-						'placeholder' => __( 'http://' ),
+						'placeholder' => 'http://',
 					),
 				),
 				array(
@@ -82,7 +82,7 @@ class MDL_Badge extends Shortcode {
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Span, Link, or Div'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'Span, Link, or Div', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),

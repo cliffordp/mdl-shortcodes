@@ -17,7 +17,7 @@ class MDL_Tooltip extends Shortcode {
 			'add_button'	 => 'icon_only',
 			'inner_content' => array(
 				//'value'		=> '',
-				'description'	=> __( 'Enter your tooltip text here. If left blank, Tooltip will not be displayed at all. Example: eXtensible Markup Language (to explain the XML acronym). NOTE: Text Editor Tooltip hovering preview does not work.', 'mdl-shortcodes' ),
+				'description'	=> esc_html__( 'Enter your tooltip text here. If left blank, Tooltip will not be displayed at all. Example: eXtensible Markup Language (to explain the XML acronym). NOTE: Text Editor Tooltip hovering preview does not work.', 'mdl-shortcodes' ),
 			),
 			'attrs'          => array(
 				array(
@@ -31,7 +31,7 @@ class MDL_Tooltip extends Shortcode {
 					'attr'   => 'icon',
 					'type'   => 'select',
 					'options' => parent::mdl_icons_selection_array(),
-					'description'  => parent::mdl_icon_description_text( 'Default: add. ' ),
+					'description'  => parent::mdl_icon_description_text( esc_html__( 'Default: add. ', 'mdl-shortcodes' ) ),
 				),
 				array(
 					'label'  => esc_html__( '(OR) Tooltip target text (instead of an Icon)', 'mdl-shortcodes' ),
@@ -66,7 +66,7 @@ class MDL_Tooltip extends Shortcode {
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Tooltip (not content that Tooltip targets).'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'Tooltip (not content that Tooltip targets).', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),

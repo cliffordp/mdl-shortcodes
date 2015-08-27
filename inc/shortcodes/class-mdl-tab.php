@@ -38,7 +38,7 @@ class MDL_Tab extends Shortcode {
 			'add_button'	 => 'icon_only',
 			'inner_content' => array(
 					//'value'			=> '',
-					'description'	=> __( '(REQUIRED) Tab Panel content. Make sure you wrap this [mdl-tab][/mdl-tab] inside [mdl-tab-group][/mdl-tab-group] !', 'mdl-shortcodes' ),
+					'description'	=> sprintf( esc_html__( '(REQUIRED) Tab Panel content. Make sure you wrap this %s inside %s !', 'mdl-shortcodes' ), '[mdl-tab][/mdl-tab]', '[mdl-tab-group][/mdl-tab-group]' ),
 			),
 			'attrs'          => array(
 				array(
@@ -61,7 +61,7 @@ class MDL_Tab extends Shortcode {
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Span, Link, or Div'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'Span, Link, or Div', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),

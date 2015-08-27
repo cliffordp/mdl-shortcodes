@@ -38,13 +38,13 @@ class MDL_Icon extends Shortcode {
 					'attr'   => 'bgcolor',
 					'type'   => 'select',
 					'options' => parent::mdl_color_palette_classes_selection_array( 'true', 'background' ),
-					'description'  => parent::mdl_color_description_text( '', ' (Disallowed from choosing same color as Icon color to avoid displaying a colored square.)' ),
+					'description'  => parent::mdl_color_description_text( '', esc_html__( ' (Disallowed from choosing same color as Icon color to avoid displaying a colored square.)', 'mdl-shortcodes' ) ),
 				),
 				array(
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Span, Link, or Div'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'Span, Link, or Div', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),

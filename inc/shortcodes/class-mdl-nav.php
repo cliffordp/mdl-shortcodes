@@ -27,7 +27,7 @@ TODO:
 /*
 			'inner_content' => array(
 					//'value'			=> '',
-					'description'	=> __( 'Content you want displayed inside the <main> element of the Navigation.', 'mdl-shortcodes' ),
+					'description'	=> sprintf( esc_html__( 'Content you want displayed inside the %s element of the Navigation.', 'mdl-shortcodes' ), '<main>' ),
 			),
 */
 			'add_button'	 => 'icon_only',
@@ -53,7 +53,7 @@ TODO:
 					'attr'   => 'header',
 					'type'   => 'select',
 					'options' => parent::mdl_nav_menus_selection_array(),
-					//'description'  => parent::mdl_icon_description_text( 'Display Icon inside Button' ),
+					//'description'  => parent::mdl_icon_description_text( esc_html__( 'Display Icon inside Button', 'mdl-shortcodes' ) ),
 				),
 				array(
 					'label'  => esc_html__( 'Drawer Nav', 'mdl-shortcodes' ),
@@ -75,7 +75,7 @@ TODO:
 					'attr'   => 'headerbgcolor',
 					'type'   => 'select',
 					'options' => parent::mdl_color_palette_classes_selection_array( 'true', 'background' ),
-					'description'  => parent::mdl_color_description_text( '', ' (Disallowed from choosing same color as Header Text color.)' ),
+					'description'  => parent::mdl_color_description_text( '', esc_html__( ' (Disallowed from choosing same color as Header Text color.)', 'mdl-shortcodes' ) ),
 				),
 */
 				array(
@@ -91,14 +91,14 @@ TODO:
 					'attr'   => 'drawerbgcolor',
 					'type'   => 'select',
 					'options' => parent::mdl_color_palette_classes_selection_array( 'true', 'background' ),
-					'description'  => parent::mdl_color_description_text( '', ' (Disallowed from choosing same color as Drawer Text color.)' ),
+					'description'  => parent::mdl_color_description_text( '', esc_html__( ' (Disallowed from choosing same color as Drawer Text color.)', 'mdl-shortcodes' ) ),
 				),
 */
 				array(
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'Span, Link, or Div'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'Span, Link, or Div', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),

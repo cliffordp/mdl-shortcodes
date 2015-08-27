@@ -46,7 +46,7 @@ class MDL_Button extends Shortcode {
 					'attr'   => 'icon',
 					'type'   => 'select',
 					'options' => parent::mdl_icons_selection_array(),
-					'description'  => parent::mdl_icon_description_text( 'Display Icon inside Button' ),
+					'description'  => parent::mdl_icon_description_text( esc_html__( 'Display Icon inside Button', 'mdl-shortcodes' ) ),
 				),
 				array(
 					'label'  => esc_html__( 'Icon Display', 'mdl-shortcodes' ),
@@ -94,7 +94,7 @@ class MDL_Button extends Shortcode {
 					'type'   => 'url',
 					'description'  => esc_html__( 'If entered, Button goes to this URL.', 'mdl-shortcodes' ),
 					'meta' => array(
-						'placeholder' => __( 'http://' ),
+						'placeholder' => 'http://',
 					),
 				),
 				array(
@@ -109,13 +109,13 @@ class MDL_Button extends Shortcode {
 					'attr'   => 'disabled',
 					'type'   => 'select',
 					'options' => parent::mdl_true_false_selection_array( 'true', 'true', 'false' ),
-					'description'  => __( 'Adds the standard HTML boolean attribute "disabled"', 'mdl-shortcodes' ),
+					'description'  => sprintf( esc_html__( 'Adds the standard HTML boolean attribute %s', 'mdl-shortcodes' ), '"disabled"' ),
 				),
 				array(
 					'label'			=> esc_html__( 'Custom CSS Class(es)', 'mdl-shortcodes' ),
 					'attr'			=> 'class',
 					'type'			=> 'text',
-					'description'	=> parent::mdl_classes_description_text('', '', 'button element'),
+					'description'	=> parent::mdl_classes_description_text( '', '', esc_html__( 'button element', 'mdl-shortcodes' ) ),
 					'meta'			=> array(
 						'placeholder' => esc_html__( 'my-class-1 other-custom-class', 'mdl-shortcodes' ),
 					),
