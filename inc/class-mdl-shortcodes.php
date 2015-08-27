@@ -138,8 +138,8 @@ class MDL_Shortcodes {
 	 */
 	public function action_init_register_shortcodes() {
 						
-		$w_ui = apply_filters( 'mdl_shortcodes_shortcode_classes_w_ui', $this->internal_shortcode_classes_w_ui );
-		$wo_ui = apply_filters( 'mdl_shortcodes_shortcode_classes_wo_ui', $this->internal_shortcode_classes_wo_ui );
+		$w_ui = apply_filters( 'mdl_shortcodes_shortcode_classes_w_ui_filter', $this->internal_shortcode_classes_w_ui );
+		$wo_ui = apply_filters( 'mdl_shortcodes_shortcode_classes_wo_ui_filter', $this->internal_shortcode_classes_wo_ui );
 		
 		$this->registered_shortcode_classes = array_merge( $w_ui, $wo_ui );
 		
@@ -161,8 +161,8 @@ class MDL_Shortcodes {
 		}
 		
 		if( method_exists( $this, 'action_init_register_duplicate_shortcodes' ) ) {
-			$w_ui_dups = apply_filters( 'mdl_shortcodes_shortcode_classes_w_ui_dups', $this->internal_shortcode_classes_w_ui_dups );
-			$wo_ui_dups = apply_filters( 'mdl_shortcodes_shortcode_classes_wo_ui_dups', $this->internal_shortcode_classes_wo_ui_dups );
+			$w_ui_dups = apply_filters( 'mdl_shortcodes_shortcode_classes_w_ui_dups_filter', $this->internal_shortcode_classes_w_ui_dups );
+			$wo_ui_dups = apply_filters( 'mdl_shortcodes_shortcode_classes_wo_ui_dups_filter', $this->internal_shortcode_classes_wo_ui_dups );
 			
 			$this->action_init_register_duplicate_shortcodes( $w_ui_dups, true );
 			$this->action_init_register_duplicate_shortcodes( $wo_ui_dups, false );

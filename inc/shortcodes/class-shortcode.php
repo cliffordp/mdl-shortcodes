@@ -23,7 +23,7 @@ abstract class Shortcode {
 		if( $append ) {
 			$shortcode_tag = sprintf( '%s-%s', $shortcode_tag, $append );
 		}
-		return apply_filters( 'mdl_shortcodes_shortcode_tag', $shortcode_tag, get_called_class() );
+		return apply_filters( 'mdl_shortcodes_shortcode_tag_filter', $shortcode_tag, get_called_class() );
 	}
 
 	/**
@@ -2410,26 +2410,26 @@ abstract class Shortcode {
 	
 	public static function mdl_version_number() {
 		// from https://github.com/google/material-design-lite/releases or visible in stylesheet URI at http://www.getmdl.io/started/index.html#download
-		$version = apply_filters( 'mdl_shortcodes_version_number', '1.0.4' );
+		$version = apply_filters( 'mdl_shortcodes_version_number_filter', '1.0.4' );
 		
 		return $version;
 	}
 	
 	
 	public static function mdl_google_hosted_stylesheet() {
-		$hosted = apply_filters( 'mdl_shortcodes_google_hosted_stylesheet', true );
+		$hosted = apply_filters( 'mdl_shortcodes_google_hosted_stylesheet_filter', true );
 		
 		return $hosted;
 	}
 	
 	public static function mdl_google_hosted_icons() {
-		$hosted = apply_filters( 'mdl_shortcodes_google_hosted_icons', true );
+		$hosted = apply_filters( 'mdl_shortcodes_google_hosted_icons_filter', true );
 		
 		return $hosted;
 	}
 	
 	public static function mdl_google_hosted_js() {
-		$hosted = apply_filters( 'mdl_shortcodes_google_hosted_js', true );
+		$hosted = apply_filters( 'mdl_shortcodes_google_hosted_js_filter', true );
 		
 		return $hosted;
 	}
@@ -2453,7 +2453,7 @@ abstract class Shortcode {
 		if ( self::mdl_google_hosted_stylesheet() ) {
 			$src = sprintf( 'https://storage.googleapis.com/code.getmdl.io/%s/material.%s.min.css', self::mdl_version_number(), self::mdl_color_combo() );
 		} else {
-			$src = apply_filters( 'mdl_shortcodes_stylesheet_src', '' ); //local source
+			$src = apply_filters( 'mdl_shortcodes_stylesheet_src_filter', '' ); //local source
 		}
 		
 		return $src;
@@ -2496,7 +2496,7 @@ abstract class Shortcode {
 		if ( self::mdl_google_hosted_icons() ) {
 			$src = 'https://fonts.googleapis.com/icon?family=Material+Icons';
 		} else {
-			$src = apply_filters( 'mdl_shortcodes_icons_src', '' ); //local source
+			$src = apply_filters( 'mdl_shortcodes_icons_src_filter', '' ); //local source
 		}
 		
 		return $src;
@@ -2506,7 +2506,7 @@ abstract class Shortcode {
 		if ( self::mdl_google_hosted_js() ) {
 			$src = sprintf( 'https://storage.googleapis.com/code.getmdl.io/%s/material.min.js', self::mdl_version_number() );
 		} else {
-			$src = apply_filters( 'mdl_shortcodes_js_src', '' ); //local source
+			$src = apply_filters( 'mdl_shortcodes_js_src_filter', '' ); //local source
 		}
 		
 		return $src;
