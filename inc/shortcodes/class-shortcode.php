@@ -2538,12 +2538,6 @@ abstract class Shortcode {
 		wp_enqueue_script( self::mdl_js_handle(), self::mdl_js_src(), array(), null, true );
 	}
 	
-	//add_action( 'wp_enqueue_scripts', 'mdl_enqueue_stylesheet' );
-	
-	//add_action( 'wp_enqueue_scripts', 'mdl_enqueue_icons' );
-	
-	//add_action( 'wp_enqueue_scripts', 'mdl_enqueue_js' );
-	
 	// first checking for class_exists( 'Shortcode_UI' ) does not work so just add styles/scripts to TinyMCE whether or not Shortcake plugin is active
 	// but alternatively we could leverage get_shortcake_admin_dependencies() in inc/class-mdl-shortcodes.php -- may or may not check for is_admin()
 	// add_filter( 'mce_css', 'mdl_tinymce_stylesheet_icons_func' );
@@ -2568,9 +2562,9 @@ abstract class Shortcode {
 	
 	// just load scripts when TinyMCE is present (which, unfortunately, does include Dashboard, Post Editing, Comments and possibly other wp-admin screens)
 	public static function mdl_tinymce_scripts_func() {
-	    printf( '<link rel="stylesheet" id="%s-css" href="%s" type="text/css" media="all">', self::mdl_icons_handle(), self::mdl_icons_src() );
-	    printf( '<link rel="stylesheet" id="%s-css" href="%s" type="text/css" media="all">', self::mdl_stylesheet_handle(), self::mdl_stylesheet_src() );
-	    printf( '<script type="text/javascript" src="%s"></script>', self::mdl_js_src() );
+		printf( '<link rel="stylesheet" id="%s-css" href="%s" type="text/css" media="all">', self::mdl_icons_handle(), self::mdl_icons_src() );
+		printf( '<link rel="stylesheet" id="%s-css" href="%s" type="text/css" media="all">', self::mdl_stylesheet_handle(), self::mdl_stylesheet_src() );
+		printf( '<script type="text/javascript" src="%s"></script>', self::mdl_js_src() );
 	}
 	
 	
