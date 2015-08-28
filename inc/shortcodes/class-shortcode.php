@@ -2560,7 +2560,7 @@ abstract class Shortcode {
 		return $mce_css;
 	}
 	
-	// just load scripts when TinyMCE is present (which, unfortunately, does include Dashboard, Post Editing, Comments and possibly other wp-admin screens)
+	// just load scripts when TinyMCE is present (which, unfortunately, does include Dashboard (Quick Draft / Quick Edit), Post Editing, Comments and possibly other wp-admin screens)
 	public static function mdl_tinymce_scripts_func() {
 		printf( '<link rel="stylesheet" id="%s-css" href="%s" type="text/css" media="all">', self::mdl_icons_handle(), self::mdl_icons_src() );
 		printf( '<link rel="stylesheet" id="%s-css" href="%s" type="text/css" media="all">', self::mdl_stylesheet_handle(), self::mdl_stylesheet_src() );

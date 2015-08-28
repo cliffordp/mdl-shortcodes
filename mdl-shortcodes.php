@@ -47,7 +47,6 @@ define( 'MDL_SHORTCODES_URL_ROOT', plugin_dir_url( __FILE__ ) );
 	- Possibly add icon font sizing (CSS and shortcode option). See https://github.com/google/material-design-lite/issues/1227#issuecomment-125573309
 	- WP Customizer colorpicker to either Sass/Scss or to PHP CSS stylesheet to override .primary, .accent, etc --> 81 changes when diff between 2 Google-hosted files (just as an idea of workload) --> not just these few here: https://github.com/google/material-design-lite/blob/master/src/palette/_palette.scss#L2263 --> http://mdlhut.com/2015/08/creating-an-mdl-theme/
 	- resolve <br> in nested Grid/Cell
-	- why don't Icons appear in some Shortcake previews?
 	- not affect all of wp-admin
 	- more useful Quick Add buttons (single click add snippet)
 	- add Footer component?
