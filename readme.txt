@@ -15,6 +15,7 @@ Making it easy to use MDL components in WordPress via shortcodes. Material Desig
 Integrates with https://wordpress.org/plugins/shortcode-ui/ so building shortcodes (even ones with complex options) is super easy!
 
 = Highlights =
+
 * Extremely lightweight and optimized by Google!
 * Easily use all the MDL Components' features by using the Shortcode UI (available for most but not all MDL Components)
 * Most shortcodes appear in Visual Editor for live preview, avoiding the need to preview every change by visiting the front-end.
@@ -27,7 +28,7 @@ Integrates with https://wordpress.org/plugins/shortcode-ui/ so building shortcod
 These plugins may come in handy when building or customizing a site with MDL Shortcodes:
 (may contain affiliate links)
 
-* [Shortcake (Shortcode UI)](https://wordpress.org/plugins/shortcode-ui/) - You'll be prompted to install this one when you install MDL Shortcodes, that's how great it is!
+* [Shortcake (Shortcode UI)](https://wordpress.org/plugins/shortcode-ui/) - You'll be prompted to install this one when you install MDL Shortcodes; that's how great it is!
 * [Easy Google Fonts](https://wordpress.org/plugins/easy-google-fonts/) - to override MDL using [Roboto](https://www.google.com/fonts/specimen/Roboto) font by default
 * **[WP Views](https://wp-types.com/home/views-create-elegant-displays-for-your-content/?aid=5336&affiliate_key=Lsvk04DjJOhq)** or [Shortcode Factory](https://wordpress.org/plugins/shortcode-factory/) - to output post info (Views is paid and much more powerful but Shortcode Factory is free)
 * [amr shortcode any widget](https://wordpress.org/plugins/amr-shortcode-any-widget/) - can come in handy if wanting to display widgets in an MDL Grid/Cell
@@ -42,6 +43,7 @@ Special thanks to:
 * [Leave a great review](https://wordpress.org/support/view/plugin-reviews/mdl-shortcodes?rate=5#postform)
 * [View my other plugins](https://profiles.wordpress.org/cliffpaulick/#content-plugins)
 * [Hire Me for Customizations](http://tourkick.com/)
+* [Contribute code via GitHub](https://github.com/cliffordp/mdl-shortcodes)
 * **[Tweet this plugin](https://twitter.com/home?status=I%20love%20the%20free%20%23Google%20%23MDL%20Shortcodes%20plugin%20at%20https%3A//wordpress.org/plugins/mdl-shortcodes/%20-%20Thanks%20%40TourKick%20and%20%40GoogleDesign%20%23WebDev)**
 
 
