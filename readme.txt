@@ -58,12 +58,14 @@ Special thanks to:
 == Installation ==
 
 After automatically installing to wp-content/plugins/:
+
 1. Install the Shortcake (Shortcode UI) plugin (you'll be prompted to do so if it's not already installed and activated). It's optional but highly recommended.
 2. Click the "MDL Shortcodes Options" wp-admin menu item (next to "Appearance" menu item) to select your MDL colors.
 3. Then just use the shortcodes in any Visual Editor (e.g. Post/Page edit screens). With Shortcake (Shortcode UI) plugin activated you'll be able to click "Add Media" then "Insert Post Element" then select one of the shortcodes to customize.
 
 == Frequently Asked Questions ==
 **What shortcodes are available?**
+
 * mdl-badge
 * mdl-button
 * mdl-card
@@ -131,6 +133,7 @@ After automatically installing to wp-content/plugins/:
 * mdl-tooltip
 
 **What are some shortcode examples?**
+
 When you install and activate the MDL Shortcodes plugin, a new Page will be created. It will be titled "MDL Shortcodes Plugin Demo Examples" and is only a Draft, not Published. You can click in to edit this page; go to the Text Editor (not Visual Editor) to see the shortcodes in use. Note that this will be the page you preview when clicking the "MDL Shortcodes Options" wp-admin menu link to pick your CSS colors.
 
 For universal reference, here are some shortcode examples:
