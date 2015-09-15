@@ -2543,19 +2543,19 @@ abstract class Shortcode {
 	// add_filter( 'mce_css', 'mdl_tinymce_stylesheet_icons_func' );
 	//add_filter( 'mce_css', array( 'MDL_Shortcodes\Shortcodes\Shortcode', 'mdl_tinymce_stylesheet_icons_func' ) );
 	public static function mdl_tinymce_stylesheet_icons_func( $mce_css ) {
-		if ( ! empty( self::mdl_stylesheet_src() ) ) {
+		// if ( ! empty( self::mdl_stylesheet_src() ) ) { // WP SVN thought there was a PHP fatal error "can't use function return value in write context in - on line 2546" -- not a crucial check anyway as it should not be empty()
 			if ( ! empty( $mce_css ) ) {
 				$mce_css .= ',';
 			}
 			$mce_css .= self::mdl_stylesheet_src();
-		}	
+		// }
 		
-		if ( ! empty( self::mdl_icons_src() ) ) {
+		// if ( ! empty( self::mdl_icons_src() ) ) { // same WP SVN error as above
 			if ( ! empty( $mce_css ) ) {
 				$mce_css .= ',';
 			}
 			$mce_css .= self::mdl_icons_src();
-		}	
+		// }	
 		
 		return $mce_css;
 	}
