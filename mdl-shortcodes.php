@@ -77,7 +77,7 @@ define( 'MDL_SHORTCODES_URL_ROOT', plugin_dir_url( __FILE__ ) );
 	https://wordpress.org/plugins/display-posts-shortcode/ -- http://www.billerickson.net/code-tag/display-posts-shortcode/
 	https://wordpress.org/plugins/custom-sidebars/
 	https://wordpress.org/plugins/amr-shortcode-any-widget/
-	https://wordpress.org/plugins/wp-page-widget/
+	https://wordpress.org/plugins/wp-page-widget/ -- no longer in WP Plugin Repo as of 2015-09-14
 	https://wordpress.org/plugins/custom-post-widget/
 	
 * END notes
