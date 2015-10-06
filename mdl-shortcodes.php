@@ -9,12 +9,12 @@ Plugin URI: http://tourkick.com/mdl-shortcodes/
 Text Domain: mdl-shortcodes
 Domain Path: /languages
 License: GPLv3
-Version: 1.0
+Version: 1.0.1
 */
 
 defined( 'ABSPATH' ) or die(); //do not allow plugin file to be called directly (security protection)
 
-define( 'MDL_SHORTCODES_VERSION', '1.0' );
+define( 'MDL_SHORTCODES_VERSION', '1.0.1' );
 define( 'MDL_SHORTCODES_URL_ROOT', plugin_dir_url( __FILE__ ) );
 
 

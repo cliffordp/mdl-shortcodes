@@ -2410,7 +2410,7 @@ abstract class Shortcode {
 	
 	public static function mdl_version_number() {
 		// from https://github.com/google/material-design-lite/releases or visible in stylesheet URI at http://www.getmdl.io/started/index.html#download
-		$version = apply_filters( 'mdl_shortcodes_version_number_filter', '1.0.4' );
+		$version = apply_filters( 'mdl_shortcodes_version_number_filter', '1.0.5' );
 		
 		return $version;
 	}
