@@ -193,6 +193,9 @@ In order to render shortcode previews in the TinyMCE Visual Editor, the 3 MDL fi
 *Changelog DIFFs for all versions are available at <a href="http://plugins.trac.wordpress.org/browser/mdl-shortcodes/trunk" target="_blank">WordPress SVN</a>.*
 *MDL Releases are viewable at <a href="https://github.com/google/material-design-lite/releases">github.com/google/material-design-lite/releases</a>*
 
+= Version 1.0.2 =
+* Updated to load MDL Version 1.0.6
+
 = Version 1.0.1 =
 * Updated to load MDL Version 1.0.5 instead of 1.0.4
 

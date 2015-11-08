@@ -9,7 +9,7 @@ Plugin URI: http://tourkick.com/mdl-shortcodes/
 Text Domain: mdl-shortcodes
 Domain Path: /languages
 License: GPLv3
-Version: 1.0.1
+Version: 1.0.2
 */
 
 defined( 'ABSPATH' ) or die(); //do not allow plugin file to be called directly (security protection)
