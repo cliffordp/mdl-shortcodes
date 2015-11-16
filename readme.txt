@@ -3,7 +3,7 @@ Contributors: cliffpaulick
 Tags: mdl, material design lite, google, shortcode, shortcodes
 Donate link: http://tourkick.com/pay/
 Requires at least: 4.0
-Tested up to: 4.3
+Tested up to: 4.3.1
 Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -192,6 +192,9 @@ In order to render shortcode previews in the TinyMCE Visual Editor, the 3 MDL fi
 == Changelog ==
 *Changelog DIFFs for all versions are available at <a href="http://plugins.trac.wordpress.org/browser/mdl-shortcodes/trunk" target="_blank">WordPress SVN</a>.*
 *MDL Releases are viewable at <a href="https://github.com/google/material-design-lite/releases">github.com/google/material-design-lite/releases</a>*
+
+= Version 1.0.3 =
+* Move TGM Plugin Activation file to 'inc' directory to avoid it showing up as a separate plugin in site's list of plugins
 
 = Version 1.0.2 =
 * Updated to load MDL Version 1.0.6

@@ -7,14 +7,13 @@ Author: TourKick (Clifford P)
 Author URI: http://tourkick.com/
 Plugin URI: http://tourkick.com/mdl-shortcodes/
 Text Domain: mdl-shortcodes
-Domain Path: /languages
 License: GPLv3
-Version: 1.0.2
+Version: 1.0.3
 */
 
 defined( 'ABSPATH' ) or die(); //do not allow plugin file to be called directly (security protection)
 
-define( 'MDL_SHORTCODES_VERSION', '1.0.1' );
+define( 'MDL_SHORTCODES_VERSION', '1.0.3' );
 define( 'MDL_SHORTCODES_URL_ROOT', plugin_dir_url( __FILE__ ) );
 
 
@@ -124,7 +123,7 @@ require_once dirname( __FILE__ ) . '/inc/class-mdl-shortcodes.php';
 /**
  * Include the TGM_Plugin_Activation class.
  */
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'mdl_shortcodes_tgm_plugins' );
 /**
