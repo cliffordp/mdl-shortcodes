@@ -8,9 +8,15 @@ Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
 
-Making it easy to use MDL components in WordPress via shortcodes
+This plugin is no longer maintained or supported. Google is no longer maintaining MDL.
 
 == Description ==
+
+From [Google MDL Staff](https://github.com/google/material-design-lite/issues/1206#issuecomment-269769984):
+> MDL is no longer being maintained by the core team so much. We are focusing on [Material Components for Web (previously MDLv2)](https://github.com/material-components/material-components-web) and MDL is primarily up to community members to handle at this point.
+
+===
+
 Making it easy to use Google's Material Design Lite (MDL) components in WordPress via shortcodes. MDL components are viewable at http://www.getmdl.io/components/
 
 Integrates with Shortcake (Shortcode UI) so building shortcodes (even ones with complex options) is super easy!
@@ -46,6 +52,7 @@ Special thanks to:
 
 * [Google Material Design Lite](http://www.getmdl.io/) because duh!
 * The Shortcake (Shortcode UI) and [Shortcake Bakery](https://wordpress.org/plugins/shortcake-bakery/) developers/contributors. MDL Shortcodes used Shortcake Bakery as a foundation for building upon Shortcake.
+* The [TGM Plugin Activation](http://tgmpluginactivation.com/) developers/contributors. It's how Shortcake gets suggested right when you install this plugin.
 
 = Support Me =
 * [Leave a great review](https://wordpress.org/support/view/plugin-reviews/mdl-shortcodes?rate=5#postform)
